@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.navigation.NavController;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
@@ -22,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         getSupportActionBar().hide();
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         binding.mainActivityVp.setAdapter(new PagerAdapter(MainActivity.this));
+
 
 
     }

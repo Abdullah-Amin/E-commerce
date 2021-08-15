@@ -10,63 +10,68 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#E3E0E0"
         tools:context=".MainActivity">
 
-        <ScrollView
-            android:orientation="horizontal"
-            android:id="@+id/main_activity_sv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
+            <TableLayout
+                android:id="@+id/main_activity_sv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/main_activity_vp">
 
-                <TextView
-                    android:id="@+id/main_activity_signup_tv"
+                <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/sign_up"
-                    android:textColor="#5E000000"
-                    android:textSize="@dimen/_20ssp"
-                    android:textStyle="bold"
-                    android:paddingStart="@dimen/_15sdp"
-                    android:paddingLeft="@dimen/_15sdp" />
+                    android:scrollbars="horizontal">
 
-                <TextView
-                    android:id="@+id/main_activity_login_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/login"
-                    android:textColor="#5E000000"
-                    android:textSize="@dimen/_20ssp"
-                    android:textStyle="bold"
-                    android:paddingStart="@dimen/_15sdp"
-                    android:paddingLeft="@dimen/_15sdp" />
+                    <TextView
+                        android:id="@+id/main_activity_signup_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sign_up"
+                        android:textColor="#5E000000"
+                        android:textSize="@dimen/_25ssp"
+                        android:textStyle="bold"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:paddingLeft="@dimen/_15sdp" />
 
-                <TextView
-                    android:id="@+id/main_activity_forgot_password_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/forgot_password"
-                    android:textColor="#5E000000"
-                    android:textSize="@dimen/_20ssp"
-                    android:textStyle="bold"
-                    android:paddingStart="@dimen/_15sdp"
-                    android:paddingLeft="@dimen/_15sdp" />
+                    <TextView
+                        android:id="@+id/main_activity_login_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login"
+                        android:textColor="#5E000000"
+                        android:textSize="@dimen/_25ssp"
+                        android:textStyle="bold"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:paddingLeft="@dimen/_15sdp" />
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/main_activity_forgot_password_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/forgot_password"
+                        android:textColor="#5E000000"
+                        android:textSize="@dimen/_25ssp"
+                        android:textStyle="bold"
+                        android:paddingStart="@dimen/_15sdp"
+                        android:paddingEnd="@dimen/_15sdp"/>
 
-        </ScrollView>
+                </TableRow>
+
+            </TableLayout>
 
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/main_activity_vp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_sv"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
 <!--        <fragment-->
 <!--            android:id="@+id/fragment"-->
