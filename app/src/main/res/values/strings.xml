@@ -16,5 +16,10 @@
     <string name="profile">Profile</string>
     <string name="more">More</string>
     <string name="categories">Categories</string>
+    <string name="see_all">See all</string>
+    <string name="shoes">Shoes</string>
+    <string name="beauty">Beauty</string>
+    <string name="apparel">Apparel</string>
+    <string name="latest">Latest</string>
 </resources>
 
