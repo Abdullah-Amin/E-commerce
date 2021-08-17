@@ -12,356 +12,367 @@
         android:layout_height="match_parent"
         tools:context=".HomeFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
-            <TextView
-                android:id="@+id/fragment_home_notification_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:drawableEnd="@drawable/ic_notifications"
-                android:drawableRight="@drawable/ic_notifications"
-                android:layout_marginRight="@dimen/_10sdp" />
-
-            <ImageView
-                android:id="@+id/fragment_home_message_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_10sdp" />
+            android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fragment_home_categories_cl"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_home_notification_tv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:layout_height="match_parent"
+                >
 
-                <TextView
-                    android:id="@+id/fragment_home_categories_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/categories"
-                    android:textSize="@dimen/_25ssp"
-                    android:textColor="@color/black"
+                <ImageView
+                    android:id="@+id/fragment_home_notification_tv"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginLeft="@dimen/_15sdp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/fragment_home_apparel_civ"
-                    android:layout_width="@dimen/_65sdp"
-                    android:layout_height="@dimen/_65sdp"
-                    android:src="@drawable/ic_mail"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
-                    app:layout_constraintEnd_toStartOf="@+id/fragment_home_beauty_civ"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/apparel"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13ssp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_apparel_civ"
-                    app:layout_constraintStart_toStartOf="@+id/fragment_home_apparel_civ"
-                    app:layout_constraintEnd_toEndOf="@+id/fragment_home_apparel_civ"/>
-                
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/fragment_home_beauty_civ"
-                    android:layout_width="@dimen/_65sdp"
-                    android:layout_height="@dimen/_65sdp"
-                    android:src="@drawable/ic_mail"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
-                    app:layout_constraintEnd_toStartOf="@+id/fragment_home_shoes_civ"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/beauty"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13ssp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_beauty_civ"
-                    app:layout_constraintStart_toStartOf="@+id/fragment_home_beauty_civ"
-                    app:layout_constraintEnd_toEndOf="@+id/fragment_home_beauty_civ"/>
-                
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/fragment_home_shoes_civ"
-                    android:layout_width="@dimen/_65sdp"
-                    android:layout_height="@dimen/_65sdp"
-                    android:src="@drawable/ic_mail"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
-                    app:layout_constraintEnd_toStartOf="@+id/fragment_home_see_all_civ"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/shoes"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13ssp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_shoes_civ"
-                    app:layout_constraintStart_toStartOf="@+id/fragment_home_shoes_civ"
-                    app:layout_constraintEnd_toEndOf="@+id/fragment_home_shoes_civ"/>
-                
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/fragment_home_see_all_civ"
-                    android:layout_width="@dimen/_65sdp"
-                    android:layout_height="@dimen/_65sdp"
-                    android:src="@drawable/ic_mail"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv" 
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/see_all"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13ssp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_see_all_civ"
-                    app:layout_constraintStart_toStartOf="@+id/fragment_home_see_all_civ"
-                    app:layout_constraintEnd_toEndOf="@+id/fragment_home_see_all_civ"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/fragment_home_latest_cl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_15sdp"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_cl"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <TextView
-                    android:id="@+id/fragment_home_latest_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/latest"
-                    android:textSize="@dimen/_25ssp"
-                    android:textColor="@color/black"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginLeft="@dimen/_15sdp" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/fragment_home_latest_rv"
-                    tools:listitem="@layout/latest_item"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_140sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/_20sdp"
                     android:layout_marginEnd="@dimen/_15sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_tv"/>
+                    android:src="@drawable/ic_notifications"
+                    android:drawableEnd="@drawable/ic_notifications"
+                    android:drawableRight="@drawable/ic_notifications"
+                    android:layout_marginRight="@dimen/_10sdp" />
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/fragment_home_first_cv"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/fragment_home_message_tv"
+                    android:layout_width="@dimen/_23sdp"
+                    android:layout_height="@dimen/_23sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/fragment_home_notification_tv"
+                    android:src="@drawable/ic_chat"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_10sdp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fragment_home_categories_cl"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:cardCornerRadius="@dimen/_15sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_rv"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_notification_tv"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="@dimen/_15sdp">
+                    app:layout_constraintEnd_toEndOf="parent">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <TextView
+                        android:id="@+id/fragment_home_categories_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/categories"
+                        android:textSize="@dimen/_25ssp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginLeft="@dimen/_15sdp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fragment_home_apparel_civ"
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:src="@drawable/ic_mail"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_home_beauty_civ"/>
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:text="@string/apparel"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_apparel_civ"
+                        app:layout_constraintStart_toStartOf="@+id/fragment_home_apparel_civ"
+                        app:layout_constraintEnd_toEndOf="@+id/fragment_home_apparel_civ"/>
 
-                        <ImageView
-                            android:id="@+id/fragment_home_first_pic_under_latest"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background"
-                            android:scaleType="fitXY"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fragment_home_beauty_civ"
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:src="@drawable/ic_mail"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_home_shoes_civ"/>
 
-                        <TextView
-                            android:id="@+id/fragment_home_product_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="boots"
-                            android:textSize="@dimen/_13ssp"
-                            android:textColor="@color/black"
-                            android:maxWidth="@dimen/_100sdp"
-                            android:layout_marginStart="@dimen/_5sdp"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_home_first_pic_under_latest"
-                            app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginLeft="@dimen/_5sdp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/beauty"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_beauty_civ"
+                        app:layout_constraintStart_toStartOf="@+id/fragment_home_beauty_civ"
+                        app:layout_constraintEnd_toEndOf="@+id/fragment_home_beauty_civ"/>
 
-                        <TextView
-                            android:id="@+id/fragment_home_product_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="100$"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_13ssp"
-                            android:textColor="@color/black"
-                            android:maxWidth="@dimen/_100sdp"
-                            android:layout_marginStart="@dimen/_5sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_home_product_name"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginLeft="@dimen/_3sdp" />
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fragment_home_shoes_civ"
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:src="@drawable/ic_mail"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_home_see_all_civ"/>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shoes"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_shoes_civ"
+                        app:layout_constraintStart_toStartOf="@+id/fragment_home_shoes_civ"
+                        app:layout_constraintEnd_toEndOf="@+id/fragment_home_shoes_civ"/>
 
-                </com.google.android.material.card.MaterialCardView>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/fragment_home_see_all_civ"
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:src="@drawable/ic_mail"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
+                        app:layout_constraintEnd_toEndOf="parent"/>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/fragment_home_second_cv"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/see_all"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_see_all_civ"
+                        app:layout_constraintStart_toStartOf="@+id/fragment_home_see_all_civ"
+                        app:layout_constraintEnd_toEndOf="@+id/fragment_home_see_all_civ"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fragment_home_latest_cl"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:cardCornerRadius="@dimen/_15sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_rv"
-                    app:layout_constraintStart_toEndOf="@+id/fragment_home_first_cv"
-                    android:layout_marginLeft="@dimen/_15sdp">
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_cl"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <TextView
+                        android:id="@+id/fragment_home_latest_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/latest"
+                        android:textSize="@dimen/_25ssp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginLeft="@dimen/_15sdp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/fragment_home_latest_rv"
+                        tools:listitem="@layout/latest_item"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_140sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_tv"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fragment_home_first_cv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_15sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_rv"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginLeft="@dimen/_15sdp">
 
-                        <ImageView
-                            android:id="@+id/fragment_home_second_pic_under_latest"
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background"
-                            android:scaleType="fitXY"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                            android:orientation="vertical"
+                            android:gravity="center">
 
-                        <TextView
-                            android:id="@+id/fragment_home_first_product_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="boots"
-                            android:textSize="@dimen/_13ssp"
-                            android:textColor="@color/black"
-                            android:maxWidth="@dimen/_100sdp"
-                            android:layout_marginStart="@dimen/_5sdp"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_home_second_pic_under_latest"
-                            app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginLeft="@dimen/_5sdp" />
+                            <ImageView
+                                android:id="@+id/fragment_home_first_pic_under_latest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_launcher_background"
+                                android:scaleType="fitXY"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"/>
 
-                        <TextView
-                            android:id="@+id/fragment_home_first_product_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="100$"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_13ssp"
-                            android:textColor="@color/black"
-                            android:maxWidth="@dimen/_100sdp"
-                            android:layout_marginStart="@dimen/_5sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_home_first_product_name"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginLeft="@dimen/_3sdp" />
+                            <TextView
+                                android:id="@+id/fragment_home_product_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="boots"
+                                android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/black"
+                                android:maxWidth="@dimen/_100sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_home_first_pic_under_latest"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/_5sdp" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/fragment_home_product_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100$"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/black"
+                                android:maxWidth="@dimen/_100sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_home_product_name"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/_3sdp" />
 
-                </com.google.android.material.card.MaterialCardView>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/fragment_home_third_cv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    app:cardCornerRadius="@dimen/_15sdp"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_rv"
-                    app:layout_constraintStart_toEndOf="@+id/fragment_home_second_cv"
-                    android:layout_marginLeft="@dimen/_15sdp">
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fragment_home_second_cv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:layout_marginStart="@dimen/_18sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:cardCornerRadius="@dimen/_15sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_rv"
+                        app:layout_constraintStart_toEndOf="@+id/fragment_home_first_cv"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginLeft="@dimen/_15sdp">
 
-                        <ImageView
-                            android:id="@+id/fragment_home_third_pic_under_latest"
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background"
-                            android:scaleType="fitXY"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"/>
+                            android:orientation="vertical"
+                            android:gravity="center">
 
-                        <TextView
-                            android:id="@+id/fragment_home_second_product_name"
+                            <ImageView
+                                android:id="@+id/fragment_home_second_pic_under_latest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_launcher_background"
+                                android:scaleType="fitXY"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"/>
+
+                            <TextView
+                                android:id="@+id/fragment_home_first_product_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="boots"
+                                android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/black"
+                                android:maxWidth="@dimen/_100sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_home_second_pic_under_latest"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/_5sdp" />
+
+                            <TextView
+                                android:id="@+id/fragment_home_first_product_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100$"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/black"
+                                android:maxWidth="@dimen/_100sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_home_first_product_name"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/_3sdp" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fragment_home_third_cv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_18sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_15sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_rv"
+                        app:layout_constraintStart_toEndOf="@+id/fragment_home_second_cv"
+                        android:layout_marginLeft="@dimen/_15sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="boots"
-                            android:textSize="@dimen/_13ssp"
-                            android:textColor="@color/black"
-                            android:maxWidth="@dimen/_100sdp"
-                            android:layout_marginStart="@dimen/_5sdp"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_home_third_pic_under_latest"
-                            app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginLeft="@dimen/_5sdp" />
+                            android:orientation="vertical"
+                            android:gravity="center">
 
-                        <TextView
-                            android:id="@+id/fragment_home_second_product_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="100$"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_13ssp"
-                            android:textColor="@color/black"
-                            android:maxWidth="@dimen/_100sdp"
-                            android:layout_marginStart="@dimen/_5sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_home_second_product_name"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginLeft="@dimen/_3sdp" />
+                            <ImageView
+                                android:id="@+id/fragment_home_third_pic_under_latest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_launcher_background"
+                                android:scaleType="fitXY"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"/>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/fragment_home_second_product_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="boots"
+                                android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/black"
+                                android:maxWidth="@dimen/_100sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_home_third_pic_under_latest"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/_5sdp" />
 
-                </com.google.android.material.card.MaterialCardView>
+                            <TextView
+                                android:id="@+id/fragment_home_second_product_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100$"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_13ssp"
+                                android:textColor="@color/black"
+                                android:maxWidth="@dimen/_100sdp"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_home_second_product_name"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/_3sdp" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
 
     </FrameLayout>
 </layout>
