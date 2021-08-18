@@ -21,5 +21,13 @@
     <string name="beauty">Beauty</string>
     <string name="apparel">Apparel</string>
     <string name="latest">Latest</string>
+    <string name="all_categories">All categories</string>
+    <string name="apparel">Apparel</string>
+    <string name="beauty">Beauty</string>
+    <string name="electronics">Electronics</string>
+    <string name="furniture">Furniture</string>
+    <string name="home">Home</string>
+    <string name="stationary">Stationary</string>
+    <string name="men_s_apparel">MEN\'S APPAREL</string>
 </resources>
 

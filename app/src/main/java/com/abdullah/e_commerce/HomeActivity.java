@@ -35,14 +35,14 @@ public class HomeActivity extends AppCompatActivity {
                                 .beginTransaction()
                                 .replace(binding.activityHomeFrame.getId(), new HomeFragment())
                                 .commit();
-                        break;
+                        return true;
 
                     case R.id.search:
                         getSupportFragmentManager()
                                 .beginTransaction()
                                 .replace(binding.activityHomeFrame.getId(), new HomeFragment())
                                 .commit();
-                        break;
+                        return true;
                 }
                 return true;
             }
