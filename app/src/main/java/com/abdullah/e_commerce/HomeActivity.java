@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.search:
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(binding.activityHomeFrame.getId(), new HomeFragment())
+                                .replace(binding.activityHomeFrame.getId(), new SearchFragment())
                                 .commit();
                         return true;
                 }
