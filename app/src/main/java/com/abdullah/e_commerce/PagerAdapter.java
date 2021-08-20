@@ -20,9 +20,6 @@ public class PagerAdapter extends FragmentStateAdapter {
         this.context  = fragmentActivity;
     }
 
-    TextView textView;
-
-
     @NonNull
     @Override
     public Fragment createFragment(int position) {
