@@ -55,7 +55,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/email"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         app:startIconDrawable="@drawable/ic_mail">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -71,7 +70,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/username"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         app:startIconDrawable="@drawable/ic_person">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -87,7 +85,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         app:startIconDrawable="@drawable/ic_password">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -102,12 +99,18 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/signup_fragment_signup_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/signup_fragment_signup_cv"
-                android:layout_margin="@dimen/_15sdp" />
+                android:layout_margin="@dimen/_15sdp"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/sign_up"
+                android:textSize="@dimen/_15ssp"
+                app:cornerRadius="@dimen/_15sdp"
+                android:drawableEnd="@drawable/ic_next"
+                android:drawableRight="@drawable/ic_next" />
 
             <TextView
                 android:id="@+id/signup_fragment_policy_tv"
