@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E3E0E0"
+        android:background="#F5F6F8"
         tools:context=".MainActivity">
 
         <com.google.android.material.tabs.TabLayout
@@ -19,10 +19,14 @@
             android:layout_height="@dimen/_60sdp"
             android:defaultFocusHighlightEnabled="false"
             app:tabMode="scrollable"
+
             app:tabSelectedTextColor="@color/black"
-            android:background="#E3E0E0"
+            android:background="#F5F6F7"
             android:scrollIndicators="none"
-            app:tabIndicatorColor="#E3E0E0"
+            app:tabTextAppearance="@style/MineCustomTabText"
+            app:tabIndicatorColor="#F5F6F7"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
