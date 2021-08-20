@@ -28,5 +28,9 @@
     <string name="men_s_apparel">MEN\'S APPAREL</string>
     <string name="recently_viewed">RECENTLY VIEWED</string>
     <string name="clear">CLEAR</string>
+    <string name="best_match">BEST MATCH</string>
+    <string name="top_rated">TOP RATED</string>
+    <string name="price_low_high">PRICE LOW-HIGH</string>
+    <string name="price_high_low">PRICE HIGH-LOW</string>
 </resources>
 
