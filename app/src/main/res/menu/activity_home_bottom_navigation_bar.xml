@@ -2,29 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/navigation_home"
         android:enabled="true"
         android:icon="@drawable/ic_home"
         android:title="@string/home"/>
     <item
-        android:id="@+id/search"
+        android:id="@+id/navigation_search"
         android:enabled="true"
         android:icon="@drawable/ic_search"
         android:title="@string/search"/>
 
     <item
-        android:id="@+id/cart"
+        android:id="@+id/navigation_cart"
         android:enabled="true"
         android:icon="@drawable/ic_cart"
-        android:title="Cart"/>
+        android:title="@string/cart"/>
     <item
-        android:id="@+id/profile"
+        android:id="@+id/navigation_profile"
         android:enabled="true"
         android:icon="@drawable/ic_person"
         android:title="@string/profile"/>
 
     <item
-        android:id="@+id/more"
+        android:id="@+id/navigation_more"
         android:enabled="true"
         android:icon="@drawable/ic_more"
         android:title="@string/more"/>

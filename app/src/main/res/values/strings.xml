@@ -32,5 +32,10 @@
     <string name="top_rated">TOP RATED</string>
     <string name="price_low_high">PRICE LOW-HIGH</string>
     <string name="price_high_low">PRICE HIGH-LOW</string>
+    <string name="title_activity_bottom_navigation">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="cart">Cart</string>
 </resources>
 

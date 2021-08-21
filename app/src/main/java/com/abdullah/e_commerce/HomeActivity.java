@@ -1,51 +1,33 @@
 package com.abdullah.e_commerce;
 
-import androidx.annotation.NonNull;
+import android.os.Bundle;
+
+import com.abdullah.e_commerce.databinding.ActivityHomeBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.navigation.NavController;
-
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import com.abdullah.e_commerce.databinding.ActivityHomeBinding;
-import com.google.android.material.navigation.NavigationBarView;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
-    NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(HomeActivity.this, R.layout.activity_home);
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(binding.activityHomeFrame.getId(), new HomeFragment())
-                .commit();
-
-        binding.activityHomeBnv.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId()){
-                    case R.id.home:
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(binding.activityHomeFrame.getId(), new HomeFragment())
-                                .commit();
-                        return true;
-
-                    case R.id.search:
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(binding.activityHomeFrame.getId(), new SearchFragment())
-                                .commit();
-                        return true;
-                }
-                return true;
-            }
-        });
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(binding.activityHomeNavView, navController);
     }
+
 }

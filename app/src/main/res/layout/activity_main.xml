@@ -13,30 +13,20 @@
         android:background="#F5F6F8"
         tools:context=".MainActivity">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/main_activity_tl"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_60sdp"
-            android:defaultFocusHighlightEnabled="false"
-            app:tabMode="scrollable"
+<!--        <androidx.viewpager2.widget.ViewPager2-->
+<!--            android:id="@+id/main_activity_vp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
 
-            app:tabSelectedTextColor="@color/black"
-            android:background="#F5F6F7"
-            android:scrollIndicators="none"
-            app:tabTextAppearance="@style/MineCustomTabText"
-            app:tabIndicatorColor="#F5F6F7"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/main_activity_vp"
+        <fragment
+            android:id="@+id/fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/main_activity_tl"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/mobile_navigation" />
 
 <!--        <fragment-->
 <!--            android:id="@+id/fragment"-->

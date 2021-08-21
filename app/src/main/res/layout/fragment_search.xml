@@ -43,23 +43,30 @@
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginLeft="@dimen/_15sdp" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/fragment_search_searchv_mcv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/_15sdp"
-            android:layout_margin="@dimen/_15sdp"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_search_categories_tv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <androidx.appcompat.widget.SearchView
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fragment_search_search_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#E3E0E0"/>
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/search"
+                app:hintTextColor="#918C8C"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                app:boxCornerRadiusTopStart="@dimen/_23sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_23sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_23sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_23sdp"
+                app:startIconDrawable="@drawable/ic_search"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_search_categories_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-        </com.google.android.material.card.MaterialCardView>
-
+            </com.google.android.material.textfield.TextInputLayout>
+        
         <TextView
             android:id="@+id/fragment_search_recently_viewed_tv"
             android:layout_width="wrap_content"
@@ -67,7 +74,7 @@
             android:text="@string/recently_viewed"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_15sdp"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_search_searchv_mcv"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_search_search_et"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="@dimen/_15sdp" />
 
@@ -79,7 +86,7 @@
             android:textColor="#ff6969"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_15sdp"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_search_searchv_mcv"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_search_search_et"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginRight="@dimen/_15sdp" />
 
@@ -91,6 +98,7 @@
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginEnd="@dimen/_15sdp"
             tools:listitem="@layout/recently_viewed_item"
+            tools:itemCount="2"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/fragment_search_recently_viewed_tv"
             app:layout_constraintStart_toStartOf="parent"

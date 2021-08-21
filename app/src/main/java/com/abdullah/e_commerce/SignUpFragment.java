@@ -32,7 +32,27 @@ public class SignUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        navController = Navigation.findNavController(view);
+        navController = Navigation.findNavController(view);
 
+        binding.signupFragmentLoginTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_signUpFragment_to_loginFragment);
+            }
+        });
+
+        binding.signupFragmentForgotPasswordTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_signUpFragment_to_forgotPasswordFragment);
+            }
+        });
+
+        binding.signupFragmentSignupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_signUpFragment_to_navigation_home);
+            }
+        });
     }
 }
