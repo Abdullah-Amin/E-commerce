@@ -85,6 +85,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <LinearLayout
+            android:id="@+id/activity_product_btns_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -102,6 +103,7 @@
                 android:text="Product"
                 android:textAllCaps="false"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 app:cornerRadius="@dimen/_20sdp"/>
@@ -115,6 +117,7 @@
                 android:text="Details"
                 android:textAllCaps="false"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 app:cornerRadius="@dimen/_20sdp"/>
@@ -128,19 +131,24 @@
                 android:text="Reviews"
                 android:textAllCaps="false"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 app:cornerRadius="@dimen/_20sdp"/>
 
         </LinearLayout>
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/activity_product_vp"
+        <fragment
+            android:id="@+id/activity_product_frame"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/mobile_navigation"
+            app:layout_constraintTop_toBottomOf="@+id/activity_product_btns_linear_layout"
             app:layout_constraintBottom_toBottomOf="@+id/activity_product_view"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <View
             android:id="@+id/activity_product_view"
@@ -151,23 +159,36 @@
             android:layout_marginEnd="@dimen/_15sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/activity_product_share_this_iv" />
+            app:layout_constraintTop_toBottomOf="@+id/activity_product_frame"
+            app:layout_constraintBottom_toTopOf="@+id/activity_product_add_to_cart_iv" />
 
         <ImageView
             android:id="@+id/activity_product_share_this_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_40sdp"
             android:src="@drawable/share_this_image"
+            android:scaleType="fitXY"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/activity_product_view"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="@dimen/_10sdp" />
 
         <ImageView
             android:id="@+id/activity_product_add_to_cart_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/add_to_cart_image"
+            android:scaleType="fitXY"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/activity_product_view"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="@dimen/_10sdp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

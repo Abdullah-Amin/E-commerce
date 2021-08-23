@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F6F8"
+    android:layout_marginTop="@dimen/_7sdp"
+    android:layout_marginBottom="@dimen/_7sdp">
+
+    <TextView
+        android:id="@+id/product_details_item_first_head_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="brand"
+        android:textColor="#80515C6F"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/_5sdp"/>
+
+    <TextView
+        android:id="@+id/product_details_item_first_core_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="brandfghjd"
+        android:textColor="#515C6F"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toBottomOf="@+id/product_details_item_first_head_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/_5sdp"/>
+
+    <TextView
+        android:id="@+id/product_details_item_second_head_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="brand"
+        android:textColor="#80515C6F"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/_5sdp"/>
+
+    <TextView
+        android:id="@+id/product_details_item_second_core_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="brandfghjd"
+        android:textColor="#515C6F"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toBottomOf="@+id/product_details_item_second_head_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/_5sdp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
