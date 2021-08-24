@@ -29,7 +29,7 @@
         android:layout_marginStart="@dimen/_10sdp"
         app:layout_constraintStart_toEndOf="@+id/product_reviews_item_iv"
         app:layout_constraintTop_toTopOf="parent"
-        android:rating="3"
+        android:rating="3.5"
         android:layout_marginLeft="@dimen/_10sdp" />
 
     <TextView
