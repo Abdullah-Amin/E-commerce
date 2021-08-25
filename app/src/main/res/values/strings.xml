@@ -48,6 +48,5 @@
     <string name="login_failed">"Login failed"</string>
     <string name="select_color">SELECT COLOR</string>
     <string name="select_size">SELECT SIZE</string>
-    <string name="cart">Cart</string>
 </resources>
 
