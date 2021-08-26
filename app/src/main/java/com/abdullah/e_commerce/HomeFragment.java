@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.abdullah.e_commerce.databinding.FragmentHomeBinding;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -47,6 +49,10 @@ public class HomeFragment extends Fragment {
         setCategoryDetails(R.drawable.furniture_image, "Furniture");
         setCategoryDetails(R.drawable.home_image, "Home");
         setCategoryDetails(R.drawable.stationary_image, "Stationary");
+
+//        Glide.with(view.getContext())
+//                .load(imageUrl).apply(new RequestOptions().circleCrop())
+//                .into();
 
         Log.i(TAG, "onViewCreated: " + categoryDetailsArrayList.size());
 

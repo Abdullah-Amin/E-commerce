@@ -17,16 +17,19 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="@dimen/_5sdp"
+            >
+
+            <ImageView
                 android:id="@+id/categories_item_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@{categoryDetail.categoryImage}"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/apparel_image"
+                android:scaleType="fitXY"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -36,10 +39,9 @@
                 android:id="@+id/categories_item_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{categoryDetail.categoryName}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_13ssp"
-                app:layout_constraintBottom_toBottomOf="@+id/categories_item_iv"
+                app:layout_constraintTop_toBottomOf="@+id/categories_item_iv"
                 app:layout_constraintStart_toStartOf="@+id/categories_item_iv"
                 app:layout_constraintEnd_toEndOf="@+id/categories_item_iv" />
 

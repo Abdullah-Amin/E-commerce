@@ -20,6 +20,10 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
         this.categoryDetailsArrayList = categoryDetailsArrayList;
     }
 
+    public int getImages(CategoryDetails image){
+        return image.getCategoryImage();
+    }
+
     @NonNull
     @Override
     public CategoriesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,7 +36,9 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
 
         CategoryDetails categoryDetails = categoryDetailsArrayList.get(position);
 
-        holder.binding.setCategoryDetail(categoryDetails);
+        holder.binding.categoriesItemTv.setText(categoryDetails.getCategoryName());
+
+        holder.binding.categoriesItemIv.setImageResource(getImages(categoryDetailsArrayList.get(position)));
     }
 
     @Override
