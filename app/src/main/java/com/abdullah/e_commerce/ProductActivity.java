@@ -2,13 +2,9 @@ package com.abdullah.e_commerce;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-
+import androidx.fragment.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-
 import com.abdullah.e_commerce.databinding.ActivityProductBinding;
 import com.google.android.material.button.MaterialButton;
 
@@ -19,70 +15,50 @@ public class ProductActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product);
 
-        binding.activityProductProductMbtn.setBackgroundColor(Color.WHITE);
-        binding.activityProductProductMbtn.setTextColor(Color.RED);
+        showFragment(binding.activityProductProductMbtn, new ProductFragment());
 
-        binding.activityProductDetailsMbtn.setBackgroundColor(Color.TRANSPARENT);
-        binding.activityProductDetailsMbtn.setTextColor(Color.GRAY);
+        unPressBtns(binding.activityProductDetailsMbtn, binding.activityProductReviewsMbtn);
 
-        binding.activityProductReviewsMbtn.setBackgroundColor(Color.TRANSPARENT);
-        binding.activityProductReviewsMbtn.setTextColor(Color.GRAY);
+        setOnClicks(binding.activityProductProductMbtn, binding.activityProductDetailsMbtn,
+                binding.activityProductReviewsMbtn, new ProductFragment());
+
+        setOnClicks(binding.activityProductDetailsMbtn, binding.activityProductProductMbtn,
+                binding.activityProductReviewsMbtn, new DetailsFragment());
+
+        setOnClicks(binding.activityProductReviewsMbtn, binding.activityProductDetailsMbtn,
+                binding.activityProductProductMbtn, new ReviewsFragment());
+    }
+
+    public void setOnClicks (MaterialButton pressedBtn, MaterialButton firstUnPressedBtn
+            , MaterialButton secondUnPressedBtn, Fragment fragment){
+
+        pressedBtn.setOnClickListener(v -> {
+            showFragment(pressedBtn, fragment);
+            unPressBtns(firstUnPressedBtn, secondUnPressedBtn);
+        });
+    }
+
+    public void showFragment (MaterialButton highlightedBtn, Fragment fragment){
+
+        highlightedBtn.setBackgroundColor(Color.WHITE);
+        highlightedBtn.setTextColor(Color.RED);
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(binding.activityProductFrame.getId(), new ProductFragment())
+                .replace(binding.activityProductFrame.getId(), fragment)
                 .commit();
+    }
 
+    public void unPressBtns ( MaterialButton firstUnPressedBtn, MaterialButton secondUnPressedBtn){
+        setBtnGray(firstUnPressedBtn);
+        setBtnGray(secondUnPressedBtn);
+    }
 
-        binding.activityProductProductMbtn.setOnClickListener(v -> {
-            binding.activityProductProductMbtn.setBackgroundColor(Color.WHITE);
-            binding.activityProductProductMbtn.setTextColor(Color.RED);
-
-            binding.activityProductDetailsMbtn.setBackgroundColor(Color.TRANSPARENT);
-            binding.activityProductDetailsMbtn.setTextColor(Color.GRAY);
-
-            binding.activityProductReviewsMbtn.setBackgroundColor(Color.TRANSPARENT);
-            binding.activityProductReviewsMbtn.setTextColor(Color.GRAY);
-
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(binding.activityProductFrame.getId(), new ProductFragment())
-                    .commit();
-        });
-
-        binding.activityProductDetailsMbtn.setOnClickListener(v -> {
-            binding.activityProductDetailsMbtn.setBackgroundColor(Color.WHITE);
-            binding.activityProductDetailsMbtn.setTextColor(Color.RED);
-
-            binding.activityProductProductMbtn.setBackgroundColor(Color.TRANSPARENT);
-            binding.activityProductProductMbtn.setTextColor(Color.GRAY);
-
-            binding.activityProductReviewsMbtn.setBackgroundColor(Color.TRANSPARENT);
-            binding.activityProductReviewsMbtn.setTextColor(Color.GRAY);
-
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(binding.activityProductFrame.getId(), new DetailsFragment())
-                    .commit();
-        });
-
-        binding.activityProductReviewsMbtn.setOnClickListener(v -> {
-            binding.activityProductReviewsMbtn.setBackgroundColor(Color.WHITE);
-            binding.activityProductReviewsMbtn.setTextColor(Color.RED);
-
-            binding.activityProductDetailsMbtn.setBackgroundColor(Color.TRANSPARENT);
-            binding.activityProductDetailsMbtn.setTextColor(Color.GRAY);
-
-            binding.activityProductProductMbtn.setBackgroundColor(Color.TRANSPARENT);
-            binding.activityProductProductMbtn.setTextColor(Color.GRAY);
-
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(binding.activityProductFrame.getId(), new ReviewsFragment())
-                    .commit();
-        });
-
+    public void setBtnGray (MaterialButton btnGray){
+        btnGray.setBackgroundColor(Color.TRANSPARENT);
+        btnGray.setTextColor(Color.GRAY);
     }
 }
