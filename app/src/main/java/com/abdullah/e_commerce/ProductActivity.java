@@ -30,6 +30,10 @@ public class ProductActivity extends AppCompatActivity {
         binding.activityProductReviewsMbtn.setBackgroundColor(Color.TRANSPARENT);
         binding.activityProductReviewsMbtn.setTextColor(Color.GRAY);
 
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(binding.activityProductFrame.getId(), new ProductFragment())
+                .commit();
 
 
         binding.activityProductProductMbtn.setOnClickListener(v -> {
@@ -41,6 +45,11 @@ public class ProductActivity extends AppCompatActivity {
 
             binding.activityProductReviewsMbtn.setBackgroundColor(Color.TRANSPARENT);
             binding.activityProductReviewsMbtn.setTextColor(Color.GRAY);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(binding.activityProductFrame.getId(), new ProductFragment())
+                    .commit();
         });
 
         binding.activityProductDetailsMbtn.setOnClickListener(v -> {
@@ -52,6 +61,11 @@ public class ProductActivity extends AppCompatActivity {
 
             binding.activityProductReviewsMbtn.setBackgroundColor(Color.TRANSPARENT);
             binding.activityProductReviewsMbtn.setTextColor(Color.GRAY);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(binding.activityProductFrame.getId(), new DetailsFragment())
+                    .commit();
         });
 
         binding.activityProductReviewsMbtn.setOnClickListener(v -> {
@@ -63,6 +77,11 @@ public class ProductActivity extends AppCompatActivity {
 
             binding.activityProductProductMbtn.setBackgroundColor(Color.TRANSPARENT);
             binding.activityProductProductMbtn.setTextColor(Color.GRAY);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(binding.activityProductFrame.getId(), new ReviewsFragment())
+                    .commit();
         });
 
     }

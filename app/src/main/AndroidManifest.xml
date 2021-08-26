@@ -11,7 +11,11 @@
         android:theme="@style/Theme.Ecommerce">
         <activity android:name=".ProductActivity">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -19,11 +23,7 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_bottom_navigation" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity">

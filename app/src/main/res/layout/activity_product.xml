@@ -138,13 +138,23 @@
 
         </LinearLayout>
 
-        <fragment
+<!--        <fragment-->
+<!--            android:id="@+id/activity_product_frame"-->
+<!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:defaultNavHost="true"-->
+<!--            app:navGraph="@navigation/mobile_navigation"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/activity_product_btns_linear_layout"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/activity_product_view"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"/>-->
+
+        <FrameLayout
             android:id="@+id/activity_product_frame"
-            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/mobile_navigation"
             app:layout_constraintTop_toBottomOf="@+id/activity_product_btns_linear_layout"
             app:layout_constraintBottom_toBottomOf="@+id/activity_product_view"
             app:layout_constraintStart_toStartOf="parent"
