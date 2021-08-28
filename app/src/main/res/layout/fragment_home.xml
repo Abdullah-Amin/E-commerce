@@ -23,32 +23,32 @@
                 >
 
                 <ImageView
-                    android:id="@+id/fragment_home_notification_tv"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
+                    android:id="@+id/fragment_home_notification_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_17sdp"
                     android:layout_marginEnd="@dimen/_15sdp"
                     android:src="@drawable/ic_notifications"
                     android:layout_marginRight="@dimen/_10sdp" />
 
                 <ImageView
-                    android:id="@+id/fragment_home_message_tv"
-                    android:layout_width="@dimen/_23sdp"
-                    android:layout_height="@dimen/_23sdp"
+                    android:id="@+id/fragment_home_message_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/fragment_home_notification_tv"
+                    app:layout_constraintEnd_toStartOf="@+id/fragment_home_notification_iv"
                     android:src="@drawable/ic_chat"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
                     android:layout_marginRight="@dimen/_10sdp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/fragment_home_categories_cl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_notification_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_notification_iv"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent">
 
@@ -58,7 +58,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/categories"
                         android:textSize="@dimen/_25ssp"
-                        android:textColor="@color/black"
+                        android:textColor="#515C6F"
+                        android:textStyle="bold"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginStart="@dimen/_15sdp"
                         android:layout_marginLeft="@dimen/_15sdp" />
@@ -68,7 +69,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         tools:listitem="@layout/categories_item"
-                        tools:itemCount="7"
+                        tools:itemCount="3"
                         android:layout_marginStart="@dimen/_10sdp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
@@ -93,7 +94,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/latest"
                         android:textSize="@dimen/_25ssp"
-                        android:textColor="@color/black"
+                        android:textColor="#515C6F"
+                        android:textStyle="bold"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginStart="@dimen/_15sdp"
                         android:layout_marginLeft="@dimen/_15sdp" />

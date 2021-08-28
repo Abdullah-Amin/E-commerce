@@ -15,7 +15,11 @@
         android:id="@+id/navigation_search"
         android:name="com.abdullah.e_commerce.SearchFragment"
         android:label="@string/search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_filterDialogFragment"
+            app:destination="@id/filterDialogFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.abdullah.e_commerce.LoginFragment"
@@ -90,6 +94,10 @@
             android:id="@+id/action_reviewsFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/filterDialogFragment"
+        android:name="com.abdullah.e_commerce.FilterDialogFragment"
+        android:label="FilterDialogFragment" />
 
 
 </navigation>
