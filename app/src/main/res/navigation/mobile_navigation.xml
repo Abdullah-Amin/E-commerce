@@ -17,8 +17,8 @@
         android:label="@string/search"
         tools:layout="@layout/fragment_search" >
         <action
-            android:id="@+id/action_navigation_search_to_filterDialogFragment"
-            app:destination="@id/filterDialogFragment" />
+            android:id="@+id/action_navigation_search_to_searchResultActivity"
+            app:destination="@id/searchResultActivity" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -98,6 +98,10 @@
         android:id="@+id/filterDialogFragment"
         android:name="com.abdullah.e_commerce.FilterDialogFragment"
         android:label="FilterDialogFragment" />
+    <activity
+        android:id="@+id/searchResultActivity"
+        android:name="com.abdullah.e_commerce.SearchResultActivity"
+        android:label="SearchResultActivity" />
 
 
 </navigation>

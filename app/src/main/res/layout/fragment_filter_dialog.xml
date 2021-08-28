@@ -8,44 +8,50 @@
     </data>
 
     <FrameLayout
-        android:layout_width="@dimen/_210sdp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FilterDialogFragment">
+        tools:context=".FilterDialogFragment"
+        style="@style/Theme.PlayCore.Transparent"
+        android:foregroundGravity="left">
 
         <LinearLayout
+            style="@style/Theme.PlayCore.Transparent"
             android:layout_width="@dimen/_210sdp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_gravity="end"
+            android:gravity="end">
 
             <LinearLayout
                 android:layout_width="@dimen/_210sdp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="clip_horizontal">
+                android:gravity="clip_horizontal"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:text="@string/refine_results"
                     android:textColor="#80515C6F"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"/>
+                    android:textSize="@dimen/_12ssp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_50sdp"
+                    android:layout_marginLeft="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:text="@string/clear"
                     android:textColor="#FF6969"
-                    android:textSize="@dimen/_12ssp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_50sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginLeft="@dimen/_50sdp"
-                    android:layout_marginRight="@dimen/_10sdp" />
+                    android:textSize="@dimen/_12ssp" />
 
             </LinearLayout>
 
@@ -57,34 +63,34 @@
                     android:id="@+id/fragment_filter_dialog_view_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="@string/view"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragment_filter_dialog_view_filtered_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="thhthtth"
                     android:textColor="#80515C6F"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/fragment_filter_dialog_view_iv"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/fragment_filter_dialog_view_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
                     android:layout_margin="@dimen/_10sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -96,34 +102,34 @@
                     android:id="@+id/fragment_filter_dialog_category_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="@string/category"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragment_filter_dialog_category_filtered_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="thhthtth"
                     android:textColor="#80515C6F"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/fragment_filter_dialog_category_iv"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/fragment_filter_dialog_category_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
                     android:layout_margin="@dimen/_10sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -135,34 +141,34 @@
                     android:id="@+id/fragment_filter_dialog_condition_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="@string/condition"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragment_filter_dialog_condition_filtered_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="thhthtth"
                     android:textColor="#80515C6F"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/fragment_filter_dialog_condition_iv"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/fragment_filter_dialog_condition_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
                     android:layout_margin="@dimen/_10sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -174,34 +180,34 @@
                     android:id="@+id/fragment_filter_dialog_material_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="@string/material"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragment_filter_dialog_material_filtered_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="thhthtth"
                     android:textColor="#80515C6F"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/fragment_filter_dialog_material_iv"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/fragment_filter_dialog_material_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
                     android:layout_margin="@dimen/_10sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -213,34 +219,34 @@
                     android:id="@+id/fragment_filter_dialog_color_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="@string/color"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragment_filter_dialog_color_filtered_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="000"
                     android:textColor="#80515C6F"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/fragment_filter_dialog_color_iv"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/fragment_filter_dialog_color_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
                     android:layout_margin="@dimen/_10sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -252,34 +258,34 @@
                     android:id="@+id/fragment_filter_dialog_brand_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="@string/brand"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragment_filter_dialog_brand_filtered_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="thhthtth"
                     android:textColor="#80515C6F"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/fragment_filter_dialog_brand_iv"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/fragment_filter_dialog_brand_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
                     android:layout_margin="@dimen/_10sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -291,34 +297,34 @@
                     android:id="@+id/fragment_filter_dialog_size_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="@string/size"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragment_filter_dialog_size_filtered_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="thhthtth"
                     android:textColor="#80515C6F"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/fragment_filter_dialog_size_iv"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/fragment_filter_dialog_size_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
                     android:layout_margin="@dimen/_10sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -330,34 +336,58 @@
                     android:id="@+id/fragment_filter_dialog_price_range_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="@string/price_range"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/fragment_filter_dialog_price_range_filtered_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
                     android:text="0 -- 20"
                     android:textColor="#80515C6F"
                     android:textSize="@dimen/_15ssp"
-                    android:layout_margin="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/fragment_filter_dialog_price_range_iv"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/fragment_filter_dialog_price_range_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_arrow_right"
                     android:layout_margin="@dimen/_10sdp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_40sdp">
+
+                <ImageView
+                    android:id="@+id/fragment_filter_dialog_apply_filters_btn_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/apply_filters_btn" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="@string/apply_filters"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/fragment_filter_dialog_apply_filters_btn_iv"
+                    app:layout_constraintTop_toTopOf="@+id/fragment_filter_dialog_apply_filters_btn_iv" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

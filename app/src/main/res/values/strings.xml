@@ -57,5 +57,6 @@
     <string name="brand">Brand</string>
     <string name="price_range">Price range</string>
     <string name="size">Size</string>
+    <string name="apply_filters">APPLY FILTERS</string>
 </resources>
 
