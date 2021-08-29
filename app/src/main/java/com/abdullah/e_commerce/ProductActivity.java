@@ -8,6 +8,9 @@ import android.os.Bundle;
 import com.abdullah.e_commerce.databinding.ActivityProductBinding;
 import com.google.android.material.button.MaterialButton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProductActivity extends AppCompatActivity {
 
     ActivityProductBinding binding;
@@ -30,6 +33,13 @@ public class ProductActivity extends AppCompatActivity {
 
         setOnClicks(binding.activityProductReviewsMbtn, binding.activityProductDetailsMbtn,
                 binding.activityProductProductMbtn, new ReviewsFragment());
+
+        List<SliderItem> sliderItems = new ArrayList<>();
+
+        sliderItems.add(new SliderItem(R.drawable.boots, "booooooots"));
+        sliderItems.add(new SliderItem(R.drawable.recommended_image, "recommended"));
+
+        binding.activityProductProductImageSlider.setSliderAdapter(new SliderAdapterExample(this, sliderItems));
     }
 
     public void setOnClicks (MaterialButton pressedBtn, MaterialButton firstUnPressedBtn

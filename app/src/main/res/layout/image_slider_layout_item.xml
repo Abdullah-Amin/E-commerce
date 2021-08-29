@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_slider_layout_item_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_170sdp"
+            android:src="@drawable/boots"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/image_slider_layout_item_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15ssp"
+            android:text="dfhfghsfgjsgj"
+            app:layout_constraintBottom_toBottomOf="@+id/image_slider_layout_item_iv"
+            app:layout_constraintStart_toStartOf="@+id/image_slider_layout_item_iv"
+            app:layout_constraintEnd_toEndOf="@+id/image_slider_layout_item_iv"
+            android:layout_marginBottom="@dimen/_15sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
