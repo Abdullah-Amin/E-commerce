@@ -59,5 +59,24 @@
     <string name="size">Size</string>
     <string name="apply_filters">APPLY FILTERS</string>
     <string name="checkout">Checkout</string>
+    <string name="total">Total</string>
+    <string name="items">Items</string>
+    <string name="all_my_orders">All My Orders</string>
+    <string name="pending_shipments">Pending Shipments</string>
+    <string name="pending_payments">Pending Payments</string>
+    <string name="finished_orders">Finished Orders</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="customer_support">Customer Support</string>
+    <string name="rate_our_app">Rate Our App</string>
+    <string name="make_a_suggestion">Make A Suggestion</string>
+    <string name="more">More</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="currency">Currency</string>
+    <string name="language">Language</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="legal_information">Legal Information</string>
+    <string name="log_out">Log out</string>
 </resources>
 
