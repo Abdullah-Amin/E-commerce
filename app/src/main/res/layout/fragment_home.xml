@@ -68,14 +68,15 @@
                         android:id="@+id/fragment_home_categories_rv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        tools:listitem="@layout/categories_item"
-                        tools:itemCount="3"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_marginLeft="@dimen/_10sdp" />
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_home_categories_tv"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/categories_item" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -104,6 +105,7 @@
                         android:id="@+id/fragment_home_latest_rv"
                         tools:listitem="@layout/latest_item"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_140sdp"
                         android:layout_marginTop="@dimen/_10sdp"
@@ -119,6 +121,8 @@
                         android:layout_marginEnd="@dimen/_15sdp"
                         android:layout_marginTop="@dimen/_10sdp"
                         tools:listitem="@layout/second_latest_item"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        android:orientation="horizontal"
                         app:layout_constraintTop_toBottomOf="@+id/fragment_home_latest_rv"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>

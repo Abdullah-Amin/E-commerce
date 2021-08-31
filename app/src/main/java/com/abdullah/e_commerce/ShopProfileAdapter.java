@@ -20,7 +20,7 @@ public class ShopProfileAdapter extends FragmentStateAdapter {
             case 1:
                 return new ShopProductFragment();
             default:
-                return new ShopReviewsFragment();
+                return new ReviewsFragment();
         }
     }
 
