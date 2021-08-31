@@ -48,6 +48,8 @@
             android:id="@+id/activity_shop_profile_tl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabPaddingBottom="@dimen/_5sdp"
+            app:tabPaddingtop="@dimen/_5sdp"
             app:layout_constraintTop_toBottomOf="@+id/activity_shop_profile_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
