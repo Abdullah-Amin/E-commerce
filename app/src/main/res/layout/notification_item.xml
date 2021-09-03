@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F6F8"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/notification_item_item_image"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/shoes_image"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/notification_item_item_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="productnamenamenamenamenamenamenamenamenamenamename"
+            android:textSize="@dimen/_15ssp"
+            android:maxWidth="@dimen/_150sdp"
+            android:maxLines="3"
+            android:gravity="center||start"
+            app:layout_constraintTop_toTopOf="@+id/notification_item_item_image"
+            app:layout_constraintStart_toEndOf="@+id/notification_item_item_image"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp" />
+
+        <TextView
+            android:id="@+id/notification_item_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="yesterday"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="#80515C6F"
+            app:layout_constraintTop_toTopOf="@+id/notification_item_item_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp" />
+        
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#80727C8E"
+            android:layout_marginEnd="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/notification_item_item_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_15sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

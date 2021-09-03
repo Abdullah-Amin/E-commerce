@@ -12,6 +12,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.abdullah.e_commerce.databinding.FragmentSignUpBinding;
 
@@ -34,19 +35,9 @@ public class SignUpFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.signupFragmentLoginTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_signUpFragment_to_loginFragment);
-            }
-        });
+        setOnClicksListeners(binding.signupFragmentLoginTv, R.id.action_signUpFragment_to_loginFragment);
 
-        binding.signupFragmentForgotPasswordTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_signUpFragment_to_forgotPasswordFragment);
-            }
-        });
+        setOnClicksListeners(binding.signupFragmentForgotPasswordTv, R.id.action_signUpFragment_to_forgotPasswordFragment);
 
         binding.signupFragmentSignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,5 +45,9 @@ public class SignUpFragment extends Fragment {
                 navController.navigate(R.id.action_signUpFragment_to_navigation_home);
             }
         });
+    }
+
+    private void setOnClicksListeners(TextView pressedBtn, int destination) {
+        pressedBtn.setOnClickListener(v -> navController.navigate(destination));
     }
 }
