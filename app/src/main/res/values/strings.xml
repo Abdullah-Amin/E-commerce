@@ -80,5 +80,8 @@
     <string name="notification">Notification</string>
     <string name="messages">Messages</string>
     <string name="type_your_message">Type your message</string>
+    <string name="order_placed">Order Placed!</string>
+    <string name="your_order_was_placed_successfully_for_more_details_check_all_my_orders_page_under_profile_tab">Your order was placed successfully. For more details, check All My Orders page under Profile tab</string>
+    <string name="my_orders">MY ORDERS</string>
 </resources>
 

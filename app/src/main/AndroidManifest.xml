@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecommerce">
-        <activity android:name=".ConversationActivity"></activity>
-        <activity android:name=".ShopProfileActivity"></activity>
+        <activity android:name=".OrderPlacedActivity"></activity>
+        <activity android:name=".ConversationActivity" />
+        <activity android:name=".ShopProfileActivity" />
         <activity android:name=".CheckoutActivity" />
         <activity android:name=".SearchResultActivity">
             <intent-filter>
@@ -19,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProductActivity"></activity>
+        <activity android:name=".ProductActivity" />
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_bottom_navigation" />

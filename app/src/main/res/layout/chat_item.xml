@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -7,8 +8,70 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#F5F6F8">
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="0dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sdfgouygerfhbksjdgkjfbsdkjghoiurg;ohouc oih;lkdiy oudhyf;ah;kajhf"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="#727C8E"
+                android:maxWidth="@dimen/_200sdp"
+                android:background="@color/white"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:maxWidth="@dimen/_170sdp"-->
+<!--            android:background="@color/white"-->
+<!--            android:padding="@dimen/_10sdp"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            app:boxStrokeWidth="0dp"-->
+<!--            app:boxStrokeColor="@color/white"-->
+<!--            android:enabled="false"-->
+<!--            android:layout_margin="@dimen/_15sdp"-->
+<!--            app:boxCornerRadiusTopStart="@dimen/_315sdp"-->
+<!--            app:boxCornerRadiusTopEnd="@dimen/_15sdp"-->
+<!--            app:boxCornerRadiusBottomStart="@dimen/_15sdp"-->
+<!--            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent">-->
+<!--            -->
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/chat_item_et"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@color/white"/>-->
+<!--            -->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
