@@ -367,29 +367,21 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_40sdp">
-
-                <ImageView
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/fragment_filter_dialog_apply_filters_btn_iv"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/apply_filters_btn" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_160sdp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_10sdp"
                     android:text="@string/apply_filters"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/fragment_filter_dialog_apply_filters_btn_iv"
-                    app:layout_constraintTop_toTopOf="@+id/fragment_filter_dialog_apply_filters_btn_iv" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    android:drawableEnd="@drawable/ic_go_for_btns"
+                    app:cornerRadius="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:drawableRight="@drawable/ic_go_for_btns" />
 
         </LinearLayout>
 

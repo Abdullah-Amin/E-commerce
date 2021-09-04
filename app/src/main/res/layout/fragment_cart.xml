@@ -75,13 +75,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/fragment_cart_check_out_btn"/>
 
-            <ImageView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/fragment_cart_check_out_btn"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_130sdp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/check_out_image"
+                android:text="@string/checkout"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingTop="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_7sdp"
+                android:drawableEnd="@drawable/ic_go_for_btns"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:cornerRadius="@dimen/_20sdp"
+                android:drawableRight="@drawable/ic_go_for_btns"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_15sdp" />
 
             <TextView
                 android:id="@+id/fragment_cart_total_price_tv"
