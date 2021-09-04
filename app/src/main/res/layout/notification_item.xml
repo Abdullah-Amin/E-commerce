@@ -29,7 +29,6 @@
             android:textSize="@dimen/_15ssp"
             android:maxWidth="@dimen/_150sdp"
             android:maxLines="3"
-            android:gravity="center||start"
             app:layout_constraintTop_toTopOf="@+id/notification_item_item_image"
             app:layout_constraintStart_toEndOf="@+id/notification_item_item_image"
             android:layout_marginStart="@dimen/_10sdp"

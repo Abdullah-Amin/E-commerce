@@ -19,6 +19,7 @@ public class FilterDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getDialog().getWindow().setGravity(Gravity.END|Gravity.BOTTOM);
         return inflater.inflate(R.layout.fragment_filter_dialog, container, false);
 
 
