@@ -79,5 +79,6 @@
     <string name="log_out">Log out</string>
     <string name="notification">Notification</string>
     <string name="messages">Messages</string>
+    <string name="type_your_message">Type your message</string>
 </resources>
 
