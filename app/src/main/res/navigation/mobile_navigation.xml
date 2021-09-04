@@ -102,6 +102,30 @@
         android:id="@+id/searchResultActivity"
         android:name="com.abdullah.e_commerce.SearchResultActivity"
         android:label="SearchResultActivity" />
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.abdullah.e_commerce.CartFragment"
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/action_cartFragment_to_checkoutActivity"
+            app:destination="@id/checkoutActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/checkoutActivity"
+        android:name="com.abdullah.e_commerce.CheckoutActivity"
+        android:label="CheckoutActivity" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.abdullah.e_commerce.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.abdullah.e_commerce.MoreFragment"
+        android:label="MoreFragment" />
+    <activity
+        android:id="@+id/shopProfileActivity"
+        android:name="com.abdullah.e_commerce.ShopProfileActivity"
+        android:label="ShopProfileActivity" />
 
 
 </navigation>

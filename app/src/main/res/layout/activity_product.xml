@@ -217,7 +217,7 @@
             android:drawableRight="@drawable/ic_share_this" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/activity_product_add_to_cart_iv"
+            android:id="@+id/activity_product_add_to_cart_btn"
             android:layout_width="@dimen/_140sdp"
             android:layout_height="wrap_content"
             android:text="@string/add_to_cart"

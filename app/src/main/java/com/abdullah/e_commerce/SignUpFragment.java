@@ -16,13 +16,15 @@ import android.widget.TextView;
 
 import com.abdullah.e_commerce.databinding.FragmentSignUpBinding;
 
+import org.jetbrains.annotations.NotNull;
+
 public class SignUpFragment extends Fragment {
 
     FragmentSignUpBinding binding;
     NavController navController;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_sign_up, container, false);
@@ -39,12 +41,7 @@ public class SignUpFragment extends Fragment {
 
         setOnClicksListeners(binding.signupFragmentForgotPasswordTv, R.id.action_signUpFragment_to_forgotPasswordFragment);
 
-        binding.signupFragmentSignupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_signUpFragment_to_navigation_home);
-            }
-        });
+        binding.signupFragmentSignupBtn.setOnClickListener(v -> navController.navigate(R.id.action_signUpFragment_to_navigation_home));
     }
 
     private void setOnClicksListeners(TextView pressedBtn, int destination) {

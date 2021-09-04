@@ -14,16 +14,20 @@
         <activity android:name=".ShopProfileActivity" />
         <activity android:name=".CheckoutActivity" />
         <activity android:name=".SearchResultActivity">
+
+        </activity>
+        <activity android:name=".ProductActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_bottom_navigation" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".ProductActivity" />
-        <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_bottom_navigation" />
         <activity android:name=".MainActivity" />
     </application>
 

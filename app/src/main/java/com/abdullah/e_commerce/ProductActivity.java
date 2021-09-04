@@ -3,8 +3,12 @@ package com.abdullah.e_commerce;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+
 import com.abdullah.e_commerce.databinding.ActivityProductBinding;
 import com.google.android.material.button.MaterialButton;
 
@@ -40,6 +44,11 @@ public class ProductActivity extends AppCompatActivity {
         sliderItems.add(new SliderItem(R.drawable.recommended_image, "recommended"));
 
         binding.activityProductProductImageSlider.setSliderAdapter(new SliderAdapterExample(this, sliderItems));
+
+        binding.activityProductAddToCartBtn.setOnClickListener(v -> {
+            startActivity(new Intent(this, CartFragment.class));
+            finish();
+        });
     }
 
     public void setOnClicks (MaterialButton pressedBtn, MaterialButton firstUnPressedBtn

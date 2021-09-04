@@ -12,8 +12,11 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.abdullah.e_commerce.databinding.FragmentLoginBinding;
+
+import org.jetbrains.annotations.NotNull;
 
 public class LoginFragment extends Fragment {
 
@@ -21,7 +24,7 @@ public class LoginFragment extends Fragment {
     NavController navController;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
@@ -34,25 +37,14 @@ public class LoginFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.fragmentLoginForgotPasswordTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_loginFragment_to_forgotPasswordFragment);
-            }
-        });
+        setOnClicksListeners(binding.fragmentLoginForgotPasswordTv, R.id.action_loginFragment_to_forgotPasswordFragment);
 
-        binding.fragmentLoginSignupTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_loginFragment_to_signUpFragment);
-            }
-        });
+        setOnClicksListeners(binding.fragmentLoginSignupTv, R.id.action_loginFragment_to_signUpFragment);
 
-        binding.fragmentLoginLoginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_loginFragment_to_navigation_home);
-            }
-        });
+        binding.fragmentLoginLoginBtn.setOnClickListener(v -> navController.navigate(R.id.action_loginFragment_to_navigation_home));
+    }
+
+    private void setOnClicksListeners(TextView pressedBtn, int destination) {
+        pressedBtn.setOnClickListener(v -> navController.navigate(destination));
     }
 }
