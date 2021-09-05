@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ShopProfileActivity">
+        tools:context=".ui.shop_ui.ShopProfileActivity">
 
         <ImageView
             android:id="@+id/activity_shop_profile_image"

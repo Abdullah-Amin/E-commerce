@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.abdullah.e_commerce.HomeFragment"
+        android:name="com.abdullah.e_commerce.ui.main_ui.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.abdullah.e_commerce.SearchFragment"
+        android:name="com.abdullah.e_commerce.ui.search_ui.SearchFragment"
         android:label="@string/search"
         tools:layout="@layout/fragment_search" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.abdullah.e_commerce.LoginFragment"
+        android:name="com.abdullah.e_commerce.ui.main_ui.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.abdullah.e_commerce.ForgotPasswordFragment"
+        android:name="com.abdullah.e_commerce.ui.main_ui.ForgotPasswordFragment"
         android:label="ForgotPasswordFragment" >
         <action
             android:id="@+id/action_forgotPasswordFragment_to_signUpFragment"
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.abdullah.e_commerce.SignUpFragment"
+        android:name="com.abdullah.e_commerce.ui.main_ui.SignUpFragment"
         android:label="SignUpFragment" >
         <action
             android:id="@+id/action_signUpFragment_to_forgotPasswordFragment"
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.abdullah.e_commerce.ProductFragment"
+        android:name="com.abdullah.e_commerce.ui.product_ui.ProductFragment"
         android:label="ProductFragment" >
         <action
             android:id="@+id/action_productFragment_to_detailsFragment"
@@ -72,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.abdullah.e_commerce.DetailsFragment"
+        android:name="com.abdullah.e_commerce.ui.product_ui.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
         <action
@@ -84,7 +84,7 @@
     </fragment>
     <fragment
         android:id="@+id/reviewsFragment"
-        android:name="com.abdullah.e_commerce.ReviewsFragment"
+        android:name="com.abdullah.e_commerce.ui.product_ui.ReviewsFragment"
         android:label="fragment_reviews"
         tools:layout="@layout/fragment_reviews" >
         <action
@@ -96,15 +96,15 @@
     </fragment>
     <fragment
         android:id="@+id/filterDialogFragment"
-        android:name="com.abdullah.e_commerce.FilterDialogFragment"
+        android:name="com.abdullah.e_commerce.ui.search_ui.FilterDialogFragment"
         android:label="FilterDialogFragment" />
     <activity
         android:id="@+id/searchResultActivity"
-        android:name="com.abdullah.e_commerce.SearchResultActivity"
+        android:name="com.abdullah.e_commerce.ui.search_ui.SearchResultActivity"
         android:label="SearchResultActivity" />
     <fragment
         android:id="@+id/navigation_cart"
-        android:name="com.abdullah.e_commerce.CartFragment"
+        android:name="com.abdullah.e_commerce.ui.cart_ui.CartFragment"
         android:label="CartFragment" >
         <action
             android:id="@+id/action_cartFragment_to_checkoutActivity"
@@ -112,19 +112,19 @@
     </fragment>
     <activity
         android:id="@+id/checkoutActivity"
-        android:name="com.abdullah.e_commerce.CheckoutActivity"
+        android:name="com.abdullah.e_commerce.ui.cart_ui.CheckoutActivity"
         android:label="CheckoutActivity" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.abdullah.e_commerce.ProfileFragment"
+        android:name="com.abdullah.e_commerce.ui.profile_ui.ProfileFragment"
         android:label="ProfileFragment" />
     <fragment
         android:id="@+id/navigation_more"
-        android:name="com.abdullah.e_commerce.MoreFragment"
+        android:name="com.abdullah.e_commerce.ui.profile_ui.MoreFragment"
         android:label="MoreFragment" />
     <activity
         android:id="@+id/shopProfileActivity"
-        android:name="com.abdullah.e_commerce.ShopProfileActivity"
+        android:name="com.abdullah.e_commerce.ui.shop_ui.ShopProfileActivity"
         android:label="ShopProfileActivity" />
 
 

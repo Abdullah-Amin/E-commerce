@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SearchFragment"
+        tools:context=".ui.search_ui.SearchFragment"
         android:background="@drawable/search_fragment_gradient_color">
 
         <androidx.constraintlayout.widget.ConstraintLayout

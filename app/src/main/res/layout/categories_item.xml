@@ -6,7 +6,7 @@
 
         <variable
             name="categoryDetail"
-            type="com.abdullah.e_commerce.CategoryDetails" />
+            type="com.abdullah.e_commerce.data.CategoryDetails" />
 
     </data>
 

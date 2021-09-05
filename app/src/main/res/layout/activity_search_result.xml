@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SearchResultActivity">
+        tools:context=".ui.search_ui.SearchResultActivity">
 
         <ImageView
             android:id="@+id/activity_search_result_arrow_iv"

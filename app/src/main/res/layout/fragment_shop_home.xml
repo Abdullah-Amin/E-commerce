@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ShopHomeFragment">
+        tools:context=".ui.shop_ui.ShopHomeFragment">
 
         <LinearLayout
             android:layout_width="match_parent"

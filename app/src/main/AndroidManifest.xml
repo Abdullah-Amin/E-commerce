@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecommerce">
-        <activity android:name=".OrderPlacedActivity"></activity>
-        <activity android:name=".ConversationActivity" />
-        <activity android:name=".ShopProfileActivity" />
-        <activity android:name=".CheckoutActivity" />
-        <activity android:name=".SearchResultActivity">
+        <activity android:name=".ui.cart_ui.OrderPlacedActivity"></activity>
+        <activity android:name=".ui.messages_notifications_ui.ConversationActivity" />
+        <activity android:name=".ui.shop_ui.ShopProfileActivity" />
+        <activity android:name=".ui.cart_ui.CheckoutActivity" />
+        <activity android:name=".ui.search_ui.SearchResultActivity">
 
         </activity>
-        <activity android:name=".ProductActivity" />
+        <activity android:name=".ui.product_ui.ProductActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.main_ui.HomeActivity"
             android:label="@string/title_activity_bottom_navigation" >
 
             <intent-filter>
@@ -28,7 +28,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.main_ui.MainActivity" />
     </application>
 
 </manifest>

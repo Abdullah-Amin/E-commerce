@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/home_fragment_gradient"
-        tools:context=".HomeFragment">
+        tools:context=".ui.main_ui.HomeFragment">
 
         <ScrollView
             android:layout_width="match_parent"

@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProfileFragment"
+        tools:context=".ui.profile_ui.ProfileFragment"
         android:background="#F5F6F8">
 
         <androidx.constraintlayout.widget.ConstraintLayout

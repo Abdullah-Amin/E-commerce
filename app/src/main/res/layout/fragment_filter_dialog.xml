@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FilterDialogFragment"
+        tools:context=".ui.search_ui.FilterDialogFragment"
         style="@style/Theme.PlayCore.Transparent"
         android:foregroundGravity="left">
 
