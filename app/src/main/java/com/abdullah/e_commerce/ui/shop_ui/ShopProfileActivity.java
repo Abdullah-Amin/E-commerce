@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import com.abdullah.e_commerce.R;
-import com.abdullah.e_commerce.data.adapters.ShopProfileAdapter;
+import com.abdullah.e_commerce.adapters.ShopProfileAdapter;
 import com.abdullah.e_commerce.databinding.ActivityShopProfileBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;

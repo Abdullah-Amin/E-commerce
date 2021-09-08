@@ -1,4 +1,4 @@
-package com.abdullah.e_commerce.data;
+package com.abdullah.e_commerce.model;
 
 public class SliderItem {
 

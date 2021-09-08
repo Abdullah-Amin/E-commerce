@@ -1,4 +1,4 @@
-package com.abdullah.e_commerce.data.adapters;
+package com.abdullah.e_commerce.adapters;
 
 import android.content.Context;
 

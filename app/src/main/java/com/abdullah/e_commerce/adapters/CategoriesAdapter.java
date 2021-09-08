@@ -1,6 +1,7 @@
-package com.abdullah.e_commerce.data.adapters;
+package com.abdullah.e_commerce.adapters;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -8,7 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.abdullah.e_commerce.R;
-import com.abdullah.e_commerce.data.CategoryDetails;
+import com.abdullah.e_commerce.model.CategoryDetails;
 import com.abdullah.e_commerce.databinding.CategoriesItemBinding;
 
 import java.util.ArrayList;

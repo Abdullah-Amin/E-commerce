@@ -1,15 +1,4 @@
-package com.abdullah.e_commerce.data;
-
-import android.net.Uri;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.databinding.BindingAdapter;
-import androidx.databinding.DataBindingUtil;
-
-import com.abdullah.e_commerce.databinding.FragmentHomeBinding;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+package com.abdullah.e_commerce.model;
 
 public class CategoryDetails {
 

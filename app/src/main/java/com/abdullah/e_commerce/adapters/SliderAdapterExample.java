@@ -1,4 +1,4 @@
-package com.abdullah.e_commerce.data.adapters;
+package com.abdullah.e_commerce.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.databinding.DataBindingUtil;
 
 import com.abdullah.e_commerce.R;
-import com.abdullah.e_commerce.data.SliderItem;
+import com.abdullah.e_commerce.model.SliderItem;
 import com.abdullah.e_commerce.databinding.ImageSliderLayoutItemBinding;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 

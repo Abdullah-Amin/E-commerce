@@ -15,8 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.abdullah.e_commerce.data.adapters.CategoriesAdapter;
-import com.abdullah.e_commerce.data.CategoryDetails;
+import com.abdullah.e_commerce.adapters.CategoriesAdapter;
+import com.abdullah.e_commerce.model.CategoryDetails;
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentHomeBinding;
 
