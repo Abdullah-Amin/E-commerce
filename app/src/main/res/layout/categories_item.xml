@@ -6,7 +6,7 @@
 
         <variable
             name="categoryDetail"
-            type="com.abdullah.e_commerce.model.CategoryDetails" />
+            type="com.abdullah.e_commerce.model.data_classes.CategoryDetails" />
 
     </data>
 

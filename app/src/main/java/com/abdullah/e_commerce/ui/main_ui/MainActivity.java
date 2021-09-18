@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
+    String token;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,5 +27,13 @@ public class MainActivity extends AppCompatActivity {
 
 //        binding.mainActivityVp.setAdapter(new PagerAdapter(MainActivity.this));
 
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
     }
 }

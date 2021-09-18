@@ -10,7 +10,7 @@ import android.os.Bundle;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.adapters.SliderAdapterExample;
-import com.abdullah.e_commerce.model.SliderItem;
+import com.abdullah.e_commerce.model.data_classes.SliderItem;
 import com.abdullah.e_commerce.databinding.ActivityProductBinding;
 import com.abdullah.e_commerce.ui.cart_ui.CartFragment;
 import com.google.android.material.button.MaterialButton;

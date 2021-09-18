@@ -12,53 +12,59 @@
         android:layout_height="match_parent"
         tools:context=".ui.shop_ui.ShopHomeFragment">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#F5F6F8">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Trending"
-                android:textSize="@dimen/_30ssp"
-                android:textColor="#515C6F"
-                android:textStyle="bold"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginLeft="@dimen/_15sdp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/shop_product_item_latest_rv"
-                tools:listitem="@layout/latest_item"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:itemCount="2"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                app:layout_constraintTop_toBottomOf="@+id/shop_product_item_latest_tv"
-                android:layout_marginLeft="@dimen/_15sdp"
-                android:layout_marginRight="@dimen/_5sdp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/shop_product_item_second_latest_rv"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                tools:listitem="@layout/shop_product_item"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="3"
-                app:layout_constraintTop_toBottomOf="@+id/shop_product_item_latest_rv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                android:orientation="vertical"
+                android:background="#F5F6F8">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trending"
+                    android:textSize="@dimen/_30ssp"
+                    android:textColor="#515C6F"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_15sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/shop_product_item_latest_rv"
+                    tools:listitem="@layout/latest_item"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="2"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/shop_product_item_latest_tv"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_5sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/shop_product_item_second_latest_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    tools:listitem="@layout/shop_product_item"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"
+                    app:layout_constraintTop_toBottomOf="@+id/shop_product_item_latest_rv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </FrameLayout>
 </layout>

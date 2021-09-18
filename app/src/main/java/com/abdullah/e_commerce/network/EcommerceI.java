@@ -1,0 +1,24 @@
+package com.abdullah.e_commerce.network;
+
+import com.abdullah.e_commerce.model.reponses.LoginResponse;
+import com.abdullah.e_commerce.model.reponses.LogoutResponse;
+import com.abdullah.e_commerce.model.reponses.SearchResponse;
+import com.abdullah.e_commerce.model.requests.LoginRequest;
+import com.abdullah.e_commerce.model.requests.SearchRequest;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Header;
+import retrofit2.http.POST;
+
+public interface EcommerceI {
+
+    @POST("login")
+    Call<LoginResponse> login(@Body LoginRequest loginRequest);
+
+    @POST("logout")
+    Call<LogoutResponse> logout(@Header("Authorization") String token);
+
+    @POST
+    Call<SearchResponse> search(@Body SearchRequest searchRequest);
+}

@@ -78,14 +78,15 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/fragment_login_username_et"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/username_email"
+                        android:hint="@string/email"
+                        android:layout_marginTop="@dimen/_5sdp"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         app:startIconDrawable="@drawable/ic_person">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fragment_login_username_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
@@ -99,14 +100,15 @@
                         android:background="#E8E7E7"/>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/fragment_login_password_et"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
                         android:hint="@string/password"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         app:startIconDrawable="@drawable/ic_password">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fragment_login_password_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textPassword"
