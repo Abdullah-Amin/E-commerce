@@ -86,5 +86,6 @@
     <string name="place_order">PLACE ORDER</string>
     <string name="add_to_cart">add to cart</string>
     <string name="share_this">share this</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
 </resources>
 

@@ -1,7 +1,6 @@
 package com.abdullah.e_commerce.model.reponses;
 
 import com.abdullah.e_commerce.model.data_classes.Product;
-import com.abdullah.e_commerce.model.data_classes.User;
 
 import java.util.List;
 

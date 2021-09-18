@@ -88,7 +88,7 @@ public class LoginFragment extends Fragment {
                             Log.i(TAG, "onResponse: " + response.toString());
 
                             Bundle bundle = new Bundle();
-                            bundle.putString("token", response.body().getUser().getAccessToken());
+                            bundle.putString("token", response.body().getLoggedUser().getAccessToken());
 
                             navController.navigate(R.id.action_loginFragment_to_navigation_more, bundle);
                         }

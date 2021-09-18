@@ -2,8 +2,10 @@ package com.abdullah.e_commerce.network;
 
 import com.abdullah.e_commerce.model.reponses.LoginResponse;
 import com.abdullah.e_commerce.model.reponses.LogoutResponse;
+import com.abdullah.e_commerce.model.reponses.RegisterResponse;
 import com.abdullah.e_commerce.model.reponses.SearchResponse;
 import com.abdullah.e_commerce.model.requests.LoginRequest;
+import com.abdullah.e_commerce.model.requests.RegisterRequest;
 import com.abdullah.e_commerce.model.requests.SearchRequest;
 
 import retrofit2.Call;
@@ -18,6 +20,9 @@ public interface EcommerceI {
 
     @POST("logout")
     Call<LogoutResponse> logout(@Header("Authorization") String token);
+
+    @POST("register")
+    Call<RegisterResponse> register(@Body RegisterRequest registerRequest);
 
     @POST
     Call<SearchResponse> search(@Body SearchRequest searchRequest);

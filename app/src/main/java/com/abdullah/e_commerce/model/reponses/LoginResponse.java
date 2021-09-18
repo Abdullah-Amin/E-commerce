@@ -1,7 +1,7 @@
 package com.abdullah.e_commerce.model.reponses;
 
 
-import com.abdullah.e_commerce.model.data_classes.User;
+import com.abdullah.e_commerce.model.data_classes.LoggedUser;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse {
@@ -13,12 +13,12 @@ public class LoginResponse {
     public String message;
 
     @SerializedName("data")
-    public User user;
+    public LoggedUser loggedUser;
 
-    public LoginResponse(boolean status, String message, User user) {
+    public LoginResponse(boolean status, String message, LoggedUser loggedUser) {
         this.status = status;
         this.message = message;
-        this.user = user;
+        this.loggedUser = loggedUser;
     }
 
     public boolean isStatus() {
@@ -37,12 +37,12 @@ public class LoginResponse {
         this.message = message;
     }
 
-    public User getUser() {
-        return user;
+    public LoggedUser getLoggedUser() {
+        return loggedUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setLoggedUser(LoggedUser loggedUser) {
+        this.loggedUser = loggedUser;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class LoginResponse {
         return "LoginResponse{" +
                 "status=" + status +
                 ", message='" + message + '\'' +
-                ", user=" + user +
+                ", loggedUser=" + loggedUser +
                 '}';
     }
 }

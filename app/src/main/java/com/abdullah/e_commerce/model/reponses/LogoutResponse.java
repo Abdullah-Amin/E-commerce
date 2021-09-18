@@ -1,6 +1,6 @@
 package com.abdullah.e_commerce.model.reponses;
 
-import com.abdullah.e_commerce.model.data_classes.User;
+import com.abdullah.e_commerce.model.data_classes.LoggedUser;
 import com.google.gson.annotations.SerializedName;
 
 public class LogoutResponse {
@@ -9,7 +9,7 @@ public class LogoutResponse {
     public String message;
 
     @SerializedName("data")
-    User data;
+    LoggedUser data;
 
     public boolean isStatus() {
         return status;
@@ -27,11 +27,11 @@ public class LogoutResponse {
         this.message = message;
     }
 
-    public User getData() {
+    public LoggedUser getData() {
         return data;
     }
 
-    public void setData(User data) {
+    public void setData(LoggedUser data) {
         this.data = data;
     }
 

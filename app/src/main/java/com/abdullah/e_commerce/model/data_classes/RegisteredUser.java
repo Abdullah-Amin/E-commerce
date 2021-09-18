@@ -2,17 +2,18 @@ package com.abdullah.e_commerce.model.data_classes;
 
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class RegisteredUser {
 
     public int id;
     public String name;
     public String email;
-
-    @SerializedName("image")
-    public String imageUrl;
     public String accessToken;
 
-    public String status;
+    @SerializedName("updated_at")
+    public String updatedAt;
+
+    @SerializedName("created_at")
+    public String createdAt;
 
     public int getId() {
         return id;
@@ -38,14 +39,6 @@ public class User {
         this.email = email;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public String getAccessToken() {
         return accessToken;
     }
@@ -54,23 +47,31 @@ public class User {
         this.accessToken = accessToken;
     }
 
-    public String getStatus() {
-        return status;
+    public String getUpdatedAt() {
+        return updatedAt;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "RegisteredUser{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
                 ", accessToken='" + accessToken + '\'' +
-                ", status='" + status + '\'' +
+                ", updatedAt='" + updatedAt + '\'' +
+                ", createdAt='" + createdAt + '\'' +
                 '}';
     }
 }
