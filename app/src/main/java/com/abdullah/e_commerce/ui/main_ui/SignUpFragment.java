@@ -18,14 +18,13 @@ import android.widget.Toast;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentSignUpBinding;
-import com.abdullah.e_commerce.model.reponses.LoginResponse;
 import com.abdullah.e_commerce.model.reponses.RegisterResponse;
-import com.abdullah.e_commerce.model.requests.LoginRequest;
 import com.abdullah.e_commerce.model.requests.RegisterRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
 
 import java.util.Objects;
 
@@ -87,8 +86,6 @@ public class SignUpFragment extends Fragment {
         setOnClicksListeners(binding.signupFragmentLoginTv, R.id.action_signUpFragment_to_loginFragment);
 
         setOnClicksListeners(binding.signupFragmentForgotPasswordTv, R.id.action_signUpFragment_to_forgotPasswordFragment);
-
-        binding.signupFragmentSignupBtn.setOnClickListener(v -> navController.navigate(R.id.action_signUpFragment_to_navigation_home));
     }
 
     private void connectAndRegister() {
@@ -96,20 +93,36 @@ public class SignUpFragment extends Fragment {
         RetrofitSingleton.connect().register(registerRequest)
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
-                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                    public void onResponse(@NotNull Call<RegisterResponse> call, @NotNull Response<RegisterResponse> response) {
                         if(response.isSuccessful()){
-                            Log.i(TAG, "onResponse: " + response.toString());
+                            Log.i(TAG, "onResponse: " + response.body().getMessage());
 
-                            navController.navigate(R.id.action_loginFragment_to_navigation_home);
+//                            Bundle bundle = new Bundle();
+//                            assert response.body() != null;
+//                            bundle.putString("token", response.body().getRegisteredUser().getAccessToken());
+//                            navController.navigate(R.id.action_signUpFragment_to_navigation_home, bundle);
                         }
+
                         else {
-                            Log.i(TAG, "onResponse: uuuu");
-                            Toast.makeText(getActivity(), "Invalid Email or Password!", Toast.LENGTH_SHORT).show();
+
+                            try {
+                                JSONObject jObjError = new JSONObject(response.errorBody().string());
+                                Toast.makeText(getContext(), jObjError.getJSONObject("data").getString("message"), Toast.LENGTH_LONG).show();
+                                Log.i(TAG, "onResponse: try" + jObjError.getJSONObject("data"));
+                            } catch (Exception e) {
+                                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                                Log.i(TAG, "onResponse: catch" + e.getLocalizedMessage());
+                            }
+
+//                            Log.i(TAG, "onResponse: uuuu"
+//                                    + response.body().getData().toString());
+//                            Toast.makeText(getActivity(),
+//                                    response.body().getData().toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                    public void onFailure(@NotNull Call<RegisterResponse> call, @NotNull Throwable t) {
                         Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
                     }
                 });

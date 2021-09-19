@@ -51,47 +51,58 @@
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginLeft="@dimen/_15sdp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/fragment_search_search_til"
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/fragment_search_search_v"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_40sdp"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                app:hintTextColor="#66515C6F"-->
+<!--                app:boxBackgroundColor="#1A727C8E"-->
+<!--                android:layout_marginEnd="@dimen/_15sdp"-->
+<!--                android:layout_marginStart="@dimen/_15sdp"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:layout_marginBottom="@dimen/_10sdp"-->
+<!--                app:boxCornerRadiusTopStart="@dimen/_23sdp"-->
+<!--                app:boxCornerRadiusTopEnd="@dimen/_23sdp"-->
+<!--                app:boxCornerRadiusBottomStart="@dimen/_23sdp"-->
+<!--                app:boxCornerRadiusBottomEnd="@dimen/_23sdp"-->
+<!--                app:startIconDrawable="@drawable/ic_search"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/fragment_search_categories_tv"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/fragment_search_recently_viewed_tv">-->
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/fragment_search_search_v"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:hintTextColor="#66515C6F"
-                app:boxBackgroundColor="#1A727C8E"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                
+                android:backgroundTint="#1A727C8E"
+                android:background="@drawable/search_corners"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-                app:boxCornerRadiusTopStart="@dimen/_23sdp"
-                app:boxCornerRadiusTopEnd="@dimen/_23sdp"
-                app:boxCornerRadiusBottomStart="@dimen/_23sdp"
-                app:boxCornerRadiusBottomEnd="@dimen/_23sdp"
-                app:startIconDrawable="@drawable/ic_search"
                 app:layout_constraintTop_toBottomOf="@+id/fragment_search_categories_tv"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/fragment_search_recently_viewed_tv">
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_search_recently_viewed_tv"/>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fragment_search_search_tiet"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <ImageButton
-                android:id="@+id/fragment_search_search_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_search"
-                app:layout_constraintTop_toTopOf="@+id/fragment_search_search_til"
-                app:layout_constraintBottom_toBottomOf="@+id/fragment_search_search_til"
-                app:layout_constraintStart_toStartOf="@+id/fragment_search_search_til"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_4sdp" />
+<!--            <ImageButton-->
+<!--                android:id="@+id/fragment_search_search_btn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/ic_search"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/fragment_search_search_v"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/fragment_search_search_v"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/fragment_search_search_v"-->
+<!--                android:layout_marginStart="@dimen/_10sdp"-->
+<!--                android:layout_marginLeft="@dimen/_10sdp"-->
+<!--                android:layout_marginTop="@dimen/_4sdp" />-->
 
             <TextView
                 android:id="@+id/fragment_search_recently_viewed_tv"
@@ -100,7 +111,7 @@
                 android:text="@string/recently_viewed"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginStart="@dimen/_15sdp"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_search_search_til"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_search_search_v"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginLeft="@dimen/_15sdp" />
 
@@ -112,7 +123,7 @@
                 android:textColor="#ff6969"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_search_search_til"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_search_search_v"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginRight="@dimen/_15sdp" />
 

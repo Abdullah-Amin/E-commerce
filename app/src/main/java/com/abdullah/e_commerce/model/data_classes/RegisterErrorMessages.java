@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class RegisterErrorMessages {
 
-    @SerializedName("data")
     public String errorMessage;
 
     public String getErrorMessage() {

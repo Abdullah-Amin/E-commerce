@@ -2,6 +2,8 @@ package com.abdullah.e_commerce.model.data_classes;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class RegisteredUser {
 
     public int id;
@@ -14,6 +16,8 @@ public class RegisteredUser {
 
     @SerializedName("created_at")
     public String createdAt;
+
+//    public List<RegisterErrorMessages> registerErrorMessages;
 
     public int getId() {
         return id;
@@ -63,15 +67,24 @@ public class RegisteredUser {
         this.createdAt = createdAt;
     }
 
-    @Override
-    public String toString() {
-        return "RegisteredUser{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", accessToken='" + accessToken + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                ", createdAt='" + createdAt + '\'' +
-                '}';
-    }
+//    public List<RegisterErrorMessages> getRegisterErrorMessages() {
+//        return registerErrorMessages;
+//    }
+//
+//    public void setRegisterErrorMessages(List<RegisterErrorMessages> registerErrorMessages) {
+//        this.registerErrorMessages = registerErrorMessages;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "RegisteredUser{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", email='" + email + '\'' +
+//                ", accessToken='" + accessToken + '\'' +
+//                ", updatedAt='" + updatedAt + '\'' +
+//                ", createdAt='" + createdAt + '\'' +
+//                ", registerErrorMessages=" + registerErrorMessages +
+//                '}';
+//    }
 }

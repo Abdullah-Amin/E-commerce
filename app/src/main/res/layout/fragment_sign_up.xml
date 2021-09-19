@@ -163,7 +163,7 @@
                 android:id="@+id/signup_fragment_signup_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/login"
+                android:text="@string/sign_up"
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 android:paddingTop="@dimen/_7sdp"
