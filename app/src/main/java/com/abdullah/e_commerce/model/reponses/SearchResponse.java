@@ -1,6 +1,6 @@
 package com.abdullah.e_commerce.model.reponses;
 
-import com.abdullah.e_commerce.model.data_classes.Product;
+import com.abdullah.e_commerce.model.data_classes.SearchedProducts;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public class SearchResponse {
 
     public boolean status;
     public String message;
-    List<Product> products;
+    List<SearchedProducts> searchedProducts;
 
     public boolean isStatus() {
         return status;
@@ -26,12 +26,12 @@ public class SearchResponse {
         this.message = message;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<SearchedProducts> getSearchedProducts() {
+        return searchedProducts;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setSearchedProducts(List<SearchedProducts> searchedProducts) {
+        this.searchedProducts = searchedProducts;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class SearchResponse {
         return "SearchResponse{" +
                 "status=" + status +
                 ", message='" + message + '\'' +
-                ", products=" + products +
+                ", searchedProducts=" + searchedProducts +
                 '}';
     }
 }

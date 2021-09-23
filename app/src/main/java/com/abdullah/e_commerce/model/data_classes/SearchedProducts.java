@@ -2,7 +2,7 @@ package com.abdullah.e_commerce.model.data_classes;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Product {
+public class SearchedProducts {
 
     public int id;
     public String name;
@@ -30,7 +30,7 @@ public class Product {
     @SerializedName("updated_at")
     public String updatedAt;
 
-    public Product(int id, String name, String description, String price, String discount, String priceAfterDiscount, String brandId, String categoryId, String shopId, String status, String createdAt, String updatedAt) {
+    public SearchedProducts(int id, String name, String description, String price, String discount, String priceAfterDiscount, String brandId, String categoryId, String shopId, String status, String createdAt, String updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -143,7 +143,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "SearchedProducts{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

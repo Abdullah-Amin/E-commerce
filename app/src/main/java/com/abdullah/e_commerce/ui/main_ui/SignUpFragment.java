@@ -18,14 +18,22 @@ import android.widget.Toast;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentSignUpBinding;
+import com.abdullah.e_commerce.model.data_classes.RegisterErrorMessages;
+import com.abdullah.e_commerce.model.data_classes.RegisteredUser;
 import com.abdullah.e_commerce.model.reponses.RegisterResponse;
 import com.abdullah.e_commerce.model.requests.RegisterRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
+import java.util.List;
 import java.util.Objects;
 
 import retrofit2.Call;
@@ -105,14 +113,39 @@ public class SignUpFragment extends Fragment {
 
                         else {
 
+                            String data = "[\"email The email has already been taken.\"]";
                             try {
-                                JSONObject jObjError = new JSONObject(response.errorBody().string());
-                                Toast.makeText(getContext(), jObjError.getJSONObject("data").getString("message"), Toast.LENGTH_LONG).show();
-                                Log.i(TAG, "onResponse: try" + jObjError.getJSONObject("data"));
-                            } catch (Exception e) {
-                                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                                Log.i(TAG, "onResponse: catch" + e.getLocalizedMessage());
+                                JSONArray jsonArray = new JSONArray(data);
+                                JSONObject object = jsonArray.getJSONObject(0);
+                                JSONObject sendingReqDataSetObject = object.getJSONObject("data");
+                                JSONArray arrayContacts = sendingReqDataSetObject.getJSONArray("data");
+
+                                for (int i = 0; i<arrayContacts.length(); i++) {
+                                    JSONObject contactObject = arrayContacts.getJSONObject(i);
+                                    System.out.println(contactObject.getString("status"));
+                                    Log.i(TAG, "onResponse: uuuu"+ contactObject.getString("status"));
+                                    Log.i(TAG, "onResponse: uuuu"+ contactObject.getString("data"));
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Log.i(TAG, "onResponse: catch " + e.getLocalizedMessage());
                             }
+
+//                            try {
+//                                JSONObject jObjError = new JSONObject(response.errorBody().toString());
+//                                Toast.makeText(getContext(), jObjError.getJSONObject(response.errorBody().string()).getString("message"), Toast.LENGTH_LONG).show();
+//                                Log.i(TAG, "onResponse: try -- " + jObjError.getJSONObject("data"));
+//                            } catch (Exception e) {
+//                                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+//                                Log.i(TAG, "onResponse: catch -- " + e.getLocalizedMessage());
+//                            }
+
+//                            List<RegisteredUser> contacts;
+//                            Type listType = new TypeToken<List<RegisteredUser>>() {
+//                            }.getType();
+//                            contacts= new Gson().fromJson(String.valueOf(response.body().getRegisteredUser()), listType);
+//
+//                            Log.i(TAG, "onResponse: uuuu"+ contacts.toString());
 
 //                            Log.i(TAG, "onResponse: uuuu"
 //                                    + response.body().getData().toString());

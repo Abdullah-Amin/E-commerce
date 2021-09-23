@@ -31,7 +31,7 @@ public class ShopProfileActivity extends AppCompatActivity {
                         tab.setText("Home");
                         break;
                     case 1:
-                        tab.setText("Product");
+                        tab.setText("SearchedProducts");
                         break;
                     case 2:
                         tab.setText("Reviews");

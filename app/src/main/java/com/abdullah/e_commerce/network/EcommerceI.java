@@ -24,6 +24,6 @@ public interface EcommerceI {
     @POST("register")
     Call<RegisterResponse> register(@Body RegisterRequest registerRequest);
 
-    @POST
+    @POST("search")
     Call<SearchResponse> search(@Body SearchRequest searchRequest);
 }
