@@ -16,16 +16,29 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.abdullah.e_commerce.adapters.CategoriesAdapter;
+import com.abdullah.e_commerce.adapters.LatestProductAdapter;
+import com.abdullah.e_commerce.adapters.SecondLatestProductAdapter;
 import com.abdullah.e_commerce.model.data_classes.CategoryDetails;
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentHomeBinding;
+import com.abdullah.e_commerce.model.data_classes.LatestProduct;
+import com.abdullah.e_commerce.model.reponses.LatestProductResponse;
+import com.abdullah.e_commerce.network.RetrofitSingleton;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
     FragmentHomeBinding binding;
     NavController navController;
+
+    List<LatestProduct> latestProductList;
+    ArrayList<Integer> latestProductImageList = new ArrayList<>();
 
     ArrayList<CategoryDetails> categoryDetailsArrayList = new ArrayList<>();
 
@@ -51,14 +64,42 @@ public class HomeFragment extends Fragment {
         setCategoryDetails(R.drawable.home_image, "Home");
         setCategoryDetails(R.drawable.stationary_image, "Stationary");
 
+        latestProductImageList.add(R.drawable.latest_picture);
+        latestProductImageList.add(R.drawable.latest_image_two);
+
+        binding.fragmentHomeLatestRv.setAdapter(new LatestProductAdapter(getContext(), latestProductImageList));
+
 //        Glide.with(view.getContext())
 //                .load(imageUrl).apply(new RequestOptions().circleCrop())
 //                .into();
 
         Log.i(TAG, "onViewCreated: " + categoryDetailsArrayList.size());
 
-        binding.fragmentHomeCategoriesRv.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false));
         binding.fragmentHomeCategoriesRv.setAdapter(new CategoriesAdapter(categoryDetailsArrayList));
+
+        connectAndGetLatestProducts();
+    }
+
+    private void connectAndGetLatestProducts() {
+        RetrofitSingleton.connect().getLatestProducts()
+                .enqueue(new Callback<LatestProductResponse>() {
+                    @Override
+                    public void onResponse(Call<LatestProductResponse> call, Response<LatestProductResponse> response) {
+                        if(response.isSuccessful()){
+                            Log.i(TAG, "onResponse: "+response.body().toString());
+                            latestProductList = response.body().getLatestProductList();
+                            binding.fragmentHomeSecondLatestRv.setAdapter(new SecondLatestProductAdapter(getContext(), latestProductList));
+
+                        }else {
+                            Log.i(TAG, "onResponse: else ");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<LatestProductResponse> call, Throwable t) {
+                        Log.i(TAG, "onFailure: "+t.getLocalizedMessage());
+                    }
+                });
     }
 
     private void setCategoryDetails(int categoryImage, String categoryName) {

@@ -90,7 +90,7 @@ public class LoginFragment extends Fragment {
                             Bundle bundle = new Bundle();
                             bundle.putString("token", response.body().getLoggedUser().getAccessToken());
 
-                            navController.navigate(R.id.action_loginFragment_to_navigation_more, bundle);
+                            navController.navigate(R.id.action_loginFragment_to_navigation_home, bundle);
                         }
                         else {
                             Log.i(TAG, "onResponse: uuuu ");

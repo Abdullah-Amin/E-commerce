@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.network;
 
+import com.abdullah.e_commerce.model.reponses.LatestProductResponse;
 import com.abdullah.e_commerce.model.reponses.LoginResponse;
 import com.abdullah.e_commerce.model.reponses.LogoutResponse;
 import com.abdullah.e_commerce.model.reponses.ProductsResponse;
@@ -31,4 +32,7 @@ public interface EcommerceI {
 
     @GET("products")
     Call<ProductsResponse> getProducts();
+
+    @GET("latest-product")
+    Call<LatestProductResponse> getLatestProducts();
 }
