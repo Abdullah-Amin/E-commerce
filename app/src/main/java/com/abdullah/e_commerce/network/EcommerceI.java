@@ -5,9 +5,11 @@ import com.abdullah.e_commerce.model.reponses.LoginResponse;
 import com.abdullah.e_commerce.model.reponses.LogoutResponse;
 import com.abdullah.e_commerce.model.reponses.ProductsResponse;
 import com.abdullah.e_commerce.model.reponses.RegisterResponse;
+import com.abdullah.e_commerce.model.reponses.ResetPasswordResponse;
 import com.abdullah.e_commerce.model.reponses.SearchResponse;
 import com.abdullah.e_commerce.model.requests.LoginRequest;
 import com.abdullah.e_commerce.model.requests.RegisterRequest;
+import com.abdullah.e_commerce.model.requests.ResetPasswordRequest;
 import com.abdullah.e_commerce.model.requests.SearchRequest;
 
 import retrofit2.Call;
@@ -35,4 +37,8 @@ public interface EcommerceI {
 
     @GET("latest-product")
     Call<LatestProductResponse> getLatestProducts();
+
+    @POST("password/reset")
+    Call<ResetPasswordResponse> resetPassword(@Body ResetPasswordRequest resetPasswordRequest,
+                                              @Header("Authorization") String token);
 }
