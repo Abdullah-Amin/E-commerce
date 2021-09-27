@@ -18,13 +18,16 @@ import android.widget.Toast;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentSignUpBinding;
+import com.abdullah.e_commerce.model.data_classes.RegisterErrorBody;
 import com.abdullah.e_commerce.model.data_classes.RegisterErrorMessages;
 import com.abdullah.e_commerce.model.data_classes.RegisteredUser;
 import com.abdullah.e_commerce.model.reponses.RegisterResponse;
 import com.abdullah.e_commerce.model.requests.RegisterRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +35,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
@@ -105,35 +110,86 @@ public class SignUpFragment extends Fragment {
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: " + response.body().getMessage());
 
-//                            Bundle bundle = new Bundle();
-//                            assert response.body() != null;
-//                            bundle.putString("token", response.body().getRegisteredUser().getAccessToken());
-//                            navController.navigate(R.id.action_signUpFragment_to_navigation_home, bundle);
+                            Bundle bundle = new Bundle();
+                            assert response.body() != null;
+                            bundle.putString("token", response.body().getRegisteredUser().getAccessToken());
+                            navController.navigate(R.id.action_signUpFragment_to_navigation_home, bundle);
                         }
 
                         else {
 
-                            String data = "[\"email The email has already been taken.\"]";
+                            String json = null;
+                            ObjectMapper objectMapper = new ObjectMapper();
+                            RegisterErrorBody errorBody = null;
                             try {
-                                JSONArray jsonArray = new JSONArray(data);
-                                JSONObject object = jsonArray.getJSONObject(0);
-                                JSONObject sendingReqDataSetObject = object.getJSONObject("data");
-                                JSONArray arrayContacts = sendingReqDataSetObject.getJSONArray("data");
-
-                                for (int i = 0; i<arrayContacts.length(); i++) {
-                                    JSONObject contactObject = arrayContacts.getJSONObject(i);
-                                    System.out.println(contactObject.getString("status"));
-                                    Log.i(TAG, "onResponse: uuuu"+ contactObject.getString("status"));
-                                    Log.i(TAG, "onResponse: uuuu"+ contactObject.getString("data"));
-                                }
-                            } catch (JSONException e) {
+                                json = response.errorBody().string();
+                                errorBody = objectMapper.readValue(json, RegisterErrorBody.class);
+                                Log.i(TAG, "onResponse: "+ errorBody.getData());
+                                Toast.makeText(getContext(), errorBody.getData().toString(), Toast.LENGTH_SHORT).show();
+                            } catch (IOException e) {
                                 e.printStackTrace();
-                                Log.i(TAG, "onResponse: catch " + e.getLocalizedMessage());
+                                Log.i(TAG, "onResponse: catch "+ e.getLocalizedMessage());
                             }
+
+//                                String errorBody = response.errorBody().string();
+//
+//                                JSONObject jsonObject = new JSONObject(errorBody.trim());
+//
+//                                Gson gson = new Gson();
+//
+//                                RegisterErrorBody registerResponse = gson.fromJson(jsonObject.toString(), RegisterErrorBody.class);
+//                                Log.i(TAG, "onResponse: "+ registerResponse.toString());
+//
+////                                jsonObject = jsonObject.getJSONObject("error");
+//
+//
+//                                JSONArray jsonArray = new JSONArray(errorBody);
+//                                JSONObject jsonObject = jsonArray.toJSONObject(jsonArray);
+//                                jsonObject = jsonObject.getJSONObject("data");
+////                                String errors = "";
+////                                for (int i = 0; i < jsonArray.getJSONArray(2).length(); i++) {
+////                                    errors += jsonArray.getString(i) + "\n";
+////                                }
+////
+////                                Log.i(TAG, "onResponse: "+ errors);
+//
+//                                Iterator<String> keys = jsonObject.keys();
+//                                String errors = "";
+//                                while (keys.hasNext()) {
+//                                    String key = keys.next();
+//                                    JSONArray arr = jsonObject.getJSONArray(key);
+//                                    for (int i = 0; i < arr.length(); i++) {
+//                                        errors += key + " : " + arr.getString(i) + "\n";
+//                                        Log.i(TAG, "onResponse: "+ errors);
+//                                        Log.i(TAG, "onResponse: "+ jsonObject);
+//                                    }
+//                                }
+//                            } catch (JSONException | IOException e) {
+//                                e.printStackTrace();
+//                                Log.i(TAG, "onResponse: catch "+ e.getLocalizedMessage());
+//                            }
+
+//                            String data = "[\"email The email has already been taken.\"]";
+//                            try {
+//                                JSONArray jsonArray = new JSONArray(data);
+//                                JSONObject object = jsonArray.getJSONObject(0);
+//                                JSONObject sendingReqDataSetObject = object.getJSONObject("data");
+//                                JSONArray arrayContacts = sendingReqDataSetObject.getJSONArray("data");
+//
+//                                for (int i = 0; i<arrayContacts.length(); i++) {
+//                                    JSONObject contactObject = arrayContacts.getJSONObject(i);
+//                                    System.out.println(contactObject.getString("status"));
+//                                    Log.i(TAG, "onResponse: uuuu"+ contactObject.getString("status"));
+//                                    Log.i(TAG, "onResponse: uuuu"+ contactObject.getString("data"));
+//                                }
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                                Log.i(TAG, "onResponse: catch " + e.getLocalizedMessage());
+//                            }
 
 //                            try {
 //                                JSONObject jObjError = new JSONObject(response.errorBody().toString());
-//                                Toast.makeText(getContext(), jObjError.getJSONObject(response.errorBody().string()).getString("message"), Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getContext(), jObjError.getJSONObject("data").getString("data"), Toast.LENGTH_LONG).show();
 //                                Log.i(TAG, "onResponse: try -- " + jObjError.getJSONObject("data"));
 //                            } catch (Exception e) {
 //                                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();

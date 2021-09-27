@@ -11,13 +11,12 @@ public class RegisterResponse {
     public boolean status;
     public String message;
 
-//    @SerializedName("data")
 //    List<String> data;
 
     @SerializedName("data")
     RegisteredUser registeredUser;
 
-
+    List<RegisterErrorMessages> errorMessages;
 
     public boolean isStatus() {
         return status;
@@ -42,6 +41,15 @@ public class RegisterResponse {
 //    public void setData(List<String> data) {
 //        this.data = data;
 //    }
+
+
+    public List<RegisterErrorMessages> getErrorMessages() {
+        return errorMessages;
+    }
+
+    public void setErrorMessages(List<RegisterErrorMessages> errorMessages) {
+        this.errorMessages = errorMessages;
+    }
 
     public RegisteredUser getRegisteredUser() {
         return registeredUser;
