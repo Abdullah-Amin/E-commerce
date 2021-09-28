@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_activity_nav_host_fragment"
+    app:startDestination="@id/navigation_home">
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.abdullah.e_commerce.ui.product_ui.DetailsFragment"
+        tools:layout="@layout/fragment_details"
+        android:label="fragment_details">
+        <action
+            android:id="@+id/action_detailsFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+        <action
+            android:id="@+id/action_detailsFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.abdullah.e_commerce.ui.main_ui.SignUpFragment"
+        android:label="SignUpFragment">
+        <action
+            android:id="@+id/action_signUpFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.abdullah.e_commerce.ui.profile_ui.MoreFragment"
+        android:label="MoreFragment">
+        <action
+            android:id="@+id/action_navigation_more_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.abdullah.e_commerce.ui.cart_ui.CartFragment"
+        android:label="CartFragment">
+        <action
+            android:id="@+id/action_cartFragment_to_checkoutActivity"
+            app:destination="@id/checkoutActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterDialogFragment"
+        android:name="com.abdullah.e_commerce.ui.search_ui.FilterDialogFragment"
+        android:label="FilterDialogFragment" />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.abdullah.e_commerce.ui.search_ui.SearchFragment"
+        tools:layout="@layout/fragment_search"
+        android:label="@string/search">
+        <action
+            android:id="@+id/action_navigation_search_to_searchResultActivity"
+            app:destination="@id/searchResultActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/searchResultActivity"
+        android:name="com.abdullah.e_commerce.ui.search_ui.SearchResultActivity"
+        android:label="SearchResultActivity" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.abdullah.e_commerce.ui.profile_ui.ProfileFragment"
+        android:label="ProfileFragment" />
+    <activity
+        android:id="@+id/checkoutActivity"
+        android:name="com.abdullah.e_commerce.ui.cart_ui.CheckoutActivity"
+        android:label="CheckoutActivity" />
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.abdullah.e_commerce.ui.product_ui.ReviewsFragment"
+        tools:layout="@layout/fragment_reviews"
+        android:label="fragment_reviews">
+        <action
+            android:id="@+id/action_reviewsFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_reviewsFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.abdullah.e_commerce.ui.product_ui.ProductFragment"
+        tools:layout="@layout/fragment_product"
+        android:label="ProductFragment">
+        <action
+            android:id="@+id/action_productFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_productFragment_to_reviewsFragment"
+            app:destination="@id/reviewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.abdullah.e_commerce.ui.main_ui.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="@string/title_home" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.abdullah.e_commerce.ui.main_ui.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_more"
+            app:destination="@id/navigation_more">
+
+            <argument
+                android:name="token"
+                app:argType="string" />
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.abdullah.e_commerce.ui.main_ui.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment">
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/shopProfileActivity"
+        android:name="com.abdullah.e_commerce.ui.shop_ui.ShopProfileActivity"
+        android:label="ShopProfileActivity" />
+</navigation>

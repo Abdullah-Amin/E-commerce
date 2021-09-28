@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.ui.main_ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.abdullah.e_commerce.R;
@@ -13,14 +14,19 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.Objects;
+
 public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding binding;
+    String token;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
         // Passing each menu ID as a set of Ids because each
@@ -32,6 +38,13 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.activityHomeNavView, navController);
+
+        this.token = getIntent().getStringExtra("token");
+
+    }
+
+    public String getToken(){
+        return this.token;
     }
 
 }

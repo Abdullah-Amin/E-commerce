@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
-    String token;
 
 
     @Override
@@ -25,15 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-//        binding.mainActivityVp.setAdapter(new PagerAdapter(MainActivity.this));
-
     }
 
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public String getToken() {
-        return token;
-    }
 }

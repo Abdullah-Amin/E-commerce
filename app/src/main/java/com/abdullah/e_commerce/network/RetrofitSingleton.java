@@ -13,9 +13,13 @@ public class RetrofitSingleton {
     public static EcommerceI connect(){
         if(retrofit == null){
 
+            Gson gson = new GsonBuilder()
+                    .setLenient()
+                    .create();
+
             retrofit = new Retrofit.Builder()
                     .baseUrl("http://ecommerce-api.senior-consultingco.com/api/")
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
         }
 

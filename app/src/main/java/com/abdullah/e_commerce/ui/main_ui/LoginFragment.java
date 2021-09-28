@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.ui.main_ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -87,10 +88,15 @@ public class LoginFragment extends Fragment {
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: " + response.toString());
 
-                            Bundle bundle = new Bundle();
-                            bundle.putString("token", response.body().getLoggedUser().getAccessToken());
+//                            Bundle bundle = new Bundle();
+//                            bundle.putString("token", response.body().getLoggedUser().getAccessToken());
 
-                            navController.navigate(R.id.action_loginFragment_to_navigation_home, bundle);
+//                            navController.navigate(R.id.action_loginFragment_to_navigation_home, bundle);
+                            Intent intent = new Intent(getActivity(), HomeActivity.class);
+                            assert response.body() != null;
+                            intent.putExtra("token", response.body().getLoggedUser().getAccessToken());
+                            startActivity(intent);
+                            getActivity().finish();
                         }
                         else {
                             Log.i(TAG, "onResponse: uuuu ");
@@ -108,4 +114,6 @@ public class LoginFragment extends Fragment {
     private void setOnClicksListeners(TextView pressedBtn, int destination) {
         pressedBtn.setOnClickListener(v -> navController.navigate(destination));
     }
+
+
 }

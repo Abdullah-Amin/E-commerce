@@ -7,6 +7,10 @@ public class SearchRequest {
     @SerializedName("search-name")
     public String searchName;
 
+    public SearchRequest(String searchName) {
+        this.searchName = searchName;
+    }
+
     public String getSearchName() {
         return searchName;
     }

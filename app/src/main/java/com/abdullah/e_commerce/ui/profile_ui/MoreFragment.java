@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.ui.profile_ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ import com.abdullah.e_commerce.model.requests.LoginRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.abdullah.e_commerce.ui.main_ui.HomeActivity;
 import com.abdullah.e_commerce.ui.main_ui.MainActivity;
+import com.google.gson.stream.JsonReader;
 
 import java.util.Objects;
 
@@ -64,8 +66,10 @@ public class MoreFragment extends Fragment {
                     public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: " + response.toString());
-                            navController.navigate(R.id.action_navigation_more_to_loginFragment);
-                            getActivity().recreate();
+//                            navController.navigate(R.id.action_navigation_more_to_loginFragment);
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
+                            getActivity().finish();
                         }
                         else {
                             Log.i(TAG, "onResponse: "+ response.body().getMessage());
@@ -81,10 +85,12 @@ public class MoreFragment extends Fragment {
     }
 
     private String getToken() {
-        Bundle bundle = getArguments();
-        if(getArguments() == null){
+        HomeActivity homeActivity = (HomeActivity) getActivity();
+        String token = Objects.requireNonNull(homeActivity).getToken();
+        if(token == null || token.isEmpty()){
+            Log.i(TAG, "getToken: " + "toke is  -- " + token + " --");
             return null;
         }
-        return "Bearer " + bundle.getString("token");
+        return "Bearer " + token;
     }
 }
