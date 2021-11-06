@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 public class ProductItem {
 
 	@SerializedName("images")
-	private List<ProductImages> productImages;
+	private List<ProductImage> productImages;
 
 	@SerializedName("item_image_url")
 	private String latestProductImageUrl;
@@ -25,7 +25,7 @@ public class ProductItem {
 	private String latestProductPrice;
 
 	@SerializedName("review")
-	private List<Object> latestProductReviews;
+	private List<ProductReviews> latestProductReviews;
 
 	@SerializedName("description")
 	private String latestProductDescription;
@@ -37,16 +37,16 @@ public class ProductItem {
 	private String latestProductName;
 
 	@SerializedName("details")
-	private List<Object> latestProductDetails;
+	private List<ProductDetails> latestProductDetails;
 
 	@SerializedName("price_after_discount")
 	private String latestProductPriceAfterDiscount;
 
-	public void setLatestProductImages(List<ProductImages> productImages){
+	public void setLatestProductImages(List<ProductImage> productImages){
 		this.productImages = productImages;
 	}
 
-	public List<ProductImages> getLatestProductImages(){
+	public List<ProductImage> getLatestProductImages(){
 		return productImages;
 	}
 
@@ -90,11 +90,11 @@ public class ProductItem {
 		return latestProductPrice;
 	}
 
-	public void setLatestProductReviews(List<Object> latestProductReviews){
+	public void setLatestProductReviews(List<ProductReviews> latestProductReviews){
 		this.latestProductReviews = latestProductReviews;
 	}
 
-	public List<Object> getLatestProductReviews(){
+	public List<ProductReviews> getLatestProductReviews(){
 		return latestProductReviews;
 	}
 
@@ -122,11 +122,11 @@ public class ProductItem {
 		return latestProductName;
 	}
 
-	public void setLatestProductDetails(List<Object> latestProductDetails){
+	public void setLatestProductDetails(List<ProductDetails> latestProductDetails){
 		this.latestProductDetails = latestProductDetails;
 	}
 
-	public List<Object> getLatestProductDetails(){
+	public List<ProductDetails> getLatestProductDetails(){
 		return latestProductDetails;
 	}
 
@@ -139,7 +139,7 @@ public class ProductItem {
 	}
 
 	@Override
- 	public String toString(){
+ 	public java.lang.String toString(){
 		return
 			"DataItem{" +
 			"images = '" + productImages + '\'' +

@@ -2,8 +2,6 @@ package com.abdullah.e_commerce.model.data_classes;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 public class RegisteredUser {
 
     public int id;
@@ -76,7 +74,7 @@ public class RegisteredUser {
 //    }
 //
 //    @Override
-//    public String toString() {
+//    public ProductImage toString() {
 //        return "RegisteredUser{" +
 //                "id=" + id +
 //                ", name='" + name + '\'' +

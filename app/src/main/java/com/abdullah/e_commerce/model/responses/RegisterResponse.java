@@ -11,7 +11,7 @@ public class RegisterResponse {
     public boolean status;
     public String message;
 
-//    List<String> data;
+//    List<ProductImage> data;
 
     @SerializedName("data")
     RegisteredUser registeredUser;
@@ -34,11 +34,11 @@ public class RegisterResponse {
         this.message = message;
     }
 
-//    public List<String> getData() {
+//    public List<ProductImage> getData() {
 //        return data;
 //    }
 //
-//    public void setData(List<String> data) {
+//    public void setData(List<ProductImage> data) {
 //        this.data = data;
 //    }
 

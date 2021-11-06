@@ -41,7 +41,7 @@ public interface EcommerceI {
     Call<LatestProductResponse> getLatestProducts();
 
     @GET("show-product/{productId}")
-    Call<ShowProductResponse> showProduct(@Path("productId") String productId);
+    Call<ShowProductResponse> showProduct(@Path("productId") int productId);
 
     @POST("password/reset")
     Call<ResetPasswordResponse> resetPassword(@Body ResetPasswordRequest resetPasswordRequest,

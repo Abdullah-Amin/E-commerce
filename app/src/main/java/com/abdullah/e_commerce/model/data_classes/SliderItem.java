@@ -2,34 +2,34 @@ package com.abdullah.e_commerce.model.data_classes;
 
 public class SliderItem {
 
-    int productImage;
-    public String productName;
+    private String productImage;
+//    public ProductImage productName;
 
 
-    public SliderItem(int productImage, String productName) {
+    public SliderItem(String productImage) {
 //        this.image = image;
         this.productImage = productImage;
-        this.productName = productName;
+//        this.productName = productName;
     }
 
-    public int getproductImage() {
+    public String getProductImage() {
         return productImage;
     }
 
     //    @BindingAdapter({"android:src"})
-    public void setproductImage(int productImage) {
+    public void setProductImage(String productImage) {
         this.productImage = productImage;
 
 //        imageView.setImageResource(productImage);
     }
 
-    public String getproductName() {
-        return productName;
-    }
-
-    public void setproductName(String productName) {
-        this.productName = productName;
-    }
+//    public ProductImage getProductName() {
+//        return productName;
+//    }
+//
+//    public void setProductName(ProductImage productName) {
+//        this.productName = productName;
+//    }
 }
 
 

@@ -128,11 +128,11 @@ public class LatestProduct {
     }
 
     public int getIntegerLatestProductPrice(){
-        return Integer.parseInt(latestProductPrice);
+        return Integer.parseInt(latestProductPrice.toString());
     }
 
     public int getIntegerLatestProductDiscount(){
-        return Integer.parseInt(latestProductDiscount);
+        return Integer.parseInt(latestProductDiscount.toString());
     }
 
     public int getIntegerProductPriceAfterDiscount(){
@@ -141,7 +141,7 @@ public class LatestProduct {
 
     @NonNull
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "LatestProduct{" +
                 "latestProductName='" + latestProductName + '\'' +
                 ", latestProductDescription='" + latestProductDescription + '\'' +

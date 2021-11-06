@@ -1,157 +1,160 @@
 package com.abdullah.e_commerce.model.data_classes;
 
-import com.google.gson.annotations.SerializedName;
-
+import java.io.Serializable;
 import java.util.List;
 
-public class ShowedProductData {
+import com.google.gson.annotations.SerializedName;
 
-    @SerializedName("item_id")
-    private int showedProductId;
+public class ShowedProductData implements Serializable {
 
-    @SerializedName("item_name")
-    private String showedProductName;
+	@SerializedName("images")
+	private List<ProductImage> images;
 
-    private String description;
+	@SerializedName("item_image_url")
+	private String itemImageUrl;
 
-    @SerializedName("item_price")
-    private String showedProductPrice;
+	@SerializedName("sizes")
+	private List<ProductSizes> sizes;
 
-//    @SerializedName("stock_qty")
-//    private String showedProductStockQty;
+	@SerializedName("color")
+	private List<ProductColor> color;
 
-//    @SerializedName("currency_code")
-//    private String showedProductCurrencyCode;
+	@SerializedName("item_id")
+	private int itemId;
 
-    @SerializedName("item_image_url")
-    private String showedProductImageUrl;
+	@SerializedName("price")
+	private String price;
 
-    @SerializedName("sizes")
-    List<ProductSizes> showedProductSizes;
+	@SerializedName("review")
+	private List<ProductReviews> review;
 
-    @SerializedName("review")
-    List<ProductReviews> showedProductReviews;
+	@SerializedName("description")
+	private String description;
 
-    @SerializedName("details")
-    List<ProductDetails> showedProductDetails;
+	@SerializedName("discount")
+	private String discount;
 
-    @SerializedName("color")
-    List<ProductColor> showedProductColor;
+	@SerializedName("item_name")
+	private String itemName;
 
-    @SerializedName("images")
-    List<ProductImages> showedProductImages;
+	@SerializedName("details")
+	private List<ProductDetails> details;
 
-    public int getShowedProductId() {
-        return showedProductId;
-    }
+	@SerializedName("price_after_discount")
+	private String priceAfterDiscount;
 
-    public void setShowedProductId(int showedProductId) {
-        this.showedProductId = showedProductId;
-    }
+	public void setImages(List<ProductImage> images){
+		this.images = images;
+	}
 
-    public String getShowedProductName() {
-        return showedProductName;
-    }
+	public List<ProductImage> getImages(){
+		return images;
+	}
 
-    public void setShowedProductName(String showedProductName) {
-        this.showedProductName = showedProductName;
-    }
+	public void setItemImageUrl(String itemImageUrl){
+		this.itemImageUrl = itemImageUrl;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public String getItemImageUrl(){
+		return itemImageUrl;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setSizes(List<ProductSizes> sizes){
+		this.sizes = sizes;
+	}
 
-    public String getShowedProductPrice() {
-        return showedProductPrice;
-    }
+	public List<ProductSizes> getSizes(){
+		return sizes;
+	}
 
-    public void setShowedProductPrice(String showedProductPrice) {
-        this.showedProductPrice = showedProductPrice;
-    }
+	public void setColor(List<ProductColor> color){
+		this.color = color;
+	}
 
-//    public String getShowedProductStockQty() {
-//        return showedProductStockQty;
-//    }
-//
-//    public void setShowedProductStockQty(String showedProductStockQty) {
-//        this.showedProductStockQty = showedProductStockQty;
-//    }
-//
-//    public String getShowedProductCurrencyCode() {
-//        return showedProductCurrencyCode;
-//    }
-//
-//    public void setShowedProductCurrencyCode(String showedProductCurrencyCode) {
-//        this.showedProductCurrencyCode = showedProductCurrencyCode;
-//    }
+	public List<ProductColor> getColor(){
+		return color;
+	}
 
-    public String getShowedProductImageUrl() {
-        return showedProductImageUrl;
-    }
+	public void setItemId(int itemId){
+		this.itemId = itemId;
+	}
 
-    public void setShowedProductImageUrl(String showedProductImageUrl) {
-        this.showedProductImageUrl = showedProductImageUrl;
-    }
+	public int getItemId(){
+		return itemId;
+	}
 
-    public List<ProductSizes> getShowedProductSizes() {
-        return showedProductSizes;
-    }
+	public void setPrice(String price){
+		this.price = price;
+	}
 
-    public void setShowedProductSizes(List<ProductSizes> showedProductSizes) {
-        this.showedProductSizes = showedProductSizes;
-    }
+	public String getPrice(){
+		return price;
+	}
 
-    public List<ProductReviews> getShowedProductReviews() {
-        return showedProductReviews;
-    }
+	public void setReview(List<ProductReviews> review){
+		this.review = review;
+	}
 
-    public void setShowedProductReviews(List<ProductReviews> showedProductReviews) {
-        this.showedProductReviews = showedProductReviews;
-    }
+	public List<ProductReviews> getReview(){
+		return review;
+	}
 
-    public List<ProductDetails> getShowedProductDetails() {
-        return showedProductDetails;
-    }
+	public void setDescription(String description){
+		this.description = description;
+	}
 
-    public void setShowedProductDetails(List<ProductDetails> showedProductDetails) {
-        this.showedProductDetails = showedProductDetails;
-    }
+	public String getDescription(){
+		return description;
+	}
 
-    public List<ProductColor> getShowedProductColor() {
-        return showedProductColor;
-    }
+	public void setDiscount(String discount){
+		this.discount = discount;
+	}
 
-    public void setShowedProductColor(List<ProductColor> showedProductColor) {
-        this.showedProductColor = showedProductColor;
-    }
+	public String getDiscount(){
+		return discount;
+	}
 
-    public List<ProductImages> getShowedProductImages() {
-        return showedProductImages;
-    }
+	public void setItemName(String itemName){
+		this.itemName = itemName;
+	}
 
-    public void setShowedProductImages(List<ProductImages> showedProductImages) {
-        this.showedProductImages = showedProductImages;
-    }
+	public String getItemName(){
+		return itemName;
+	}
 
-    @Override
-    public String toString() {
-        return "ShowedProductData{" +
-                "showedProductId=" + showedProductId +
-                ", showedProductName='" + showedProductName + '\'' +
-                ", description='" + description + '\'' +
-                ", showedProductPrice='" + showedProductPrice + '\'' +
-//                ", showedProductStockQty='" + showedProductStockQty + '\'' +
-//                ", showedProductCurrencyCode='" + showedProductCurrencyCode + '\'' +
-                ", showedProductImageUrl='" + showedProductImageUrl + '\'' +
-                ", showedProductSizes=" + showedProductSizes +
-                ", showedProductReviews=" + showedProductReviews +
-                ", showedProductDetails=" + showedProductDetails +
-                ", showedProductColor=" + showedProductColor +
-                ", showedProductImages=" + showedProductImages +
-                '}';
-    }
+	public void setDetails(List<ProductDetails> details){
+		this.details = details;
+	}
+
+	public List<ProductDetails> getDetails(){
+		return details;
+	}
+
+	public void setPriceAfterDiscount(String priceAfterDiscount){
+		this.priceAfterDiscount = priceAfterDiscount;
+	}
+
+	public String getPriceAfterDiscount(){
+		return priceAfterDiscount;
+	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"ShowedProductData{" +
+			"images = '" + images + '\'' + 
+			",item_image_url = '" + itemImageUrl + '\'' + 
+			",sizes = '" + sizes + '\'' + 
+			",color = '" + color + '\'' + 
+			",item_id = '" + itemId + '\'' + 
+			",price = '" + price + '\'' + 
+			",review = '" + review + '\'' + 
+			",description = '" + description + '\'' + 
+			",discount = '" + discount + '\'' + 
+			",item_name = '" + itemName + '\'' + 
+			",details = '" + details + '\'' + 
+			",price_after_discount = '" + priceAfterDiscount + '\'' + 
+			"}";
+		}
 }

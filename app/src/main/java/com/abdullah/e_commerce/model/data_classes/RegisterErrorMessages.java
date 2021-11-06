@@ -1,7 +1,5 @@
 package com.abdullah.e_commerce.model.data_classes;
 
-import com.google.gson.annotations.SerializedName;
-
 public class RegisterErrorMessages {
 
     public String errorMessage;

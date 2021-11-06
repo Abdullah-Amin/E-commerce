@@ -14,21 +14,28 @@
         android:theme="@style/Theme.Ecommerce"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ui.cart_ui.OrderPlacedActivity" />
-        <activity android:name=".ui.messages_notifications_ui.ConversationActivity" />
-        <activity android:name=".ui.shop_ui.ShopProfileActivity" />
-        <activity android:name=".ui.cart_ui.CheckoutActivity" />
-        <activity android:name=".ui.search_ui.SearchResultActivity"></activity>
-        <activity android:name=".ui.product_ui.ProductActivity" />
         <activity
-            android:name=".ui.main_ui.HomeActivity"
-            android:label="@string/title_activity_bottom_navigation"></activity>
-        <activity android:name=".ui.main_ui.MainActivity">
+            android:name=".ui.main_ui.SplashActivity"
+            android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".ui.cart_ui.OrderPlacedActivity" />
+        <activity android:name=".ui.messages_notifications_ui.ConversationActivity" />
+        <activity android:name=".ui.shop_ui.ShopProfileActivity" />
+        <activity android:name=".ui.cart_ui.CheckoutActivity" />
+        <activity android:name=".ui.search_ui.SearchResultActivity" />
+        <activity android:name=".ui.product_ui.ProductActivity" />
+        <activity
+            android:name=".ui.main_ui.HomeActivity"
+            android:label="@string/title_activity_bottom_navigation" />
+        <activity android:name=".ui.main_ui.MainActivity">
+
         </activity>
     </application>
 

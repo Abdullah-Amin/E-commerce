@@ -101,7 +101,7 @@ public class SignUpFragment extends Fragment {
 
                             Bundle bundle = new Bundle();
                             assert response.body() != null;
-                            bundle.putString("token", response.body().getRegisteredUser().getAccessToken());
+                            bundle.putString("token", response.body().getRegisteredUser().getAccessToken().toString());
                             navController.navigate(R.id.action_signUpFragment_to_navigation_home, bundle);
                         }
 
@@ -120,7 +120,7 @@ public class SignUpFragment extends Fragment {
                                 Log.i(TAG, "onResponse: catch "+ e.getLocalizedMessage());
                             }
 
-//                                String errorBody = response.errorBody().string();
+//                                ProductImage errorBody = response.errorBody().string();
 //
 //                                JSONObject jsonObject = new JSONObject(errorBody.trim());
 //
@@ -135,17 +135,17 @@ public class SignUpFragment extends Fragment {
 //                                JSONArray jsonArray = new JSONArray(errorBody);
 //                                JSONObject jsonObject = jsonArray.toJSONObject(jsonArray);
 //                                jsonObject = jsonObject.getJSONObject("data");
-////                                String errors = "";
+////                                ProductImage errors = "";
 ////                                for (int i = 0; i < jsonArray.getJSONArray(2).length(); i++) {
 ////                                    errors += jsonArray.getString(i) + "\n";
 ////                                }
 ////
 ////                                Log.i(TAG, "onResponse: "+ errors);
 //
-//                                Iterator<String> keys = jsonObject.keys();
-//                                String errors = "";
+//                                Iterator<ProductImage> keys = jsonObject.keys();
+//                                ProductImage errors = "";
 //                                while (keys.hasNext()) {
-//                                    String key = keys.next();
+//                                    ProductImage key = keys.next();
 //                                    JSONArray arr = jsonObject.getJSONArray(key);
 //                                    for (int i = 0; i < arr.length(); i++) {
 //                                        errors += key + " : " + arr.getString(i) + "\n";
@@ -158,7 +158,7 @@ public class SignUpFragment extends Fragment {
 //                                Log.i(TAG, "onResponse: catch "+ e.getLocalizedMessage());
 //                            }
 
-//                            String data = "[\"email The email has already been taken.\"]";
+//                            ProductImage data = "[\"email The email has already been taken.\"]";
 //                            try {
 //                                JSONArray jsonArray = new JSONArray(data);
 //                                JSONObject object = jsonArray.getJSONObject(0);
@@ -188,7 +188,7 @@ public class SignUpFragment extends Fragment {
 //                            List<RegisteredUser> contacts;
 //                            Type listType = new TypeToken<List<RegisteredUser>>() {
 //                            }.getType();
-//                            contacts= new Gson().fromJson(String.valueOf(response.body().getRegisteredUser()), listType);
+//                            contacts= new Gson().fromJson(ProductImage.valueOf(response.body().getRegisteredUser()), listType);
 //
 //                            Log.i(TAG, "onResponse: uuuu"+ contacts.toString());
 

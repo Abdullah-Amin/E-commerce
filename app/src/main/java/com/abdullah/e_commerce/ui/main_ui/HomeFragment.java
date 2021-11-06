@@ -82,10 +82,12 @@ public class HomeFragment extends Fragment {
         RetrofitSingleton.connect().getLatestProducts()
                 .enqueue(new Callback<LatestProductResponse>() {
                     @Override
-                    public void onResponse(Call<LatestProductResponse> call, Response<LatestProductResponse> response) {
+                    public void onResponse(@NonNull Call<LatestProductResponse> call, @NonNull Response<LatestProductResponse> response) {
                         if(response.isSuccessful()){
+                            assert response.body() != null;
                             Log.i(TAG, "onResponse: "+response.body().toString());
                             latestProductList = response.body().getLatestProductData();
+                            Log.i(TAG, "onResponse: "+ latestProductList);
                             binding.fragmentHomeSecondLatestRv.setAdapter(new SecondLatestProductAdapter(getContext(), latestProductList));
 
                         }else {

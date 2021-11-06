@@ -1,5 +1,7 @@
 package com.abdullah.e_commerce.model.data_classes;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 public class LoggedUser {
@@ -62,15 +64,16 @@ public class LoggedUser {
         this.status = status;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "LoggedUser{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", accessToken='" + accessToken + '\'' +
-                ", status='" + status + '\'' +
+                ", name=" + name +
+                ", email=" + email +
+                ", imageUrl=" + imageUrl +
+                ", accessToken=" + accessToken +
+                ", status=" + status +
                 '}';
     }
 }

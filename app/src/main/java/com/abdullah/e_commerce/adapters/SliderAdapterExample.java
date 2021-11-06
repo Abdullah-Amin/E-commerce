@@ -1,6 +1,7 @@
 package com.abdullah.e_commerce.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,18 +10,21 @@ import android.widget.Toast;
 import androidx.databinding.DataBindingUtil;
 
 import com.abdullah.e_commerce.R;
+import com.abdullah.e_commerce.model.data_classes.ProductImage;
 import com.abdullah.e_commerce.model.data_classes.SliderItem;
 import com.abdullah.e_commerce.databinding.ImageSliderLayoutItemBinding;
 import com.smarteist.autoimageslider.SliderViewAdapter;
+import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SliderAdapterExample extends
         SliderViewAdapter<SliderAdapterExample.SliderAdapterVH> {
 
     private Context context;
-    private List<SliderItem> mSliderItems = new ArrayList<>();
+    private List<SliderItem> mSliderItems;
+
+    private static final java.lang.String TAG = "SliderAdapterExample";
 
     public SliderAdapterExample(Context context, List<SliderItem> mSliderItems) {
         this.context = context;
@@ -45,11 +49,11 @@ public class SliderAdapterExample extends
     @Override
     public SliderAdapterVH onCreateViewHolder(ViewGroup parent) {
         return new SliderAdapterVH(DataBindingUtil.inflate(LayoutInflater.from(context),
-                R.layout.image_slider_layout_item, parent,false));
+                R.layout.image_slider_layout_item, parent, false));
     }
 
-    public int getImages(SliderItem image){
-        return image.getproductImage();
+    public String getImages(SliderItem image){
+        return image.getProductImage();
     }
 
     @Override
@@ -57,8 +61,17 @@ public class SliderAdapterExample extends
 
         SliderItem sliderItem = mSliderItems.get(position);
 
-        viewHolder.binding.imageSliderLayoutItemIv.setImageResource(getImages(mSliderItems.get(position)));
-        viewHolder.binding.imageSliderLayoutItemTv.setText(sliderItem.productName);
+        Log.i(TAG, "onBindViewHolder: "+ sliderItem.getProductImage().toString());
+
+        Picasso
+                .get()
+                .load(java.lang.String.valueOf(sliderItem.getProductImage().toString()))
+                .placeholder(R.drawable.place_holder_image)
+                .into(viewHolder.binding.imageSliderLayoutItemIv);
+
+
+
+//        viewHolder.binding.imageSliderLayoutItemTv.setText(sliderItem.productName);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +87,7 @@ public class SliderAdapterExample extends
         return mSliderItems.size();
     }
 
-    class SliderAdapterVH extends SliderViewAdapter.ViewHolder {
+    static class SliderAdapterVH extends SliderViewAdapter.ViewHolder {
 
         ImageSliderLayoutItemBinding binding;
 

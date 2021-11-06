@@ -30,7 +30,9 @@ public class SearchedProducts {
     @SerializedName("updated_at")
     public String updatedAt;
 
-    public SearchedProducts(int id, String name, String description, String price, String discount, String priceAfterDiscount, String brandId, String categoryId, String shopId, String status, String createdAt, String updatedAt) {
+    public SearchedProducts(int id, String name, String description, String price,
+                            String discount, String priceAfterDiscount, String brandId,
+                            String categoryId, String shopId, String status, String createdAt, String updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;

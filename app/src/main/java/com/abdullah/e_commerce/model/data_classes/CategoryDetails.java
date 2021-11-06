@@ -6,7 +6,6 @@ public class CategoryDetails {
     int categoryImage;
     String categoryName;
 
-
     public CategoryDetails(int categoryImage, String categoryName) {
 //        this.image = image;
         this.categoryImage = categoryImage;

@@ -97,10 +97,10 @@ public class LoginFragment extends Fragment {
 //                            bundle.putString("token", response.body().getLoggedUser().getAccessToken());
 
 //                            navController.navigate(R.id.action_loginFragment_to_navigation_home, bundle);
-                            saveToken(response.body().getLoggedUser().getAccessToken(), response.isSuccessful());
+                            saveToken(response.body().getLoggedUser().getAccessToken().toString(), response.isSuccessful());
                             Intent intent = new Intent(getActivity(), HomeActivity.class);
                             assert response.body() != null;
-                            intent.putExtra("token", response.body().getLoggedUser().getAccessToken());
+                            intent.putExtra("token", response.body().getLoggedUser().getAccessToken().toString());
                             startActivity(intent);
                             requireActivity().finish();
                         }
@@ -118,7 +118,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void saveToken(String accessToken, boolean loginState) {
-        SharedPreferences.Editor preferences = getActivity().getSharedPreferences("userToken", Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor preferences = requireActivity().getSharedPreferences("userToken", Context.MODE_PRIVATE).edit();
         preferences.putString("token", accessToken);
         preferences.putBoolean("loginState", loginState);
         preferences.apply();

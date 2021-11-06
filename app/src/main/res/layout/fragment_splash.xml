@@ -18,7 +18,7 @@
             android:background="#CDF44336">
 
             <ProgressBar
-                android:id="@+id/fragment_splash_pb"
+                android:id="@+id/activity_splash_pb"
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_80sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +33,7 @@
                 android:textSize="@dimen/_14ssp"
                 android:textStyle="bold"
                 android:gravity="center"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_splash_pb" />
+                app:layout_constraintTop_toBottomOf="@+id/activity_splash_pb" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

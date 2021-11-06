@@ -2,6 +2,7 @@ package com.abdullah.e_commerce.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -23,6 +24,8 @@ public class SecondLatestProductAdapter extends
     private final Context context;
     private final List<ProductItem> latestProductList;
 
+    private static final String TAG = "latestProductAdapter";
+
     public SecondLatestProductAdapter(Context context, List<ProductItem> latestProductList) {
         this.context = context;
         this.latestProductList = latestProductList;
@@ -39,17 +42,25 @@ public class SecondLatestProductAdapter extends
     public void onBindViewHolder(@NonNull SecondLatestProductHolder holder, int position) {
         ProductItem latestProduct = latestProductList.get(position);
 
-        holder.binding.fragmentHomeSecondProductName.setText(latestProduct.getLatestProductName());
-        holder.binding.fragmentHomeSecondProductPrice.setText((latestProduct.getLatestProductPrice()));
+        holder.binding.fragmentHomeSecondProductName.setText(latestProduct.getLatestProductName().toString());
+        holder.binding.fragmentHomeSecondProductPrice.setText((latestProduct.getLatestProductPrice().toString()));
 
-        Picasso.get()
-                .load(String.valueOf(latestProduct.getLatestProductImages().get(0).getLatestProductImage()))
-                .placeholder(R.drawable.place_holder_image)
-                .into(holder.binding.fragmentHomeThirdPicUnderLatest);
+        if(latestProduct.getLatestProductImages().size() > 0){
+            Picasso.get()
+                    .load(latestProduct.getLatestProductImages().get(0).getProductImage())
+                    .placeholder(R.drawable.place_holder_image)
+                    .into(holder.binding.fragmentHomeThirdPicUnderLatest);
+        }else{
+            Picasso.get()
+                    .load(R.drawable.place_holder_image)
+                    .placeholder(R.drawable.place_holder_image)
+                    .into(holder.binding.fragmentHomeThirdPicUnderLatest);
+        }
 
         holder.binding.fragmentHomeThirdCv.setOnClickListener(v->{
             Intent intent = new Intent(context.getApplicationContext(), ProductActivity.class);
             intent.putExtra("productId", latestProduct.getLatestProductId());
+            Log.i(TAG, "onBindViewHolder: "+ latestProduct.getLatestProductId());
             context.startActivity(intent);
         });
     }

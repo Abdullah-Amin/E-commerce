@@ -1,5 +1,7 @@
 package com.abdullah.e_commerce.model.data_classes;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 public class ProductColor {
@@ -15,6 +17,7 @@ public class ProductColor {
         return colorId;
     }
 
+    @NonNull
     @Override
     public String toString(){
         return
