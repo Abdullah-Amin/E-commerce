@@ -1,4 +1,4 @@
-package com.abdullah.e_commerce.model.reponses;
+package com.abdullah.e_commerce.model.responses;
 
 import com.google.gson.annotations.SerializedName;
 

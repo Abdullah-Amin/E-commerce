@@ -1,11 +1,9 @@
-package com.abdullah.e_commerce.model.reponses;
+package com.abdullah.e_commerce.model.responses;
 
-import com.abdullah.e_commerce.model.data_classes.LatestProduct;
+import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class LatestProductResponse {
+public class ShowProductResponse {
 
     @SerializedName("status")
     private boolean status;
@@ -14,7 +12,7 @@ public class LatestProductResponse {
     private String message;
 
     @SerializedName("data")
-    private List<LatestProduct> latestProductList;
+    private ShowedProductData showedProductData;
 
     public boolean isStatus() {
         return status;
@@ -32,20 +30,20 @@ public class LatestProductResponse {
         this.message = message;
     }
 
-    public List<LatestProduct> getLatestProductList() {
-        return latestProductList;
+    public ShowedProductData getShowedProductData() {
+        return showedProductData;
     }
 
-    public void setLatestProductList(List<LatestProduct> latestProductList) {
-        this.latestProductList = latestProductList;
+    public void setShowedProductData(ShowedProductData showedProductData) {
+        this.showedProductData = showedProductData;
     }
 
     @Override
     public String toString() {
-        return "LatestProductResponse{" +
+        return "ShowProductResponse{" +
                 "status=" + status +
                 ", message='" + message + '\'' +
-                ", latestProductList=" + latestProductList +
+                ", showedProductData=" + showedProductData +
                 '}';
     }
 }

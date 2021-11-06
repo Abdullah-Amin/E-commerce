@@ -7,8 +7,6 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,8 +19,8 @@ import com.abdullah.e_commerce.adapters.SecondLatestProductAdapter;
 import com.abdullah.e_commerce.model.data_classes.CategoryDetails;
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentHomeBinding;
-import com.abdullah.e_commerce.model.data_classes.LatestProduct;
-import com.abdullah.e_commerce.model.reponses.LatestProductResponse;
+import com.abdullah.e_commerce.model.data_classes.ProductItem;
+import com.abdullah.e_commerce.model.responses.LatestProductResponse;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 
 import java.util.ArrayList;
@@ -37,7 +35,7 @@ public class HomeFragment extends Fragment {
     FragmentHomeBinding binding;
     NavController navController;
 
-    List<LatestProduct> latestProductList;
+    List<ProductItem> latestProductList;
     ArrayList<Integer> latestProductImageList = new ArrayList<>();
 
     ArrayList<CategoryDetails> categoryDetailsArrayList = new ArrayList<>();
@@ -87,7 +85,7 @@ public class HomeFragment extends Fragment {
                     public void onResponse(Call<LatestProductResponse> call, Response<LatestProductResponse> response) {
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: "+response.body().toString());
-                            latestProductList = response.body().getLatestProductList();
+                            latestProductList = response.body().getLatestProductData();
                             binding.fragmentHomeSecondLatestRv.setAdapter(new SecondLatestProductAdapter(getContext(), latestProductList));
 
                         }else {

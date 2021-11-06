@@ -21,6 +21,7 @@ import java.util.List;
 public class ProductActivity extends AppCompatActivity {
 
     ActivityProductBinding binding;
+    int productId = getIntent().getIntExtra("productId", 1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

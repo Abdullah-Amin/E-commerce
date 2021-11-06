@@ -17,11 +17,11 @@ public class ShowedProductData {
     @SerializedName("item_price")
     private String showedProductPrice;
 
-    @SerializedName("stock_qty")
-    private String showedProductStockQty;
+//    @SerializedName("stock_qty")
+//    private String showedProductStockQty;
 
-    @SerializedName("currency_code")
-    private String showedProductCurrencyCode;
+//    @SerializedName("currency_code")
+//    private String showedProductCurrencyCode;
 
     @SerializedName("item_image_url")
     private String showedProductImageUrl;
@@ -73,21 +73,21 @@ public class ShowedProductData {
         this.showedProductPrice = showedProductPrice;
     }
 
-    public String getShowedProductStockQty() {
-        return showedProductStockQty;
-    }
-
-    public void setShowedProductStockQty(String showedProductStockQty) {
-        this.showedProductStockQty = showedProductStockQty;
-    }
-
-    public String getShowedProductCurrencyCode() {
-        return showedProductCurrencyCode;
-    }
-
-    public void setShowedProductCurrencyCode(String showedProductCurrencyCode) {
-        this.showedProductCurrencyCode = showedProductCurrencyCode;
-    }
+//    public String getShowedProductStockQty() {
+//        return showedProductStockQty;
+//    }
+//
+//    public void setShowedProductStockQty(String showedProductStockQty) {
+//        this.showedProductStockQty = showedProductStockQty;
+//    }
+//
+//    public String getShowedProductCurrencyCode() {
+//        return showedProductCurrencyCode;
+//    }
+//
+//    public void setShowedProductCurrencyCode(String showedProductCurrencyCode) {
+//        this.showedProductCurrencyCode = showedProductCurrencyCode;
+//    }
 
     public String getShowedProductImageUrl() {
         return showedProductImageUrl;
@@ -144,8 +144,8 @@ public class ShowedProductData {
                 ", showedProductName='" + showedProductName + '\'' +
                 ", description='" + description + '\'' +
                 ", showedProductPrice='" + showedProductPrice + '\'' +
-                ", showedProductStockQty='" + showedProductStockQty + '\'' +
-                ", showedProductCurrencyCode='" + showedProductCurrencyCode + '\'' +
+//                ", showedProductStockQty='" + showedProductStockQty + '\'' +
+//                ", showedProductCurrencyCode='" + showedProductCurrencyCode + '\'' +
                 ", showedProductImageUrl='" + showedProductImageUrl + '\'' +
                 ", showedProductSizes=" + showedProductSizes +
                 ", showedProductReviews=" + showedProductReviews +

@@ -1,5 +1,7 @@
 package com.abdullah.e_commerce.model.data_classes;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 public class LatestProduct {
@@ -126,32 +128,18 @@ public class LatestProduct {
     }
 
     public int getIntegerLatestProductPrice(){
-        if(!latestProductPrice.isEmpty()
-                || !latestProductPrice.equals("")
-                || latestProductPrice != null){
-            return Integer.parseInt(latestProductPrice);
-        }
-        else return 0;
+        return Integer.parseInt(latestProductPrice);
     }
 
     public int getIntegerLatestProductDiscount(){
-        if(!latestProductDiscount.isEmpty()
-                || !latestProductDiscount.equals("")
-                || latestProductDiscount != null){
-            return Integer.parseInt(latestProductDiscount);
-        }
-        else return 0;
+        return Integer.parseInt(latestProductDiscount);
     }
 
     public int getIntegerProductPriceAfterDiscount(){
-        if(!latestProductPriceAfterDiscount.isEmpty()
-                || !latestProductPriceAfterDiscount.equals("")
-                || latestProductPriceAfterDiscount != null){
-            return getIntegerLatestProductPrice() - getIntegerLatestProductDiscount();
-        }
-        else return 0;
+        return getIntegerLatestProductPrice() - getIntegerLatestProductDiscount();
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "LatestProduct{" +

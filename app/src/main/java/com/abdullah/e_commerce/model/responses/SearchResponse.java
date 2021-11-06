@@ -1,4 +1,4 @@
-package com.abdullah.e_commerce.model.reponses;
+package com.abdullah.e_commerce.model.responses;
 
 import com.abdullah.e_commerce.model.data_classes.SearchedProducts;
 

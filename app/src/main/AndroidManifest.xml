@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.abdullah.e_commerce">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Ecommerce">
-        <activity android:name=".ui.cart_ui.OrderPlacedActivity"></activity>
+        android:theme="@style/Theme.Ecommerce"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".ui.cart_ui.OrderPlacedActivity" />
         <activity android:name=".ui.messages_notifications_ui.ConversationActivity" />
         <activity android:name=".ui.shop_ui.ShopProfileActivity" />
         <activity android:name=".ui.cart_ui.CheckoutActivity" />
-        <activity android:name=".ui.search_ui.SearchResultActivity">
-
-        </activity>
+        <activity android:name=".ui.search_ui.SearchResultActivity"></activity>
         <activity android:name=".ui.product_ui.ProductActivity" />
         <activity
             android:name=".ui.main_ui.HomeActivity"
-            android:label="@string/title_activity_bottom_navigation" >
-
-
-
-        </activity>
-        <activity android:name=".ui.main_ui.MainActivity" >
-
+            android:label="@string/title_activity_bottom_navigation"></activity>
+        <activity android:name=".ui.main_ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

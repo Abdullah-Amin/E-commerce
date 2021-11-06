@@ -20,20 +20,14 @@ import android.widget.Toast;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentSearchBinding;
-import com.abdullah.e_commerce.model.reponses.SearchResponse;
+import com.abdullah.e_commerce.model.responses.SearchResponse;
 import com.abdullah.e_commerce.model.requests.SearchRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

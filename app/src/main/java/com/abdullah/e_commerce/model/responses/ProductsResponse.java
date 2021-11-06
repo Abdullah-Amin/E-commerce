@@ -1,6 +1,6 @@
-package com.abdullah.e_commerce.model.reponses;
+package com.abdullah.e_commerce.model.responses;
 
-import com.abdullah.e_commerce.model.data_classes.Products;
+import com.abdullah.e_commerce.model.data_classes.ProductItem;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -14,7 +14,7 @@ public class ProductsResponse {
     private String message;
 
     @SerializedName("data")
-    private List<Products> productsList;
+    private List<ProductItem> productsList;
 
     public boolean isStatus() {
         return status;
@@ -32,11 +32,11 @@ public class ProductsResponse {
         this.message = message;
     }
 
-    public List<Products> getProductsList() {
+    public List<ProductItem> getProductsList() {
         return productsList;
     }
 
-    public void setProductsList(List<Products> productsList) {
+    public void setProductsList(List<ProductItem> productsList) {
         this.productsList = productsList;
     }
 

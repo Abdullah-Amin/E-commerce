@@ -14,18 +14,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentMoreBinding;
-import com.abdullah.e_commerce.model.reponses.LoginResponse;
-import com.abdullah.e_commerce.model.reponses.LogoutResponse;
-import com.abdullah.e_commerce.model.requests.LoginRequest;
+import com.abdullah.e_commerce.model.responses.LogoutResponse;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.abdullah.e_commerce.ui.main_ui.HomeActivity;
 import com.abdullah.e_commerce.ui.main_ui.MainActivity;
-import com.google.gson.stream.JsonReader;
 
 import java.util.Objects;
 

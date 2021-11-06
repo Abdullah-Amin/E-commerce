@@ -19,26 +19,15 @@ import android.widget.Toast;
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentSignUpBinding;
 import com.abdullah.e_commerce.model.data_classes.RegisterErrorBody;
-import com.abdullah.e_commerce.model.data_classes.RegisterErrorMessages;
-import com.abdullah.e_commerce.model.data_classes.RegisteredUser;
-import com.abdullah.e_commerce.model.reponses.RegisterResponse;
+import com.abdullah.e_commerce.model.responses.RegisterResponse;
 import com.abdullah.e_commerce.model.requests.RegisterRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Objects;
 
 import retrofit2.Call;

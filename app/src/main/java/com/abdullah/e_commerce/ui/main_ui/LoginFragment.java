@@ -1,6 +1,8 @@
 package com.abdullah.e_commerce.ui.main_ui;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,14 +21,12 @@ import android.widget.Toast;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentLoginBinding;
-import com.abdullah.e_commerce.model.reponses.LoginResponse;
+import com.abdullah.e_commerce.model.responses.LoginResponse;
 import com.abdullah.e_commerce.model.requests.LoginRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.google.android.material.textfield.TextInputEditText;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -61,18 +61,23 @@ public class LoginFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.fragmentLoginLoginBtn.setOnClickListener(v ->{
+        binding.fragmentLoginLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-            if(Objects.requireNonNull(emailEt.getText()).toString().isEmpty()
-                    || Objects.requireNonNull(passwordEt.getText()).toString().isEmpty()){
-                Toast.makeText(getActivity(), "Fields can't be empty", Toast.LENGTH_SHORT).show();
-                return;
+                if ((emailEt.getText()).toString().isEmpty()
+                        || (passwordEt.getText()).toString().isEmpty()) {
+                    Toast.makeText(LoginFragment.this.getActivity(), "Fields can't be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                loginRequest = new LoginRequest(emailEt.getText().toString()
+                        ,passwordEt.getText().toString()
+                        ,"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiJkD2J2whBx1MsaTx7vLgOCK1GXSlMIuGTkRBGxJu_nywCxX4He11y3jOI4puSCber8gLtGG2NABA3mZsozK2e1ap7tQckSpj3aDH9btLdSZhYEHr0APDYComArJPwa2IJdxSWbMu8HEpYhicQ4");
+
+                connectAndLogin();
+
             }
-
-            loginRequest = new LoginRequest(emailEt.getText().toString(), passwordEt.getText().toString());
-
-            connectAndLogin();
-
         });
 
         setOnClicksListeners(binding.fragmentLoginForgotPasswordTv, R.id.action_loginFragment_to_forgotPasswordFragment);
@@ -92,11 +97,12 @@ public class LoginFragment extends Fragment {
 //                            bundle.putString("token", response.body().getLoggedUser().getAccessToken());
 
 //                            navController.navigate(R.id.action_loginFragment_to_navigation_home, bundle);
+                            saveToken(response.body().getLoggedUser().getAccessToken(), response.isSuccessful());
                             Intent intent = new Intent(getActivity(), HomeActivity.class);
                             assert response.body() != null;
                             intent.putExtra("token", response.body().getLoggedUser().getAccessToken());
                             startActivity(intent);
-                            getActivity().finish();
+                            requireActivity().finish();
                         }
                         else {
                             Log.i(TAG, "onResponse: uuuu ");
@@ -109,6 +115,13 @@ public class LoginFragment extends Fragment {
                         Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
                     }
                 });
+    }
+
+    private void saveToken(String accessToken, boolean loginState) {
+        SharedPreferences.Editor preferences = getActivity().getSharedPreferences("userToken", Context.MODE_PRIVATE).edit();
+        preferences.putString("token", accessToken);
+        preferences.putBoolean("loginState", loginState);
+        preferences.apply();
     }
 
     private void setOnClicksListeners(TextView pressedBtn, int destination) {
