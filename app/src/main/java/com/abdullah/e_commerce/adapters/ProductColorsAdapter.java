@@ -36,7 +36,9 @@ public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdap
 
     @Override
     public void onBindViewHolder(@NonNull ProductColorsViewHolder holder, int position) {
-        holder.binding.productColorItemFloatingActionBtn.setBackgroundColor(Integer.parseInt(showedProductData.getColor().get(position).getColorId()));
+        if (showedProductData.getColor().size() > 0) {
+            holder.binding.productColorItemFloatingActionBtn.setBackgroundColor(Integer.parseInt(showedProductData.getColor().get(position).getColorId()));
+        }
     }
 
     @Override

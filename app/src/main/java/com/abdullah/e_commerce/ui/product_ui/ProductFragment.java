@@ -20,7 +20,6 @@ import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
 public class ProductFragment extends Fragment {
 
     FragmentProductBinding binding;
-    Bundle bundle = new Bundle();
 
     private static final String TAG = "productFragment ";
 
@@ -30,17 +29,20 @@ public class ProductFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_product, container, false);
         return binding.getRoot();
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        ShowedProductData productData = (ShowedProductData) bundle.getSerializable("productResponse");
+        Log.i(TAG, "onCreateView: "+ getArguments().getSerializable("showedProductData"));
 
-        ProductActivity activity = (ProductActivity) requireActivity();
-        binding.fragmentProductColorsRv.setAdapter(new ProductColorsAdapter(activity.getProduct()));
-        Log.i(TAG, "onViewCreated: "+ activity.getProduct());
+//        ShowedProductData showedProductData = (ShowedProductData) getArguments().getSerializable("showedProductData");
 
+        if(getArguments() != null){
+            binding.fragmentProductColorsRv.setAdapter(new ProductColorsAdapter(
+                    (ShowedProductData) getArguments().getSerializable("showedProductData")));
+        }
     }
 }

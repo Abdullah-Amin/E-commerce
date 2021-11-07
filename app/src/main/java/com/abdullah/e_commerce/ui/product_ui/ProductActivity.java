@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.ui.product_ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
@@ -32,12 +33,13 @@ public class ProductActivity extends AppCompatActivity {
     ActivityProductBinding binding;
     int productId;
 
+    ProductFragment productFragment = new ProductFragment();
+    DetailsFragment detailsFragment = new DetailsFragment();
+    ReviewsFragment reviewsFragment = new ReviewsFragment();
+
     Bundle bundle;
 
-    public ShowedProductData showedProductData;
-
     private static final String TAG = "ProductActivity";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,18 +49,26 @@ public class ProductActivity extends AppCompatActivity {
 
         productId = getIntent().getIntExtra("productId", 1);
 
-        showFragment(binding.activityProductProductMbtn, new ProductFragment());
+        if(productId < 1)return;
 
         showProduct(productId);
 
+        productFragment.setArguments(bundle);
+        showFragment(binding.activityProductProductMbtn, productFragment);
+
+
         unPressBtns(binding.activityProductDetailsMbtn, binding.activityProductReviewsMbtn);
 
-        setOnClicks(binding.activityProductProductMbtn, binding.activityProductDetailsMbtn,
-                binding.activityProductReviewsMbtn, new ProductFragment());
 
+        setOnClicks(binding.activityProductProductMbtn, binding.activityProductDetailsMbtn,
+                binding.activityProductReviewsMbtn, productFragment);
+        Log.i(TAG, "onCreate: bundle "+ bundle);
+
+        detailsFragment.setArguments(bundle);
         setOnClicks(binding.activityProductDetailsMbtn, binding.activityProductProductMbtn,
                 binding.activityProductReviewsMbtn, new DetailsFragment());
 
+        reviewsFragment.setArguments(bundle);
         setOnClicks(binding.activityProductReviewsMbtn, binding.activityProductDetailsMbtn,
                 binding.activityProductProductMbtn, new ReviewsFragment());
 
@@ -72,18 +82,22 @@ public class ProductActivity extends AppCompatActivity {
 
     private void showProduct(int productId) {
 
-        RetrofitSingleton.connect().showProduct(productId).enqueue(new Callback<ShowProductResponse>() {
+        RetrofitSingleton.connect().showProduct(2).enqueue(new Callback<ShowProductResponse>() {
             @Override
-            public void onResponse(Call<ShowProductResponse> call, Response<ShowProductResponse> response) {
+            public void onResponse(@NonNull Call<ShowProductResponse> call, @NonNull Response<ShowProductResponse> response) {
                 if (response.isSuccessful()){
                     setDataToUi(response);
                     assert response.body() != null;
 //                    setProduct(response.body().getShowedProductData());
-                    showedProductData = response.body().getShowedProductData();
+                    bundle = new Bundle();
+                    bundle.putSerializable("showedProductData", response.body().getShowedProductData());
 //                    bundle = new Bundle();
 //                    assert response.body() != null;
 //                    bundle.putSerializable("productResponse", response.body().getShowedProductData());
                     Log.i(TAG, "onResponse: "+ response.body().getShowedProductData());
+                }
+                else{
+                    Log.i(TAG, "onResponse: failure");
                 }
             }
 
@@ -155,11 +169,4 @@ public class ProductActivity extends AppCompatActivity {
         btnGray.setTextColor(Color.GRAY);
     }
 
-    public ShowedProductData getProduct(){
-        return this.showedProductData;
-    }
-
-//    public void setProduct(ShowedProductData showedProductData){
-//        this.showedProductData = showedProductData;
-//    }
 }
