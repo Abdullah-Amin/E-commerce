@@ -16,6 +16,7 @@ import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.adapters.ProductColorsAdapter;
 import com.abdullah.e_commerce.databinding.FragmentProductBinding;
 import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
+import com.abdullah.e_commerce.network.ShowProductCallbackI;
 
 public class ProductFragment extends Fragment {
 
@@ -36,9 +37,15 @@ public class ProductFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Log.i(TAG, "onCreateView: "+ getArguments().getSerializable("showedProductData"));
+//        Log.i(TAG, "onCreateView: "+ getArguments().getSerializable("showedProductData"));
 
 //        ShowedProductData showedProductData = (ShowedProductData) getArguments().getSerializable("showedProductData");
+
+        ProductActivity productActivity = (ProductActivity) getActivity();
+
+
+
+        binding.fragmentProductColorsRv.setAdapter(new ProductColorsAdapter(productActivity.getProductData()));
 
         if(getArguments() != null){
             binding.fragmentProductColorsRv.setAdapter(new ProductColorsAdapter(

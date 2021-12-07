@@ -45,7 +45,7 @@ public class SecondLatestProductAdapter extends
         holder.binding.fragmentHomeSecondProductName.setText(latestProduct.getLatestProductName().toString());
         holder.binding.fragmentHomeSecondProductPrice.setText((latestProduct.getLatestProductPrice().toString()));
 
-        if(latestProduct.getLatestProductImages().size() > 0){
+        if(!latestProduct.getLatestProductImages().isEmpty()){
             Picasso.get()
                     .load(latestProduct.getLatestProductImages().get(0).getProductImage())
                     .placeholder(R.drawable.place_holder_image)
@@ -59,8 +59,9 @@ public class SecondLatestProductAdapter extends
 
         holder.binding.fragmentHomeThirdCv.setOnClickListener(v->{
             Intent intent = new Intent(context.getApplicationContext(), ProductActivity.class);
+            Log.i(TAG, "onBindViewHolder: context ---- "+ context.getApplicationContext().toString());
             intent.putExtra("productId", latestProduct.getLatestProductId());
-            Log.i(TAG, "onBindViewHolder: "+ latestProduct.getLatestProductId());
+            Log.i(TAG, "onBindViewHolder: id ---- "+ latestProduct.getLatestProductId());
             context.startActivity(intent);
         });
     }

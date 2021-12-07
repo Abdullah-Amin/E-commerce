@@ -17,6 +17,7 @@ import com.abdullah.e_commerce.model.data_classes.SliderItem;
 import com.abdullah.e_commerce.databinding.ActivityProductBinding;
 import com.abdullah.e_commerce.model.responses.ShowProductResponse;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
+import com.abdullah.e_commerce.network.ShowProductCallbackI;
 import com.abdullah.e_commerce.ui.cart_ui.CartFragment;
 import com.google.android.material.button.MaterialButton;
 
@@ -32,6 +33,7 @@ public class ProductActivity extends AppCompatActivity {
 
     ActivityProductBinding binding;
     int productId;
+    private ShowedProductData showedProductData;
 
     ProductFragment productFragment = new ProductFragment();
     DetailsFragment detailsFragment = new DetailsFragment();
@@ -53,8 +55,8 @@ public class ProductActivity extends AppCompatActivity {
 
         showProduct(productId);
 
-        productFragment.setArguments(bundle);
-        showFragment(binding.activityProductProductMbtn, productFragment);
+//        productFragment.setArguments(bundle);
+//        showFragment(binding.activityProductProductMbtn, productFragment);
 
 
         unPressBtns(binding.activityProductDetailsMbtn, binding.activityProductReviewsMbtn);
@@ -77,23 +79,24 @@ public class ProductActivity extends AppCompatActivity {
             finish();
         });
 
+
         Log.i(TAG, "onCreate: "+ productId);
     }
 
     private void showProduct(int productId) {
 
-        RetrofitSingleton.connect().showProduct(2).enqueue(new Callback<ShowProductResponse>() {
+        RetrofitSingleton.connect().showProduct(productId).enqueue(new Callback<ShowProductResponse>() {
             @Override
             public void onResponse(@NonNull Call<ShowProductResponse> call, @NonNull Response<ShowProductResponse> response) {
                 if (response.isSuccessful()){
                     setDataToUi(response);
                     assert response.body() != null;
 //                    setProduct(response.body().getShowedProductData());
-                    bundle = new Bundle();
-                    bundle.putSerializable("showedProductData", response.body().getShowedProductData());
-//                    bundle = new Bundle();
-//                    assert response.body() != null;
-//                    bundle.putSerializable("productResponse", response.body().getShowedProductData());
+                    showedProductData = response.body().getShowedProductData();
+                    Bundle productBundle = new Bundle();
+                    productBundle.putSerializable("showedProductData", response.body().getShowedProductData());
+                    productBundle.putSerializable("productResponse", response.body().getShowedProductData());
+
                     Log.i(TAG, "onResponse: "+ response.body().getShowedProductData());
                 }
                 else{
@@ -121,7 +124,7 @@ public class ProductActivity extends AppCompatActivity {
 
         for (int i = 0; i < bounds; i++) {
             sliderItemsList.add(new SliderItem(response.body().getShowedProductData().getImages().get(i).getProductImage()));
-            Log.i(TAG, "setProductImagesToImageSlider: "+ sliderItemsList.get(i));
+            Log.i(TAG, "setProductImagesToImageSlider: "+ sliderItemsList.get(i).getProductImage());
         }
 
         binding.activityProductProductImageSlider.setSliderAdapter(
@@ -169,4 +172,7 @@ public class ProductActivity extends AppCompatActivity {
         btnGray.setTextColor(Color.GRAY);
     }
 
+    public ShowedProductData getProductData(){
+        return showedProductData;
+    }
 }
