@@ -173,6 +173,7 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     public ShowedProductData getProductData(){
+        Log.i(TAG, "getProductData: "+ showedProductData);
         return showedProductData;
     }
 }

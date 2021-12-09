@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/product_size_item_material_btn"
-        android:text="4"
-        android:textColor="#FF6969"
-        android:textSize="@dimen/_12ssp"
-        android:layout_width="@dimen/_60sdp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_5sdp"
-        app:backgroundTint="@color/white"/>
+    <data>
 
-</LinearLayout>
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/product_size_item_material_btn"
+            android:text="4"
+            android:textColor="#FF6969"
+            android:textSize="@dimen/_8ssp"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            app:backgroundTint="@color/white" />
+
+    </LinearLayout>
+</layout>

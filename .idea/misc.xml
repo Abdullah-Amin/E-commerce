@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/drawable/ic_arrow_left.xml" value="0.2203125" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/drawable/ic_arrow_right.xml" value="0.2203125" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_checkout.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_conversation.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_home.xml" value="0.1" />
@@ -38,6 +40,7 @@
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/notification_item.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/product_added_to_cart_item.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/product_color_item.xml" value="0.22" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/product_size_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/second_latest_item.xml" value="0.22" />
       </map>
     </option>

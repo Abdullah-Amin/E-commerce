@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.adapters.ProductColorsAdapter;
+import com.abdullah.e_commerce.adapters.ProductSizesAdapter;
 import com.abdullah.e_commerce.databinding.FragmentProductBinding;
 import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
 import com.abdullah.e_commerce.network.ShowProductCallbackI;
@@ -43,13 +44,15 @@ public class ProductFragment extends Fragment {
 
         ProductActivity productActivity = (ProductActivity) getActivity();
 
+        Log.i(TAG, "onViewCreated: "+ productActivity.getProductData());
 
-
+        assert productActivity != null;
         binding.fragmentProductColorsRv.setAdapter(new ProductColorsAdapter(productActivity.getProductData()));
+        binding.fragmentProductSizesRv.setAdapter(new ProductSizesAdapter(productActivity.getProductData()));
 
-        if(getArguments() != null){
-            binding.fragmentProductColorsRv.setAdapter(new ProductColorsAdapter(
-                    (ShowedProductData) getArguments().getSerializable("showedProductData")));
-        }
+//        if(getArguments() != null){
+//            binding.fragmentProductColorsRv.setAdapter(new ProductColorsAdapter(
+//                    (ShowedProductData) getArguments().getSerializable("showedProductData")));
+//        }
     }
 }

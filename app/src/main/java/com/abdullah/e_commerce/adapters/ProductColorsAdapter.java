@@ -36,15 +36,18 @@ public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdap
 
     @Override
     public void onBindViewHolder(@NonNull ProductColorsViewHolder holder, int position) {
-        if (showedProductData.getColor().size() > 0) {
-            holder.binding.productColorItemFloatingActionBtn.setBackgroundColor(Integer.parseInt(showedProductData.getColor().get(position).getColorId()));
+        Log.i(TAG, "onBindViewHolder: colors "+ showedProductData);
+        if (!showedProductData.getColor().isEmpty()) {
+            Log.i(TAG, "onBindViewHolder: "+ showedProductData.getColor().get(position).getColorId());
+            holder.binding.productColorItemFloatingActionBtn.setBackgroundColor(Color.parseColor(
+                    showedProductData.getColor().get(position).getColorId()));
         }
     }
 
     @Override
     public int getItemCount() {
         Log.i(TAG, "getItemCount: "+ showedProductData);
-        return 1;
+        return showedProductData.getColor().size();
     }
 
     public static class ProductColorsViewHolder extends RecyclerView.ViewHolder {
