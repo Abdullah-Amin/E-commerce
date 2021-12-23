@@ -1,5 +1,8 @@
 package com.abdullah.e_commerce.network;
 
+import com.abdullah.e_commerce.model.responses.CartResponse;
+import com.abdullah.e_commerce.model.requests.AddToCartRequest;
+import com.abdullah.e_commerce.model.responses.AddToCartResponse;
 import com.abdullah.e_commerce.model.responses.LatestProductResponse;
 import com.abdullah.e_commerce.model.responses.LoginResponse;
 import com.abdullah.e_commerce.model.responses.LogoutResponse;
@@ -46,4 +49,11 @@ public interface EcommerceI {
     @POST("password/reset")
     Call<ResetPasswordResponse> resetPassword(@Body ResetPasswordRequest resetPasswordRequest,
                                               @Header("Authorization") String token);
+
+    @POST("add-to-cart")
+    Call<AddToCartResponse> addToCart(@Header("Authorization") String token,
+                                      @Body AddToCartRequest addToCartRequest);
+
+    @GET("cart")
+    Call<CartResponse> showCartProducts(@Header("Authorization") String Token);
 }

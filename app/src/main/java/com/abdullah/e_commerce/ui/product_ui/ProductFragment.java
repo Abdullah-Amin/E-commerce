@@ -16,8 +16,6 @@ import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.adapters.ProductColorsAdapter;
 import com.abdullah.e_commerce.adapters.ProductSizesAdapter;
 import com.abdullah.e_commerce.databinding.FragmentProductBinding;
-import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
-import com.abdullah.e_commerce.network.ShowProductCallbackI;
 
 public class ProductFragment extends Fragment {
 

@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.ProductColorItemBinding;
 import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
+import com.abdullah.e_commerce.ui.product_ui.ProductActivity;
 
 
 public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdapter.ProductColorsViewHolder> {
@@ -24,6 +26,9 @@ public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdap
     private static final String TAG = "ProductColorsAdapter";
 
     private boolean isSelected;
+    int oldPosition;
+
+    ProductActivity productActivity;
 
     public ProductColorsAdapter(ShowedProductData showedProductData) {
 //        this.productColors = productColors;
@@ -33,6 +38,7 @@ public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdap
     @NonNull
     @Override
     public ProductColorsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        productActivity = (ProductActivity) parent.getContext();
         return new ProductColorsViewHolder(ProductColorItemBinding.inflate(
                 LayoutInflater.from(parent.getContext()), parent, false));
     }
@@ -57,22 +63,27 @@ public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdap
 
         holder.binding.productColorItemColorTv.setOnClickListener(p-> {
             Log.i(TAG, "abdo onBindViewHolder: "+ holder.getAdapterPosition());
+//            isSelected = (oldPosition != holder.getAdapterPosition());
             if (isSelected){
                 unSelect(holder);
-                select(holder);
+//                select(holder);
                 isSelected = false;
             }else{
                 holder.binding.productColorItemSelectIv.setImageResource(R.drawable.ic_dark_select);
                 holder.binding.productColorItemSelectIv.setVisibility(View.VISIBLE);
                 isSelected = true;
+                productActivity.setProductColor(showedProductData.getColor().get(position).getColorId());
+                oldPosition = holder.getAdapterPosition();
             }
         });
     }
 
-    private void select(ProductColorsViewHolder holder) {
+//    private void select(ProductColorsViewHolder holder) {
+//        holder.binding.productColorItemSelectIv.setImageResource(R.drawable.ic_dark_select);
+//        holder.binding.productColorItemSelectIv.setVisibility(View.VISIBLE);
+//    }
 
-    }
-
+    @SuppressLint("NotifyDataSetChanged")
     private void unSelect(ProductColorsViewHolder holder) {
         for (int i = 0; i < showedProductData.getColor().size(); i++) {
             holder.binding.productColorItemSelectIv.setVisibility(View.GONE);

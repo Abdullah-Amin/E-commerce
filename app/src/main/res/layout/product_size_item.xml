@@ -19,6 +19,7 @@
             android:layout_width="@dimen/_70sdp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_5sdp"
+            android:soundEffectsEnabled="false"
             app:backgroundTint="@color/white" />
 
     </LinearLayout>

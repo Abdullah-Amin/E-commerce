@@ -1,11 +1,10 @@
 package com.abdullah.e_commerce.ui.main_ui;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.ActivityHomeBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -39,8 +38,17 @@ public class HomeActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.activityHomeNavView, navController);
 
+
         this.token = getIntent().getStringExtra("token");
 
+        String activityName = getIntent().getStringExtra("productActivity");
+
+        if(activityName != null && activityName.equals("ProductActivity")){
+            navController.navigate(R.id.action_navigation_home_to_navigation_cart);
+        }
+        else{
+            Log.i("asd", "onCreate: ---------------------");
+        }
     }
 
     public String getToken(){

@@ -141,7 +141,7 @@ public class ProductItem {
 	@Override
  	public java.lang.String toString(){
 		return
-			"DataItem{" +
+			"ShowedCartItem{" +
 			"images = '" + productImages + '\'' +
 			",item_image_url = '" + latestProductImageUrl + '\'' +
 			",sizes = '" + productSizes + '\'' +
