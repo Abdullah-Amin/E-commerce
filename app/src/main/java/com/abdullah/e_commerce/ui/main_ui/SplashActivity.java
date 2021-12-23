@@ -47,7 +47,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 if (!token.isEmpty() || !loginState){
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                     finish();
                 }else{
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));

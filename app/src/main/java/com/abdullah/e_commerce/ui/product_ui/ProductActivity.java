@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.adapters.SliderAdapterExample;

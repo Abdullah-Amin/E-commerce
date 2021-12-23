@@ -54,6 +54,8 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Log.i(TAG, "onViewCreated: "+ view.getContext());
+
         setCategoryDetails(R.drawable.apparel_image, "Apparel");
         setCategoryDetails(R.drawable.beauty_image, "Beauty");
         setCategoryDetails(R.drawable.shoes_image, "Shoes");

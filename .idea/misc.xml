@@ -5,27 +5,31 @@
       <map>
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/drawable/ic_arrow_left.xml" value="0.2203125" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/drawable/ic_arrow_right.xml" value="0.2203125" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/drawable/ic_dark_select.xml" value="0.2203125" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/drawable/ic_white_select.xml" value="0.2203125" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/aaaaaa.xml" value="0.25" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_checkout.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_conversation.xml" value="0.1" />
-        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_home.xml" value="0.12" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_order_placed.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_product.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_search_result.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_shop_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/categories_item.xml" value="0.1" />
-        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/chat_item.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/chat_item.xml" value="0.25" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/checkout_activity_item.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_cart.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_details.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_filter_dialog.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_forgot_password.xml" value="0.1" />
-        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_message.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_more.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_notification.xml" value="0.1" />
-        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_product.xml" value="0.1" />
+        <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_product.xml" value="0.25" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_reviews.xml" value="0.1" />
         <entry key="..\:/Users/Abdullah Amin/StudioProjects/E-commerce/app/src/main/res/layout/fragment_search.xml" value="0.1" />

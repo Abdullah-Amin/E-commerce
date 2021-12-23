@@ -12,12 +12,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/product_color_item_floating_action_btn"
-            android:layout_width="@dimen/_32sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:layout_margin="@dimen/_5sdp"
-            app:cornerRadius="@dimen/_30sdp"/>
+
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/product_color_item_cv"-->
+<!--            android:layout_width="@dimen/_40sdp"-->
+<!--            android:layout_height="@dimen/_40sdp"-->
+<!--            android:layout_margin="@dimen/_5sdp"-->
+<!--            app:cardCornerRadius="@dimen/_60sdp"-->
+<!--            app:strokeWidth="@dimen/_1sdp"-->
+<!--            app:strokeColor="@color/black">-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/product_color_item_color_tv"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:cardCornerRadius="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:strokeColor="@color/black"
+                    app:strokeWidth="@dimen/_1sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/product_color_item_select_iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_dark_select"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
 
     </LinearLayout>
 </layout>

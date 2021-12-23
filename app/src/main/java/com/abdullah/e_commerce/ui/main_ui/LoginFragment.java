@@ -56,6 +56,10 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        HomeActivity homeActivity = (HomeActivity) view.getContext();
+
+//        homeActivity.binding.activityHomeNavView.setVisibility(View.GONE);
+
         emailEt = view.findViewById(R.id.fragment_login_username_et);
         passwordEt = view.findViewById(R.id.fragment_login_password_et);
 

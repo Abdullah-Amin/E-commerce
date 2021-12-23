@@ -1,6 +1,8 @@
 package com.abdullah.e_commerce.adapters;
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +11,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.ProductColorItemBinding;
-import com.abdullah.e_commerce.model.data_classes.ProductColor;
 import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
 
-import java.util.List;
 
 public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdapter.ProductColorsViewHolder> {
 
@@ -21,6 +22,8 @@ public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdap
     ShowedProductData showedProductData;
 
     private static final String TAG = "ProductColorsAdapter";
+
+    private boolean isSelected;
 
     public ProductColorsAdapter(ShowedProductData showedProductData) {
 //        this.productColors = productColors;
@@ -39,8 +42,42 @@ public class ProductColorsAdapter extends RecyclerView.Adapter<ProductColorsAdap
         Log.i(TAG, "onBindViewHolder: colors "+ showedProductData);
         if (!showedProductData.getColor().isEmpty()) {
             Log.i(TAG, "onBindViewHolder: "+ showedProductData.getColor().get(position).getColorId());
-            holder.binding.productColorItemFloatingActionBtn.setBackgroundColor(Color.parseColor(
+
+            holder.binding.productColorItemColorTv.setCardBackgroundColor(Color.parseColor(
                     showedProductData.getColor().get(position).getColorId()));
+
+//            holder.binding.productColorItemColorTv.setBackgroundResource(R.drawable.search_corners);
+//            holder.binding.productColorItemFloatingActionBtn.setBackgroundColor(Color.parseColor(
+//                    showedProductData.getColor().get(position).getColorId()));
+        }
+
+        for (int i = 0; i < showedProductData.getColor().size(); i++) {
+            holder.binding.productColorItemSelectIv.setVisibility(View.GONE);
+        }
+
+        holder.binding.productColorItemColorTv.setOnClickListener(p-> {
+            Log.i(TAG, "abdo onBindViewHolder: "+ holder.getAdapterPosition());
+            if (isSelected){
+                unSelect(holder);
+                select(holder);
+                isSelected = false;
+            }else{
+                holder.binding.productColorItemSelectIv.setImageResource(R.drawable.ic_dark_select);
+                holder.binding.productColorItemSelectIv.setVisibility(View.VISIBLE);
+                isSelected = true;
+            }
+        });
+    }
+
+    private void select(ProductColorsViewHolder holder) {
+
+    }
+
+    private void unSelect(ProductColorsViewHolder holder) {
+        for (int i = 0; i < showedProductData.getColor().size(); i++) {
+            holder.binding.productColorItemSelectIv.setVisibility(View.GONE);
+//            isSelected = false;
+            notifyDataSetChanged();
         }
     }
 

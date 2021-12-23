@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.adapters;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,13 @@ public class ProductSizesAdapter extends RecyclerView.Adapter<ProductSizesAdapte
         if(!showedProductData.getSizes().isEmpty()){
             holder.binding.productSizeItemMaterialBtn.setText(showedProductData.getSizes().get(position).getName());
         }
+
+        holder.binding.productSizeItemMaterialBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.binding.productSizeItemMaterialBtn.setTextColor(Color.parseColor("#FF6969"));
+            }
+        });
     }
 
     @Override
