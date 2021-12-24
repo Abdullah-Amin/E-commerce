@@ -11,15 +11,25 @@
         android:layout_height="wrap_content"
         android:background="#F5F6F8">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/product_added_to_cart_item_item_image"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/product_added_to_cart_item_item_cv"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_100sdp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@color/white"
+            android:elevation="@dimen/_3sdp"
+            app:cardCornerRadius="@dimen/_50sdp"
+            app:layout_constraintCircleRadius="@dimen/_20sdp"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/shoes_image"
-            android:scaleType="fitXY"
-            android:layout_margin="@dimen/_15sdp"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/product_added_to_cart_item_item_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_15sdp" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/product_added_to_cart_item_item_name"
@@ -28,8 +38,8 @@
             android:text="product name"
             android:textColor="#515C6F"
             android:textSize="@dimen/_14ssp"
-            app:layout_constraintTop_toTopOf="@+id/product_added_to_cart_item_item_image"
-            app:layout_constraintStart_toEndOf="@+id/product_added_to_cart_item_item_image"
+            app:layout_constraintTop_toTopOf="@+id/product_added_to_cart_item_item_cv"
+            app:layout_constraintStart_toEndOf="@+id/product_added_to_cart_item_item_cv"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp" />
 
@@ -41,7 +51,7 @@
             android:textColor="#99515C6F"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintTop_toBottomOf="@+id/product_added_to_cart_item_item_name"
-            app:layout_constraintStart_toEndOf="@+id/product_added_to_cart_item_item_image"
+            app:layout_constraintStart_toEndOf="@+id/product_added_to_cart_item_item_cv"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp" />
 
@@ -54,7 +64,7 @@
             android:textSize="@dimen/_14ssp"
             android:layout_marginTop="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@+id/product_added_to_cart_item_item_details"
-            app:layout_constraintStart_toEndOf="@+id/product_added_to_cart_item_item_image"
+            app:layout_constraintStart_toEndOf="@+id/product_added_to_cart_item_item_cv"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp" />
 
@@ -64,7 +74,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_remove"
             app:layout_constraintTop_toBottomOf="@+id/product_added_to_cart_item_item_price"
-            app:layout_constraintStart_toEndOf="@+id/product_added_to_cart_item_item_image"
+            app:layout_constraintStart_toEndOf="@+id/product_added_to_cart_item_item_cv"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"/>

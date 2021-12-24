@@ -13,6 +13,7 @@ import android.view.View;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.ActivitySplashBinding;
+import com.abdullah.e_commerce.network.SharedPref;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -20,17 +21,12 @@ public class SplashActivity extends AppCompatActivity {
     Intent intent = new Intent();
     private static final String TAG = "SplashActivity";
 
+    String token =  SharedPref.read(SharedPref.Token, null);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash);
-
-        SharedPreferences preferences = getSharedPreferences("userToken", Context.MODE_PRIVATE);
-        String token = preferences.getString("token", "no token found");
-        boolean loginState = preferences.getBoolean("loginState", false);
-        Log.i(TAG, "onCreate: "+ token);
-        Log.i(TAG, "onCreate: "+ loginState);
-
 
 //        try {
 //            Thread.sleep(3000);
@@ -46,7 +42,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                if (!token.isEmpty() || !loginState){
+                if (token != null){
                     startActivity(new Intent(SplashActivity.this, HomeActivity.class));
                     finish();
                 }else{

@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "214697689157",
+    "project_id": "seniorstepse-commerce",
+    "storage_bucket": "seniorstepse-commerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214697689157:android:5ce93b4c56b06af0cea32c",
+        "android_client_info": {
+          "package_name": "com.abdullah.e_commerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214697689157-nf4b45q6t35dppmljg3hk5vgjqtfcs31.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abdullah.e_commerce",
+            "certificate_hash": "f4c1f304783b9f4e998f3960f3baa6d3c7682468"
+          }
+        },
+        {
+          "client_id": "214697689157-f2q61eibqeite738k3nl41vk990n5m4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVD27dmOknblZosUZlYFrOWwRwOgLM9cY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214697689157-f2q61eibqeite738k3nl41vk990n5m4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214697689157:android:d3e40b1eed48a940cea32c",
+        "android_client_info": {
+          "package_name": "com.example.final_project_java"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214697689157-m1bug7n1l7pk7671c7vp90530v5htd94.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.final_project_java",
+            "certificate_hash": "0669804a056facbc3dbcc68b59a74c216a6f822d"
+          }
+        },
+        {
+          "client_id": "214697689157-f2q61eibqeite738k3nl41vk990n5m4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVD27dmOknblZosUZlYFrOWwRwOgLM9cY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214697689157-f2q61eibqeite738k3nl41vk990n5m4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214697689157:android:70a871d97cbf0ad6cea32c",
+        "android_client_info": {
+          "package_name": "com.marconagy.e_commerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214697689157-f2q61eibqeite738k3nl41vk990n5m4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVD27dmOknblZosUZlYFrOWwRwOgLM9cY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214697689157-f2q61eibqeite738k3nl41vk990n5m4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -24,7 +24,10 @@ import com.abdullah.e_commerce.databinding.FragmentLoginBinding;
 import com.abdullah.e_commerce.model.responses.LoginResponse;
 import com.abdullah.e_commerce.model.requests.LoginRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
+import com.abdullah.e_commerce.network.SharedPref;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -42,6 +45,9 @@ public class LoginFragment extends Fragment {
 
     LoginRequest loginRequest;
 
+    public static String deviceToken;
+
+
     private static final String TAG = "LoginFragment";
 
     @Override
@@ -56,7 +62,7 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        HomeActivity homeActivity = (HomeActivity) view.getContext();
+//        HomeActivity homeActivity = (HomeActivity) view.getContext();
 
 //        homeActivity.binding.activityHomeNavView.setVisibility(View.GONE);
 
@@ -64,6 +70,13 @@ public class LoginFragment extends Fragment {
         passwordEt = view.findViewById(R.id.fragment_login_password_et);
 
         navController = Navigation.findNavController(view);
+
+        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(new OnSuccessListener<String>() {
+            @Override
+            public void onSuccess(String token) {
+                deviceToken = token;
+            }
+        });
 
         binding.fragmentLoginLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,8 +89,7 @@ public class LoginFragment extends Fragment {
                 }
 
                 loginRequest = new LoginRequest(emailEt.getText().toString()
-                        ,passwordEt.getText().toString()
-                        ,"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiJkD2J2whBx1MsaTx7vLgOCK1GXSlMIuGTkRBGxJu_nywCxX4He11y3jOI4puSCber8gLtGG2NABA3mZsozK2e1ap7tQckSpj3aDH9btLdSZhYEHr0APDYComArJPwa2IJdxSWbMu8HEpYhicQ4");
+                        ,passwordEt.getText().toString(), deviceToken);
 
                 connectAndLogin();
 
@@ -97,16 +109,11 @@ public class LoginFragment extends Fragment {
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: " + response.toString());
 
-//                            Bundle bundle = new Bundle();
-//                            bundle.putString("token", response.body().getLoggedUser().getAccessToken());
+                            SharedPref.write(SharedPref.Token, "Bearer "+ response.body().getLoggedUser().getAccessToken());//save string in shared preference.
+//                            SharedPref.write(SharedPref.EMAIL, email);//save int in shared preference.
+//                            SharedPref.write(SharedPref.PASSWORD, password);//save int in shared preference.
 
-//                            navController.navigate(R.id.action_loginFragment_to_navigation_home, bundle);
-                            saveToken(response.body().getLoggedUser().getAccessToken().toString(), response.isSuccessful());
-                            Intent intent = new Intent(getActivity(), HomeActivity.class);
-                            assert response.body() != null;
-                            intent.putExtra("token", response.body().getLoggedUser().getAccessToken().toString());
-                            startActivity(intent);
-                            requireActivity().finish();
+//                            requireActivity().finish();
                         }
                         else {
                             Log.i(TAG, "onResponse: uuuu ");

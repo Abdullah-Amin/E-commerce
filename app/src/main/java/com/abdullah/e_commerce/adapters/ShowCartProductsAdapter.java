@@ -8,19 +8,25 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.ProductAddedToCartItemBinding;
+import com.abdullah.e_commerce.from_json_to_pojo.DataItem;
+import com.abdullah.e_commerce.model.data_classes.ShowedCartItem;
 import com.abdullah.e_commerce.model.responses.CartResponse;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 import retrofit2.Response;
 
 public class ShowCartProductsAdapter extends RecyclerView.Adapter<ShowCartProductsAdapter.ShowCartProductsViewHolder>{
 
     Context context;
-    Response<CartResponse> response;
+    List<DataItem> showedData;
 
-    public ShowCartProductsAdapter(Context context, Response<CartResponse> response) {
+    public ShowCartProductsAdapter(Context context, List<DataItem> showedData) {
         this.context = context;
-        this.response = response;
+        this.showedData = showedData;
     }
 
     @NonNull
@@ -33,26 +39,33 @@ public class ShowCartProductsAdapter extends RecyclerView.Adapter<ShowCartProduc
     @Override
     public void onBindViewHolder(@NonNull ShowCartProductsViewHolder holder, int position) {
 
-        holder.binding.productAddedToCartItemItemImage.setBackgroundResource(
-                Integer.parseInt(response.body().getShowedData().get(position).
-                        getProductId().getLatestProductImages().get(0).getProductImage()));
+        DataItem dataItem = showedData.get(position);
+
+//        holder.binding.productAddedToCartItemItemImage.setBackgroundResource(
+//                Integer.parseInt(showedData.get(position).
+//                        getProductId().getImages().get(0).getImage()));
+
+        Picasso.get()
+                .load(dataItem.getProductId().getImages().get(0).getImage())
+                .placeholder(R.drawable.place_holder_image)
+                .into(holder.binding.productAddedToCartItemItemImage);
 
         holder.binding.productAddedToCartItemItemName.setText(
-                response.body().getShowedData().get(position).getProductId().getLatestProductName());
+                showedData.get(position).getProductId().getItemName());
 
         holder.binding.productAddedToCartItemItemDetails.setText(
-                response.body().getShowedData().get(position).getProductId().getLatestProductDescription());
+                showedData.get(position).getProductId().getDescription());
 
         holder.binding.productAddedToCartItemItemPrice.setText(
-                response.body().getShowedData().get(position).getProductId().getLatestProductPrice());
+                showedData.get(position).getProductId().getPriceAfterDiscount());
 
         holder.binding.productAddedToCartItemItemCounterTv.setText(
-                response.body().getShowedData().get(position).getQuantity());
+                showedData.get(position).getQuantity());
     }
 
     @Override
     public int getItemCount() {
-        return response.body().getShowedData().size();
+        return showedData.size();
     }
 
     public static class ShowCartProductsViewHolder extends RecyclerView.ViewHolder {

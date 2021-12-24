@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navigation_home">
+    app:startDestination="@id/splashFragment2">
 
 <!--    <fragment-->
 <!--        android:id="@+id/navigation_home"-->
@@ -25,7 +25,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.abdullah.e_commerce.ui.main_ui.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
@@ -44,24 +45,32 @@
                 app:argType="string" />
 
         </action>
+        <action
+            android:id="@+id/action_loginFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
     </fragment>
 
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.abdullah.e_commerce.ui.main_ui.ForgotPasswordFragment"
-        android:label="ForgotPasswordFragment" >
+        android:label="ForgotPasswordFragment"
+        tools:layout="@layout/fragment_forgot_password">
         <action
             android:id="@+id/action_forgotPasswordFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
             android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
     </fragment>
 
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.abdullah.e_commerce.ui.main_ui.SignUpFragment"
-        android:label="SignUpFragment" >
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
@@ -71,10 +80,36 @@
         <action
             android:id="@+id/action_signUpFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_signUpFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
     </fragment>
+    <fragment
+        android:id="@+id/splashFragment2"
+        android:name="com.abdullah.e_commerce.ui.main_ui.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment2_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment2_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_splashFragment2_to_homeActivity"
+            app:destination="@id/homeActivity" />
+        <action
+            android:id="@+id/action_splashFragment2_to_loginFragment2"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.abdullah.e_commerce.ui.main_ui.HomeActivity"
+        android:label="HomeActivity"
+        tools:layout="@layout/activity_home"/>
 
 
-<!--    <fragment-->
+    <!--    <fragment-->
 <!--        android:id="@+id/productFragment"-->
 <!--        android:name="com.abdullah.e_commerce.ui.product_ui.ProductFragment"-->
 <!--        android:label="ProductFragment"-->

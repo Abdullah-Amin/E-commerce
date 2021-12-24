@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.network;
 
+import com.abdullah.e_commerce.from_json_to_pojo.GetCartResponse;
 import com.abdullah.e_commerce.model.responses.CartResponse;
 import com.abdullah.e_commerce.model.requests.AddToCartRequest;
 import com.abdullah.e_commerce.model.responses.AddToCartResponse;
@@ -55,5 +56,5 @@ public interface EcommerceI {
                                       @Body AddToCartRequest addToCartRequest);
 
     @GET("cart")
-    Call<CartResponse> showCartProducts(@Header("Authorization") String Token);
+    Call<GetCartResponse> showCartProducts(@Header("Authorization") String Token);
 }

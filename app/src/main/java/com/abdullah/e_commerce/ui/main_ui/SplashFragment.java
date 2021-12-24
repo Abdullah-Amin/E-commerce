@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentSplashBinding;
+import com.abdullah.e_commerce.network.SharedPref;
 
 import java.util.Objects;
 
@@ -39,14 +40,13 @@ public class SplashFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 //        binding.fragmentSplashPb.setVisibility(View.VISIBLE);
-        SharedPreferences preferences = requireActivity().getSharedPreferences("userToken", Context.MODE_PRIVATE);
-        String token = preferences.getString("token", "no token found");
-        boolean loginState = preferences.getBoolean("loginState", false);
 
-        if (!token.isEmpty() || !loginState){
-            navController.navigate(R.id.action_splashFragment_to_loginFragment);
+        String token = SharedPref.read(SharedPref.Token, null);
+
+        if (token == null){
+            navController.navigate(R.id.action_splashFragment2_to_loginFragment);
         }else{
-            navController.navigate(R.id.action_splashFragment_to_navigation_home);
+            navController.navigate(R.id.action_splashFragment2_to_homeActivity);
         }
 
     }

@@ -1,6 +1,5 @@
 package com.abdullah.e_commerce.from_json_to_pojo;
 
-import com.abdullah.e_commerce.model.data_classes.User;
 import com.google.gson.annotations.SerializedName;
 
 public class ReviewItem{

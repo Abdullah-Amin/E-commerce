@@ -16,8 +16,10 @@ import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
 import com.abdullah.e_commerce.model.data_classes.SliderItem;
 import com.abdullah.e_commerce.databinding.ActivityProductBinding;
 import com.abdullah.e_commerce.model.requests.AddToCartRequest;
+import com.abdullah.e_commerce.model.responses.AddToCartResponse;
 import com.abdullah.e_commerce.model.responses.ShowProductResponse;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
+import com.abdullah.e_commerce.network.SharedPref;
 import com.abdullah.e_commerce.ui.cart_ui.CartFragment;
 import com.abdullah.e_commerce.ui.main_ui.HomeActivity;
 import com.google.android.material.button.MaterialButton;
@@ -78,11 +80,24 @@ public class ProductActivity extends AppCompatActivity {
         setOnClicks(binding.activityProductReviewsMbtn, binding.activityProductDetailsMbtn,
                 binding.activityProductProductMbtn, new ReviewsFragment());
 
-
+        String token = SharedPref.read(SharedPref.Token, null);
 
         binding.activityProductAddToCartBtn.setOnClickListener(v -> {
-            RetrofitSingleton.connect().addToCart("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjAxOWQwMDE2M2Y4ZjhlZGE5YTA3Y2Y1MzMyY2UyMDQ2Mzk4NzRkMzY5NDI1ZWM5NjlhNDBlNjNiYTg1OTZjZTBhZjlmYzczMWI5Mzk3MmYiLCJpYXQiOjE2MzU0NjU4NjUsIm5iZiI6MTYzNTQ2NTg2NSwiZXhwIjoxNjY3MDAxODY1LCJzdWIiOiI3NCIsInNjb3BlcyI6W119.qM2puWcFIMDysFs_kxxaLce0q7EZDsjsAqW18WODsJ0UGxLihEc_YXLWTk5Y8LqYmWlynzFvWaeqhBX9yVYJSPzHl_zomatC1QkpM2fCJouNjmMBQRBPYQQab-NEtNfA7QlZaiNIr69CVEgCi4IV_EWLDTGE0YLY2M4rmzTESVcXpb1T1T2XuWgRyZwCRmAFzgY6q9s-g4fz7B5b9xpqqLW1a2TFGTkxcPhsDOvXjYyzEg6IBFm6U2Izjj7cMEI9-w0z9tI0MEkaL2AP4YxEQeWzHMezkGN5FjHQsTnFpFA3lmzVX_J3qjfX-iY00Ol5fH-F9S_VX6u2EMn1B37SI4cGHMTlUwpTZE8oVDx0mU_Abydkfb1H3armN2dpdopDnH1xlRfOthp6ZslF5bZftXAKnovOPCgXxP3R-as-0VZdMMpiAosoCefAo1yRuyolBvykIfVYXDx9ZeFe2GIoXk3XncQEbyuC_5FI1U2Eih5Bd4n_7QcxlK-vo4ILs1tMhlHnlOE8DJLOPG7ZwVWpvaH9dEMP4q7X27F0mJ0ukEdZGunUqMN_8NuGkNIVBiZEzKJlN-2qLKBnLeY4oLv6T3Cu4g_S-uBcUD8y3DwAqZKEvyEIkcLg3AltnxDSH-X4ok16ITk8n2k1nIXBafXer1dKhAGpX9N0HCnLZjl9KiE",
-                    new AddToCartRequest(showedProductData.getItemId(), getColor(), getSize()));
+            RetrofitSingleton.connect().addToCart(token,
+                    new AddToCartRequest(showedProductData.getItemId(), getColor(), getSize()))
+            .enqueue(new Callback<AddToCartResponse>() {
+                @Override
+                public void onResponse(Call<AddToCartResponse> call, Response<AddToCartResponse> response) {
+                    if (response.isSuccessful()){
+                        Log.i(TAG, "abdo onResponse: ---- "+ response.body().getAddedToCartProductData());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<AddToCartResponse> call, Throwable t) {
+                    Log.i(TAG, "abdo onFailure: ---- "+ t.getLocalizedMessage());
+                }
+            });
             Intent intent = new Intent(this, HomeActivity.class);
             intent.putExtra("productActivity", ProductActivity.TAG);
             startActivity(intent);
