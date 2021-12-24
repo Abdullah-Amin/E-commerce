@@ -57,4 +57,8 @@ public interface EcommerceI {
 
     @GET("cart")
     Call<GetCartResponse> showCartProducts(@Header("Authorization") String Token);
+
+//    @GET("add-qty/{quantity}")
+//    Call<AddQuantityResponse> addQuantity(@Path("quantity") int quantity,
+//                                          @Header("Authorization") String token);
 }

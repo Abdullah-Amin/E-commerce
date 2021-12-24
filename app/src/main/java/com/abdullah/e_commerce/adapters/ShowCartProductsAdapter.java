@@ -13,6 +13,7 @@ import com.abdullah.e_commerce.databinding.ProductAddedToCartItemBinding;
 import com.abdullah.e_commerce.from_json_to_pojo.DataItem;
 import com.abdullah.e_commerce.model.data_classes.ShowedCartItem;
 import com.abdullah.e_commerce.model.responses.CartResponse;
+import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -61,6 +62,10 @@ public class ShowCartProductsAdapter extends RecyclerView.Adapter<ShowCartProduc
 
         holder.binding.productAddedToCartItemItemCounterTv.setText(
                 showedData.get(position).getQuantity());
+
+//        holder.binding.productAddedToCartItemItemAddIv.setOnClickListener(p->{
+//            RetrofitSingleton.connect().
+//        });
     }
 
     @Override
