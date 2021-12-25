@@ -14,15 +14,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.adapters.ShowCartProductsAdapter;
 import com.abdullah.e_commerce.databinding.FragmentCartBinding;
-import com.abdullah.e_commerce.from_json_to_pojo.GetCartResponse;
-import com.abdullah.e_commerce.model.responses.CartResponse;
+import com.abdullah.e_commerce.model.responses.CheckoutResponse;
+import com.abdullah.e_commerce.model.responses.GetCartResponse;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.abdullah.e_commerce.network.SharedPref;
-import com.abdullah.e_commerce.ui.cart_ui.CheckoutActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +32,9 @@ public class CartFragment extends Fragment {
 
     FragmentCartBinding binding;
     NavController navController;
+
+    Response<GetCartResponse> checkoutResponse;
+
 
     private static final String TAG = "CartFragment";
 
@@ -64,6 +67,7 @@ public class CartFragment extends Fragment {
                     public void onResponse(Call<GetCartResponse> call, Response<GetCartResponse> response) {
                         if (response.isSuccessful()){
                             Log.i(TAG, "onResponse: "+ response.body());
+                            checkoutResponse = response;
                             binding.fragmentCartRv.setAdapter(new ShowCartProductsAdapter(getContext(), response.body().getData()));
                         }
                     }
@@ -73,5 +77,30 @@ public class CartFragment extends Fragment {
                         Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
                     }
                 });
+
+        binding.fragmentCartCheckOutBtn.setOnClickListener(p->{
+
+            RetrofitSingleton.connect().checkout(token)
+                    .enqueue(new Callback<CheckoutResponse>() {
+                        @Override
+                        public void onResponse(Call<CheckoutResponse> call, Response<CheckoutResponse> response) {
+                            if (response.isSuccessful()){
+                                Log.i(TAG, "onResponse: "+ response.body().toString());
+//                                showData(response.body());
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<CheckoutResponse> call, Throwable t) {
+                            Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
+                        }
+                    });
+
+            if (binding.fragmentCartRv.getAdapter().getItemCount() > 0){
+                navController.navigate(R.id.action_cartFragment_to_checkoutActivity);
+            }else{
+                Toast.makeText(requireContext(), "There is no products to checkout", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

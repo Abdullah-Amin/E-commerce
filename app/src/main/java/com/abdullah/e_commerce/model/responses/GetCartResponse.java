@@ -1,6 +1,8 @@
-package com.abdullah.e_commerce.from_json_to_pojo;
+package com.abdullah.e_commerce.model.responses;
 
 import java.util.List;
+
+import com.abdullah.e_commerce.model.data_classes.DataItem;
 import com.google.gson.annotations.SerializedName;
 
 public class GetCartResponse{

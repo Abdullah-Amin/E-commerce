@@ -1,7 +1,7 @@
 package com.abdullah.e_commerce.network;
 
-import com.abdullah.e_commerce.from_json_to_pojo.GetCartResponse;
-import com.abdullah.e_commerce.model.responses.CartResponse;
+import com.abdullah.e_commerce.model.responses.CheckoutResponse;
+import com.abdullah.e_commerce.model.responses.GetCartResponse;
 import com.abdullah.e_commerce.model.requests.AddToCartRequest;
 import com.abdullah.e_commerce.model.responses.AddToCartResponse;
 import com.abdullah.e_commerce.model.responses.LatestProductResponse;
@@ -61,4 +61,7 @@ public interface EcommerceI {
 //    @GET("add-qty/{quantity}")
 //    Call<AddQuantityResponse> addQuantity(@Path("quantity") int quantity,
 //                                          @Header("Authorization") String token);
+
+    @POST("checkout")
+    Call<CheckoutResponse> checkout(@Header("Authorization") String token);
 }

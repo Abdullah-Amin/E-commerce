@@ -2,7 +2,6 @@ package com.abdullah.e_commerce.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,15 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.ProductAddedToCartItemBinding;
-import com.abdullah.e_commerce.from_json_to_pojo.DataItem;
-import com.abdullah.e_commerce.model.data_classes.ShowedCartItem;
-import com.abdullah.e_commerce.model.responses.CartResponse;
+import com.abdullah.e_commerce.model.data_classes.DataItem;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import retrofit2.Response;
 
 public class ShowCartProductsAdapter extends RecyclerView.Adapter<ShowCartProductsAdapter.ShowCartProductsViewHolder>{
 

@@ -1,4 +1,4 @@
-package com.abdullah.e_commerce.from_json_to_pojo;
+package com.abdullah.e_commerce.model.data_classes;
 
 import java.util.List;
 import com.google.gson.annotations.SerializedName;
