@@ -105,4 +105,17 @@ public class CartFragment extends Fragment {
             }
         });
     }
+
+//    public void countAmount() {
+//        totalAmount = 0.0;
+//        for (int i = 0; i < list.size(); i++) {
+//            double amount = Double.parseDouble(list.get(i).getQuantity())
+//                    * Double.parseDouble(list.get(i).getProductId().getPrice());
+//            totalAmount = totalAmount + amount;
+//
+//        }
+//        binding.salary.setText(String.valueOf(totalAmount));
+//
+//    }
+
 }

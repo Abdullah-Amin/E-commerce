@@ -54,7 +54,7 @@ public class ShowCartProductsAdapter extends RecyclerView.Adapter<ShowCartProduc
             Log.i(TAG, "abdo before onBindViewHolder: "+ totalPrice);
         }
 
-        Log.i(TAG, "abdo after onBindViewHolder: "+ totalPrice);
+        Log.i(TAG, "abdo after onBindViewHolder: " + totalPrice);
 
         Picasso.get()
                 .load(dataItem.getProductId().getImages().get(0).getImage())
