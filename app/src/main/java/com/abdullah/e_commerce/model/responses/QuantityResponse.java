@@ -1,9 +1,9 @@
 package com.abdullah.e_commerce.model.responses;
 
-import com.abdullah.e_commerce.model.data_classes.AddQuantityDetails;
+import com.abdullah.e_commerce.model.data_classes.QuantityDetails;
 import com.google.gson.annotations.SerializedName;
 
-public class AddQuantityResponse {
+public class QuantityResponse {
 
     @SerializedName("status")
     private boolean status;
@@ -12,7 +12,7 @@ public class AddQuantityResponse {
     private String message;
 
     @SerializedName("data")
-    private AddQuantityDetails addQuantityDetails;
+    private QuantityDetails quantityDetails;
 
     public boolean isStatus() {
         return status;
@@ -30,20 +30,20 @@ public class AddQuantityResponse {
         this.message = message;
     }
 
-    public AddQuantityDetails getAddQuantityDetails() {
-        return addQuantityDetails;
+    public QuantityDetails getQuantityDetails() {
+        return quantityDetails;
     }
 
-    public void setAddQuantityDetails(AddQuantityDetails addQuantityDetails) {
-        this.addQuantityDetails = addQuantityDetails;
+    public void setQuantityDetails(QuantityDetails quantityDetails) {
+        this.quantityDetails = quantityDetails;
     }
 
     @Override
     public String toString() {
-        return "AddQuantityResponse{" +
+        return "QuantityResponse{" +
                 "status=" + status +
                 ", message='" + message + '\'' +
-                ", addQuantityDetails=" + addQuantityDetails +
+                ", quantityDetails=" + quantityDetails +
                 '}';
     }
 }

@@ -1,6 +1,6 @@
 package com.abdullah.e_commerce.network;
 
-import com.abdullah.e_commerce.model.responses.AddQuantityResponse;
+import com.abdullah.e_commerce.model.responses.QuantityResponse;
 import com.abdullah.e_commerce.model.responses.CheckoutResponse;
 import com.abdullah.e_commerce.model.responses.GetCartResponse;
 import com.abdullah.e_commerce.model.requests.AddToCartRequest;
@@ -60,8 +60,12 @@ public interface EcommerceI {
     Call<GetCartResponse> showCartProducts(@Header("Authorization") String Token);
 
     @GET("add-qty/{productId}")
-    Call<AddQuantityResponse> addQuantity(@Path("productId") int productId,
-                                          @Header("Authorization") String token);
+    Call<QuantityResponse> addQuantity(@Path("productId") int productId,
+                                       @Header("Authorization") String token);
+
+    @GET("sub-qty/{productId}")
+    Call<QuantityResponse> subQuantity(@Path("productId") int productId,
+                                       @Header("Authorization") String token);
 
     @POST("checkout")
     Call<CheckoutResponse> checkout(@Header("Authorization") String token);

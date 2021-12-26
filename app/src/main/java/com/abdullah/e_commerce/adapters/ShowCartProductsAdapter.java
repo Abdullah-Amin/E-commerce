@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,9 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.ProductAddedToCartItemBinding;
 import com.abdullah.e_commerce.model.data_classes.DataItem;
-import com.abdullah.e_commerce.model.requests.AddToCartRequest;
-import com.abdullah.e_commerce.model.responses.AddQuantityResponse;
-import com.abdullah.e_commerce.model.responses.AddToCartResponse;
+import com.abdullah.e_commerce.model.responses.QuantityResponse;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.abdullah.e_commerce.network.SharedPref;
 import com.squareup.picasso.Picasso;
@@ -48,10 +47,14 @@ public class ShowCartProductsAdapter extends RecyclerView.Adapter<ShowCartProduc
     public void onBindViewHolder(@NonNull ShowCartProductsViewHolder holder, int position) {
 
         DataItem dataItem = showedData.get(position);
+        double totalPrice = 0;
 
-//        holder.binding.productAddedToCartItemItemImage.setBackgroundResource(
-//                Integer.parseInt(showedData.get(position).
-//                        getProductId().getImages().get(0).getImage()));
+        for (DataItem item : showedData) {
+            totalPrice += Double.parseDouble(item.getProductId().getPriceAfterDiscount());
+            Log.i(TAG, "abdo before onBindViewHolder: "+ totalPrice);
+        }
+
+        Log.i(TAG, "abdo after onBindViewHolder: "+ totalPrice);
 
         Picasso.get()
                 .load(dataItem.getProductId().getImages().get(0).getImage())
@@ -59,37 +62,49 @@ public class ShowCartProductsAdapter extends RecyclerView.Adapter<ShowCartProduc
                 .into(holder.binding.productAddedToCartItemItemImage);
 
         holder.binding.productAddedToCartItemItemName.setText(
-                showedData.get(position).getProductId().getItemName());
+                dataItem.getProductId().getItemName());
 
         holder.binding.productAddedToCartItemItemDetails.setText(
-                showedData.get(position).getProductId().getDescription());
+                dataItem.getProductId().getDescription());
 
         holder.binding.productAddedToCartItemItemPrice.setText(
-                showedData.get(position).getProductId().getPriceAfterDiscount());
+                dataItem.getProductId().getPriceAfterDiscount());
 
         holder.binding.productAddedToCartItemItemCounterTv.setText(
-                showedData.get(position).getQuantity());
+                dataItem.getQuantity());
+
+        Log.i(TAG, "abdo onBindViewHolder: "+ dataItem.getQuantity());
 
         String token = SharedPref.read("token", null);
 
         holder.binding.productAddedToCartItemItemAddIv.setOnClickListener(p->{
-            RetrofitSingleton.connect().addQuantity(dataItem.getProductId().getItemId(), token)
-                    .enqueue(new Callback<AddQuantityResponse>() {
-                        @Override
-                        public void onResponse(Call<AddQuantityResponse> call, Response<AddQuantityResponse> response) {
-                            if (response.isSuccessful()){
-                                Log.i(TAG, "onResponse: "+ response.body().toString());
-                                holder.binding.productAddedToCartItemItemCounterTv.setText(
-                                        response.body().getAddQuantityDetails().getQuantity());
-                            }
-                        }
+            changeQuantity(holder, RetrofitSingleton.connect().addQuantity(
+                    dataItem.getProductId().getItemId(), token));
+        });
 
-                        @Override
-                        public void onFailure(Call<AddQuantityResponse> call, Throwable t) {
-                            Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
-                            Toast.makeText(p.getContext(), t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+        holder.binding.productAddedToCartItemItemRemoveIv.setOnClickListener(p->{
+            changeQuantity(holder, RetrofitSingleton.connect().subQuantity(
+                    dataItem.getProductId().getItemId(), token));
+        });
+    }
+
+    private void changeQuantity(ShowCartProductsViewHolder holder,
+                                @NonNull Call<QuantityResponse> modifyQuantity) {
+        modifyQuantity.enqueue(new Callback<QuantityResponse>() {
+            @Override
+            public void onResponse(Call<QuantityResponse> call, Response<QuantityResponse> response) {
+                if (response.isSuccessful()){
+                    Log.i(TAG, "onResponse: "+ response.body().toString());
+                    holder.binding.productAddedToCartItemItemCounterTv.setText(
+                            Integer.toString(response.body().getQuantityDetails().getQuantity()));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<QuantityResponse> call, Throwable t) {
+                Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
+                Toast.makeText(context, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

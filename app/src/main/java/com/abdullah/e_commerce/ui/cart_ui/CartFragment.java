@@ -68,7 +68,9 @@ public class CartFragment extends Fragment {
                         if (response.isSuccessful()){
                             Log.i(TAG, "onResponse: "+ response.body());
                             checkoutResponse = response;
-                            binding.fragmentCartRv.setAdapter(new ShowCartProductsAdapter(getContext(), response.body().getData()));
+                            ShowCartProductsAdapter showCartProductsAdapter =
+                                    new ShowCartProductsAdapter(getContext(), response.body().getData());
+                            binding.fragmentCartRv.setAdapter(showCartProductsAdapter);
                         }
                     }
 

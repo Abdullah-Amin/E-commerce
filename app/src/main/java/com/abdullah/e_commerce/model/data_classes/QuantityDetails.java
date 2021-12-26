@@ -2,7 +2,7 @@ package com.abdullah.e_commerce.model.data_classes;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AddQuantityDetails{
+public class QuantityDetails {
 
 	@SerializedName("quantity")
 	private int quantity;
@@ -106,7 +106,7 @@ public class AddQuantityDetails{
 	@Override
  	public String toString(){
 		return 
-			"AddQuantityDetails{" + 
+			"QuantityDetails{" +
 			"quantity = '" + quantity + '\'' + 
 			",updated_at = '" + updatedAt + '\'' + 
 			",user_id = '" + userId + '\'' + 
