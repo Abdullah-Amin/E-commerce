@@ -20,6 +20,7 @@ import com.abdullah.e_commerce.R;
 import com.abdullah.e_commerce.databinding.FragmentMoreBinding;
 import com.abdullah.e_commerce.model.responses.LogoutResponse;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
+import com.abdullah.e_commerce.network.SharedPref;
 import com.abdullah.e_commerce.ui.main_ui.HomeActivity;
 import com.abdullah.e_commerce.ui.main_ui.MainActivity;
 
@@ -63,6 +64,7 @@ public class MoreFragment extends Fragment {
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: " + response.toString());
 //                            navController.navigate(R.id.action_navigation_more_to_loginFragment);
+                            SharedPref.clearAll();
                             Intent intent = new Intent(getActivity(), MainActivity.class);
                             startActivity(intent);
                             getActivity().finish();
@@ -81,12 +83,11 @@ public class MoreFragment extends Fragment {
     }
 
     private String getToken() {
-        HomeActivity homeActivity = (HomeActivity) getActivity();
-        String token = Objects.requireNonNull(homeActivity).getToken();
+        String token = SharedPref.read("token", null);
         if(token == null || token.isEmpty()){
             Log.i(TAG, "getToken: " + "toke is  -- " + token + " --");
             return null;
         }
-        return "Bearer " + token;
+        return token;
     }
 }

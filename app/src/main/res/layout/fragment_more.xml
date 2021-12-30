@@ -12,343 +12,347 @@
         android:layout_height="match_parent"
         tools:context=".ui.profile_ui.MoreFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#F5F6F8">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/fragment_more_notification_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:src="@drawable/ic_notifications"
-                android:layout_marginRight="@dimen/_10sdp" />
-
-            <ImageView
-                android:id="@+id/fragment_more_message_iv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/fragment_more_notification_iv"
-                android:src="@drawable/ic_chat"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginRight="@dimen/_10sdp" />
-
-            <TextView
-                android:id="@+id/fragment_more_headline_tv"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/more"
-                android:textColor="#515C6F"
-                android:textStyle="bold"
-                android:textSize="@dimen/_30ssp"
-                android:layout_marginStart="@dimen/_15sdp"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_more_message_iv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginLeft="@dimen/_15sdp" />
+                android:layout_height="match_parent"
+                android:background="#F5F6F8"
+                android:paddingBottom="@dimen/_15sdp">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/fragment_more_first_cv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_more_headline_tv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:background="@color/white"
-                app:cardCornerRadius="@dimen/_15sdp"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_10sdp">
-
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/fragment_more_notification_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:src="@drawable/ic_notifications"
+                    android:layout_marginRight="@dimen/_10sdp" />
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/fragment_more_shipping_address_tv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:text="@string/shipping_address"
-                            android:textSize="@dimen/_15ssp"
-                            android:drawablePadding="@dimen/_10sdp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:drawableStartCompat="@drawable/ic_shipping"
-                            app:drawableEndCompat="@drawable/ic_arrow_right" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:background="#727C8E"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_more_shipping_address_tv"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_35sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginLeft="@dimen/_35sdp"
-                            android:layout_marginRight="@dimen/_10sdp"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/fragment_more_payment_method_tv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:text="@string/payment_method"
-                            android:textSize="@dimen/_15ssp"
-                            android:drawablePadding="@dimen/_10sdp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:drawableStartCompat="@drawable/ic_payment_method"
-                            app:drawableEndCompat="@drawable/ic_arrow_right" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:background="#727C8E"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_more_payment_method_tv"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_35sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginLeft="@dimen/_35sdp"
-                            android:layout_marginRight="@dimen/_10sdp"/>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/fragment_more_currency_tv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:text="@string/currency"
-                            android:textSize="@dimen/_15ssp"
-                            android:drawablePadding="@dimen/_10sdp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:drawableStartCompat="@drawable/ic_currency"
-                            app:drawableEndCompat="@drawable/ic_arrow_right" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:background="#727C8E"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_more_currency_tv"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_35sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginLeft="@dimen/_35sdp"
-                            android:layout_marginRight="@dimen/_10sdp" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/fragment_more_language_tv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:text="@string/language"
-                            android:textSize="@dimen/_15ssp"
-                            android:drawablePadding="@dimen/_10sdp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:drawableStartCompat="@drawable/ic_language"
-                            app:drawableEndCompat="@drawable/ic_arrow_right" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/fragment_more_second_cv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_more_first_cv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:background="@color/white"
-                app:cardCornerRadius="@dimen/_15sdp"
-                android:layout_marginStart="@dimen/_15sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_10sdp">
-
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/fragment_more_message_iv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/fragment_more_notification_iv"
+                    android:src="@drawable/ic_chat"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp" />
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/fragment_more_headline_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more"
+                    android:textColor="#515C6F"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_30ssp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_more_message_iv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginLeft="@dimen/_15sdp" />
 
-                        <TextView
-                            android:id="@+id/fragment_more_notification_settings_tv"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_more_first_cv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_more_headline_tv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:text="@string/notification_settings"
-                            android:textSize="@dimen/_15ssp"
-                            android:drawablePadding="@dimen/_10sdp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:drawableStartCompat="@drawable/ic_notification_settings"
-                            app:drawableEndCompat="@drawable/ic_arrow_right" />
+                            android:layout_height="wrap_content">
 
-                        <View
+                            <TextView
+                                android:id="@+id/fragment_more_shipping_address_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:text="@string/shipping_address"
+                                android:textSize="@dimen/_15ssp"
+                                android:drawablePadding="@dimen/_10sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:drawableStartCompat="@drawable/ic_shipping"
+                                app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:background="#727C8E"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_more_shipping_address_tv"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginStart="@dimen/_35sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginLeft="@dimen/_35sdp"
+                                android:layout_marginRight="@dimen/_10sdp"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:background="#727C8E"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_more_notification_settings_tv"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_35sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginLeft="@dimen/_35sdp"
-                            android:layout_marginRight="@dimen/_10sdp"/>
+                            android:layout_height="wrap_content">
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/fragment_more_payment_method_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:text="@string/payment_method"
+                                android:textSize="@dimen/_15ssp"
+                                android:drawablePadding="@dimen/_10sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:drawableStartCompat="@drawable/ic_payment_method"
+                                app:drawableEndCompat="@drawable/ic_arrow_right" />
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:background="#727C8E"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_more_payment_method_tv"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginStart="@dimen/_35sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginLeft="@dimen/_35sdp"
+                                android:layout_marginRight="@dimen/_10sdp"/>
 
-                        <TextView
-                            android:id="@+id/fragment_more_privacy_policy_tv"
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:text="@string/privacy_policy"
-                            android:textSize="@dimen/_15ssp"
-                            android:drawablePadding="@dimen/_10sdp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:drawableStartCompat="@drawable/ic_privacy"
-                            app:drawableEndCompat="@drawable/ic_arrow_right" />
+                            android:layout_height="wrap_content">
 
-                        <View
+                            <TextView
+                                android:id="@+id/fragment_more_currency_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:text="@string/currency"
+                                android:textSize="@dimen/_15ssp"
+                                android:drawablePadding="@dimen/_10sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:drawableStartCompat="@drawable/ic_currency"
+                                app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:background="#727C8E"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_more_currency_tv"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginStart="@dimen/_35sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginLeft="@dimen/_35sdp"
+                                android:layout_marginRight="@dimen/_10sdp" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:background="#727C8E"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_more_privacy_policy_tv"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_35sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginLeft="@dimen/_35sdp"
-                            android:layout_marginRight="@dimen/_10sdp"/>
+                            android:layout_height="wrap_content">
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/fragment_more_language_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:text="@string/language"
+                                android:textSize="@dimen/_15ssp"
+                                android:drawablePadding="@dimen/_10sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:drawableStartCompat="@drawable/ic_language"
+                                app:drawableEndCompat="@drawable/ic_arrow_right" />
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:id="@+id/fragment_more_frequently_ask_question_tv"
+                    </LinearLayout>
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fragment_more_second_cv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_more_first_cv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@color/white"
+                    app:cardCornerRadius="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:text="@string/rate_our_app"
-                            android:textSize="@dimen/_15ssp"
-                            android:drawablePadding="@dimen/_10sdp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:drawableStartCompat="@drawable/ic_suggest"
-                            app:drawableEndCompat="@drawable/ic_arrow_right" />
+                            android:layout_height="wrap_content">
 
-                        <View
+                            <TextView
+                                android:id="@+id/fragment_more_notification_settings_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:text="@string/notification_settings"
+                                android:textSize="@dimen/_15ssp"
+                                android:drawablePadding="@dimen/_10sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:drawableStartCompat="@drawable/ic_notification_settings"
+                                app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:background="#727C8E"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_more_notification_settings_tv"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginStart="@dimen/_35sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginLeft="@dimen/_35sdp"
+                                android:layout_marginRight="@dimen/_10sdp"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:background="#727C8E"
-                            app:layout_constraintTop_toBottomOf="@+id/fragment_more_frequently_ask_question_tv"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            android:layout_marginStart="@dimen/_35sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginLeft="@dimen/_35sdp"
-                            android:layout_marginRight="@dimen/_10sdp" />
+                            android:layout_height="wrap_content">
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/fragment_more_privacy_policy_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:text="@string/privacy_policy"
+                                android:textSize="@dimen/_15ssp"
+                                android:drawablePadding="@dimen/_10sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:drawableStartCompat="@drawable/ic_privacy"
+                                app:drawableEndCompat="@drawable/ic_arrow_right" />
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:background="#727C8E"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_more_privacy_policy_tv"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginStart="@dimen/_35sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginLeft="@dimen/_35sdp"
+                                android:layout_marginRight="@dimen/_10sdp"/>
 
-                        <TextView
-                            android:id="@+id/fragment_more_legal_information_tv"
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:text="@string/legal_information"
-                            android:textSize="@dimen/_15ssp"
-                            android:drawablePadding="@dimen/_10sdp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:drawableStartCompat="@drawable/ic_legal_info"
-                            app:drawableEndCompat="@drawable/ic_arrow_right" />
+                            android:layout_height="wrap_content">
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            <TextView
+                                android:id="@+id/fragment_more_frequently_ask_question_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:text="@string/rate_our_app"
+                                android:textSize="@dimen/_15ssp"
+                                android:drawablePadding="@dimen/_10sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:drawableStartCompat="@drawable/ic_suggest"
+                                app:drawableEndCompat="@drawable/ic_arrow_right" />
 
-                </LinearLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:background="#727C8E"
+                                app:layout_constraintTop_toBottomOf="@+id/fragment_more_frequently_ask_question_tv"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginStart="@dimen/_35sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginLeft="@dimen/_35sdp"
+                                android:layout_marginRight="@dimen/_10sdp" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/fragment_more_legal_information_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_10sdp"
+                                android:text="@string/legal_information"
+                                android:textSize="@dimen/_15ssp"
+                                android:drawablePadding="@dimen/_10sdp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:drawableStartCompat="@drawable/ic_legal_info"
+                                app:drawableEndCompat="@drawable/ic_arrow_right" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
 
 
 
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/fragment_more_logout_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_more_second_cv"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:text="@string/log_out"
-                android:textSize="@dimen/_12ssp"
-                android:layout_marginTop="@dimen/_15sdp"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fragment_more_logout_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/fragment_more_second_cv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:text="@string/log_out"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_marginTop="@dimen/_15sdp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
+        </ScrollView>
 
     </FrameLayout>
 </layout>

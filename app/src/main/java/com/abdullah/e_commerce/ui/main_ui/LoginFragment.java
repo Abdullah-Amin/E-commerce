@@ -109,11 +109,10 @@ public class LoginFragment extends Fragment {
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: " + response.toString());
 
-                            SharedPref.write(SharedPref.Token, "Bearer "+ response.body().getLoggedUser().getAccessToken());//save string in shared preference.
-//                            SharedPref.write(SharedPref.EMAIL, email);//save int in shared preference.
-//                            SharedPref.write(SharedPref.PASSWORD, password);//save int in shared preference.
+                            SharedPref.write(SharedPref.Token,
+                                    "Bearer "+ response.body().getLoggedUser().getAccessToken());
 
-//                            requireActivity().finish();
+                            startActivity(new Intent(requireActivity(), HomeActivity.class));
                         }
                         else {
                             Log.i(TAG, "onResponse: uuuu ");

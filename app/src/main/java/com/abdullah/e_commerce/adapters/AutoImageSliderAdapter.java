@@ -10,7 +10,6 @@ import android.widget.Toast;
 import androidx.databinding.DataBindingUtil;
 
 import com.abdullah.e_commerce.R;
-import com.abdullah.e_commerce.model.data_classes.ProductImage;
 import com.abdullah.e_commerce.model.data_classes.SliderItem;
 import com.abdullah.e_commerce.databinding.ImageSliderLayoutItemBinding;
 import com.smarteist.autoimageslider.SliderViewAdapter;
@@ -18,15 +17,15 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SliderAdapterExample extends
-        SliderViewAdapter<SliderAdapterExample.SliderAdapterVH> {
+public class AutoImageSliderAdapter extends
+        SliderViewAdapter<AutoImageSliderAdapter.SliderAdapterVH> {
 
     private Context context;
     private List<SliderItem> mSliderItems;
 
-    private static final java.lang.String TAG = "SliderAdapterExample";
+    private static final java.lang.String TAG = "AutoImageSliderAdapter";
 
-    public SliderAdapterExample(Context context, List<SliderItem> mSliderItems) {
+    public AutoImageSliderAdapter(Context context, List<SliderItem> mSliderItems) {
         this.context = context;
         this.mSliderItems = mSliderItems;
     }

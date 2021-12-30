@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.ui.main_ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import com.abdullah.e_commerce.model.data_classes.RegisterErrorBody;
 import com.abdullah.e_commerce.model.responses.RegisterResponse;
 import com.abdullah.e_commerce.model.requests.RegisterRequest;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
+import com.abdullah.e_commerce.network.SharedPref;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -96,13 +98,12 @@ public class SignUpFragment extends Fragment {
                 .enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(@NotNull Call<RegisterResponse> call, @NotNull Response<RegisterResponse> response) {
+                        assert response.body() != null;
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: " + response.body().getMessage());
 
-                            Bundle bundle = new Bundle();
-                            assert response.body() != null;
-                            bundle.putString("token", response.body().getRegisteredUser().getAccessToken().toString());
-                            navController.navigate(R.id.action_signUpFragment_to_navigation_home, bundle);
+                            SharedPref.write("token", "Bearer " + response.body().getRegisteredUser().getAccessToken());
+                            startActivity(new Intent(requireActivity(), HomeActivity.class));
                         }
 
                         else {

@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.abdullah.e_commerce.R;
-import com.abdullah.e_commerce.adapters.SliderAdapterExample;
+import com.abdullah.e_commerce.adapters.AutoImageSliderAdapter;
 import com.abdullah.e_commerce.model.data_classes.ShowedProductData;
 import com.abdullah.e_commerce.model.data_classes.SliderItem;
 import com.abdullah.e_commerce.databinding.ActivityProductBinding;
@@ -20,9 +20,10 @@ import com.abdullah.e_commerce.model.responses.AddToCartResponse;
 import com.abdullah.e_commerce.model.responses.ShowProductResponse;
 import com.abdullah.e_commerce.network.RetrofitSingleton;
 import com.abdullah.e_commerce.network.SharedPref;
-import com.abdullah.e_commerce.ui.cart_ui.CartFragment;
 import com.abdullah.e_commerce.ui.main_ui.HomeActivity;
 import com.google.android.material.button.MaterialButton;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -153,8 +154,11 @@ public class ProductActivity extends AppCompatActivity {
         }
 
         binding.activityProductProductImageSlider.setSliderAdapter(
-                new SliderAdapterExample(this, sliderItemsList));
+                new AutoImageSliderAdapter(this, sliderItemsList));
 
+        binding.activityProductProductImageSlider.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        binding.activityProductProductImageSlider.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+        binding.activityProductProductImageSlider.startAutoCycle();
     }
 
     private void setProductNameAndPrice(Response<ShowProductResponse> response) {
