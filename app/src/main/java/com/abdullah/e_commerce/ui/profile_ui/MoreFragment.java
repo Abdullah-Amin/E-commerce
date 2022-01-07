@@ -1,5 +1,6 @@
 package com.abdullah.e_commerce.ui.profile_ui;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.abdullah.e_commerce.R;
@@ -54,6 +56,17 @@ public class MoreFragment extends Fragment {
         binding.fragmentMoreLogoutBtn.setOnClickListener(v->{
             connectAndLogout();
         });
+
+        binding.fragmentMoreNotificationSettingsLayout.setOnClickListener(p->{
+//            openNotificationSettingsDialog();
+        });
+    }
+
+    private void openNotificationSettingsDialog() {
+//        AlertDialog dialog = new AlertDialog.Builder(requireActivity())
+//                .setTitle("NotificationSettings")
+//                .setMessage("Choose ")
+//                .setView()
     }
 
     private void connectAndLogout() {
@@ -64,10 +77,7 @@ public class MoreFragment extends Fragment {
                         if(response.isSuccessful()){
                             Log.i(TAG, "onResponse: " + response.toString());
 //                            navController.navigate(R.id.action_navigation_more_to_loginFragment);
-                            SharedPref.clearAll();
-                            Intent intent = new Intent(getActivity(), MainActivity.class);
-                            startActivity(intent);
-                            getActivity().finish();
+                            logout();
                         }
                         else {
                             Log.i(TAG, "onResponse: "+ response.body().getMessage());
@@ -80,6 +90,13 @@ public class MoreFragment extends Fragment {
                         Log.i(TAG, "onFailure: "+ t.getLocalizedMessage());
                     }
                 });
+    }
+
+    private void logout() {
+        SharedPref.clearAll();
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        startActivity(intent);
+        getActivity().finish();
     }
 
     private String getToken() {
